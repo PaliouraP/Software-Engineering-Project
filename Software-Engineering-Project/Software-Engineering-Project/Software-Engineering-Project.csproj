@@ -7,4 +7,9 @@
     <RootNamespace>Software_Engineering_Project</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\images\lock.png" />
+    <None Include="wwwroot\images\user.png" />
+  </ItemGroup>
+
 </Project>

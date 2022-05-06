@@ -28,5 +28,11 @@ namespace Software_Engineering_Project.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        // Login page view method
+        public IActionResult Login()
+        {
+            return View();
+        }
     }
 }

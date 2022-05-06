@@ -1,0 +1,44 @@
+﻿@page
+@model Software_Engineering_Project.Views.Home.LoginModel
+@{
+}
+
+<!-- Stylesheet connection for Login page -->
+@section Styles {
+    <link rel="stylesheet" href="~/css/login_style.css" />
+}
+
+<div class="container">
+    <!-- Forms Container -->
+    <div class="forms-container">  
+        <div class="signin">
+            <form action="#" class="sign-in-form">
+                <h2 class="title">Login</h2>
+                <!-- Username field -->
+                <div class="inputs">
+                    <img src="@Url.Content("~/images/user.png")" alt="User" class="icons">
+                    <input type="text" placeholder="Username" />
+                </div>
+                <!-- Password field -->
+                <div class="inputs">
+                    <img src="@Url.Content("~/images/lock.png")" alt="Lock" class="icons">
+                    <input type="password" placeholder="Password" />
+                </div>
+                <!-- Submit button -->
+                <input type="submit" class="btn solid" value="Login"/>
+            </form>
+        </div>
+    </div>
+
+    <!-- Panels Container -->
+    <div class="panels-container">
+        <div class="panel left-panel">
+            <div class="content">
+                <h3>Forgot your password?</h3>
+                <p>Click on the button below to reset your password.</p>
+                <button class="btn transparent" id="forgot-pswd">Reset password</button>
+            </div>
+            <img src="@Url.Content("~/images/login_img.png")" alt="" class="image" />
+        </div>
+    </div>
+</div>
