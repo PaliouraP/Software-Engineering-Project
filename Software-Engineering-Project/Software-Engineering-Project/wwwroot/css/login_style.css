@@ -10,7 +10,7 @@ body, input {
 
 .container {
     position: relative;
-    widthL 100%;
+    width: 100%;
     background-color: #fff;
     min-height: 100vh;
     overflow: hidden;
@@ -31,7 +31,7 @@ body, input {
     width: 2000px;
     top: -10%;
     right: 48%;
-    background-image: linear-gradient(-45deg, #5138EE, #6953F0, #8E7EF4);
+    background-image: linear-gradient(-45deg, #067BC2, #449DD1, #78C0E0);
     transform: translateY(-35%);
     border-radius: 50%;
     z-index: 6;
@@ -98,7 +98,7 @@ form {
     outline: none;
     border: none;
     border-radius: 48px;
-    background-color: #5138EE;
+    background-color: #067BC2;
     color: white;
     font-weight: 500;
     font-size: large;
@@ -107,7 +107,7 @@ form {
 }
 
     .btn:hover {
-        background-color: #644EF0;
+        background-color: #376996;
     }
 
     .signin {
@@ -171,5 +171,5 @@ form {
     height: 41px;
     font-weight: 600;
     font-size: 0.8rem;
-    color: #5138EE;
+    color: #067BC2;
 }
