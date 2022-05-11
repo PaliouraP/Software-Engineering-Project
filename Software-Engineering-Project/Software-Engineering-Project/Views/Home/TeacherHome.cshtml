@@ -1,0 +1,37 @@
+﻿@page
+@model Software_Engineering_Project.Views.Home.TeacherHomeModel
+@{
+}
+
+<!-- Stylesheet connection for TeacherHome page -->
+@section Styles {
+    <link rel="stylesheet" href="~/css/TeacherHome_style.css" />
+}
+
+<section>
+    <div class="circle"></div>
+    <header>
+        <a href="#" class="logo">
+            <img src="@Url.Content("~/images/unipi_logo.png")" alt="logo">
+        </a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Thesis</a></li>
+            <li><a href="#">Students</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Profile</a></li>
+        </ul>
+    </header>
+    <div class="content">
+        <div class="textbox">
+            <h2>Manage your advisees <br /><span>easier</span> and <span>faster</span></h2>
+            <p>DTM stands for Dissertation Thesis Management system. The easiest way to track down your
+                student's dissertations. Grade, comment, chat and schedule meetings. All in one place.
+            </p>
+            <a href="#">Learn more</a>
+        </div>
+        <div class="imgBox">
+            <img src="@Url.Content("~/images/TeacherHome_img.png")" class="basicImg">
+        </div>
+    </div>
+</section>

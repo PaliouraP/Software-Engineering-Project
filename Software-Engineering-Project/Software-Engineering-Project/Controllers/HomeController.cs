@@ -34,5 +34,11 @@ namespace Software_Engineering_Project.Controllers
         {
             return View();
         }
+
+        // TeacherHome page view method
+        public IActionResult TeacherHome()
+        {
+            return View();
+        }
     }
 }
