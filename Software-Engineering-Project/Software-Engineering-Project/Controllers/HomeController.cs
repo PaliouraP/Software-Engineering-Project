@@ -31,13 +31,8 @@ namespace Software_Engineering_Project.Controllers
         }
 
         // Login page view method
+        //GET
         public IActionResult Login()
-        {
-            return View();
-        }
-
-        // TeacherHome page view method
-        public IActionResult TeacherHome()
         {
             return View();
         }
@@ -51,7 +46,8 @@ namespace Software_Engineering_Project.Controllers
             string password = model.Password;
 
             NpgsqlConnection conn = Database.Database.GetConnection();
-            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select username, password , role from users where username = '{0}'", username),conn);
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select username" +
+                ", password , role from users where username = '{0}'", username),conn);
 
             if (reader.Read())
             {
@@ -64,7 +60,7 @@ namespace Software_Engineering_Project.Controllers
                 {
                     if(role == "professor")
                     {
-                        return View("~/Views/Home/TeacherHome.cshtml");
+                        return View("~/Views/Teacher/TeacherHome.cshtml", model);
                     }
                     else
                     {

@@ -45,9 +45,7 @@
 <!-- Alert in case the user has entered wrong credentials -->
 @if (Model!=null && !Model.IsLoginConfirmed)
 {
-    <script type="text/javascript">
-window.onload = function(){
-    alert('You have entered a wrong username or password');
+    <script type="text/javascript" src="~/js/LoginFailed.js">
+    </script>
 }
-</script>
-}
+

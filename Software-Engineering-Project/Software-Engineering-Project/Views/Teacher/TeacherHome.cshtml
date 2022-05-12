@@ -1,5 +1,4 @@
-﻿@page
-@model Software_Engineering_Project.Views.Home.TeacherHomeModel
+﻿@model Software_Engineering_Project.Models.LoginModel
 @{
 }
 
@@ -17,7 +16,7 @@
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Thesis</a></li>
-            <li><a href="#">Students</a></li>
+            <li><a asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@Model.Username">Students</a></li>
             <li><a href="#">Reports</a></li>
             <li><a href="#">Profile</a></li>
         </ul>

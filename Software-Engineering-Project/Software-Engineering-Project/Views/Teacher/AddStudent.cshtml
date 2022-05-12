@@ -1,0 +1,88 @@
+﻿@model Software_Engineering_Project.Models.StudentModel
+
+@{
+    ViewData["Title"] = "Add Student";
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Teacher" asp-action="AddStudent" asp-route-proffesorName="@ViewBag.Username">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div><!--Used if the user has not entered correctly all the details-->
+            
+            <!--Input start year-->
+            <div class="form-group">
+                <label asp-for="StartYear" class="control-label"></label>
+                <input asp-for="StartYear" class="form-control" min="1930" max="2022" />
+                <span asp-validation-for="StartYear" class="text-danger"></span> <!--Used if the user has entered wrong details on this input-->
+            </div>
+           
+            <!--Input username-->
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" value="" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+
+            <!--Input password-->
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input type="password" asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <!--Input first name-->
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <!--Input last name-->
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <!--Input gender-->
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <input asp-for="Gender" class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+
+            <!--Input email-->
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <!--Input phone-->
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+           
+            <!--Submit button -->
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+@if (ViewBag.Success != null && ViewBag.Success)
+{
+    <script type="text/javascript" src="~/js/AddStudentSuccess.js">
+    </script>
+}
+@if (ViewBag.Success != null && !ViewBag.Success){
+    <script type="text/javascript" src="~/js/AddStudentFail.js"></script>
+}
