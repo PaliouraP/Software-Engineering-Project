@@ -51,24 +51,70 @@ namespace Software_Engineering_Project.Controllers
 
         }
 
-        public IActionResult Search(string queryString)
+        public IActionResult StudentSearch(string queryString, string professorName)
         {
+            List<SearchModel> searchModels = new List<SearchModel>();
+
+            NpgsqlConnection conn = Database.Database.GetConnection();
+
             if(queryString.Contains(' '))
             {
                 string firstName = queryString.Substring(0, queryString.IndexOf(' '));
                 string lastName = queryString.Substring(queryString.IndexOf(' ') + 1);
 
-                NpgsqlConnection conn = Database.Database.GetConnection();
                 NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select student" +
                     ", start_year, first_name, last_name, email, phone, title, thesis_start_date, " +
                     "grade, language, technology from thesis natural join (select student, start_year," +
                     " first_name, last_name, email, phone from student as s join users as u on " +
                     "s.student = u.username where first_name='{0}' and last_name='{1}' " +
-                    "and professor='{2}') as student",firstName,lastName), conn);
+                    "and professor='{2}') as student",firstName,lastName, professorName), conn);
 
-
+                while (reader.Read())
+                {
+                    SearchModel model = new SearchModel();
+                    model.Student = reader.GetString(0);
+                    model.StartYear = reader.GetInt32(1);
+                    model.FirstName = reader.GetString(2);
+                    model.LastName = reader.GetString(3);
+                    model.Email = reader.GetString(4);
+                    model.Phone = reader.GetDecimal(5).ToString();
+                    model.Title = reader.GetString(6);
+                    model.StartDate = (DateOnly)reader.GetDate(7);
+                    model.Grade = reader.GetInt32(8);
+                    model.Language = reader.GetString(9);
+                    model.Technology = reader.GetString(10);
+                    searchModels.Add(model);
+                }
+                conn.Close();
             }
-            return View();
+            else
+            {
+                NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select student" +
+                    ", start_year, first_name, last_name, email, phone, title, thesis_start_date, " +
+                    "grade, language, technology from thesis natural join (select student, start_year," +
+                    " first_name, last_name, email, phone from student as s join users as u on " +
+                    "s.student = u.username where student='{0}' " +
+                    "and professor='{1}') as student", queryString, professorName), conn);
+
+                while (reader.Read())
+                {
+                    SearchModel model = new SearchModel();
+                    model.Student = reader.GetString(0);
+                    model.StartYear = reader.GetInt32(1);
+                    model.FirstName = reader.GetString(2);
+                    model.LastName = reader.GetString(3);
+                    model.Email = reader.GetString(4);
+                    model.Phone = reader.GetDecimal(5).ToString();
+                    model.Title = reader.GetString(6);
+                    model.StartDate = (DateOnly)reader.GetDate(7);
+                    model.Grade = reader.GetInt32(8);
+                    model.Language = reader.GetString(9);
+                    model.Technology = reader.GetString(10);
+                    searchModels.Add(model);
+                }
+                conn.Close();
+            }
+            return View(searchModels);
         }
     }
 }

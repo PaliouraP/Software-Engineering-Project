@@ -1,14 +1,17 @@
 ﻿@{   
     ViewData["Title"] = "Manage your Students";
 }
+<h1>@ViewBag.Username</h1>
 
     <div > 
-            <form asp-controller="Teacher" asp-action="Search" method="get" >
+            <form asp-controller="Teacher" asp-action="StudentSearch" method="post" >
                 <h2 class="title">Search for a student by name or id</h2>
 
                 <div class="inputs">
                     <input type="text" name="queryString" placeholder="Name or id"  />
                 </div>
+
+                <input type="hidden" name="professorName" value="@ViewBag.Username"/>
                 <!-- Submit button -->
                 <input type="submit" class="btn solid" value="Login"/>
             </form>

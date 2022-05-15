@@ -1,0 +1,87 @@
+﻿@model List<Software_Engineering_Project.Models.SearchModel>
+
+@{
+    ViewData["Title"] = "Student Search";
+}
+
+<h1>Student Search</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Student Id
+            </th>
+            <th>
+                Start year
+            </th>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Phone number
+            </th>
+            <th>
+                Thesis title
+            </th>
+            <th>
+                Thesis start date
+            </th>
+            <th>
+                Thesis grade
+            </th>
+            <th>
+                Thesis Language
+            </th>
+            <th>
+                Thesis Technology
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @item.Student
+                    </td>
+                    <td>
+                        @item.StartYear
+                    </td>
+                    <td>
+                        @item.FirstName
+                    </td>
+                    <td>
+                        @item.LastName
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                        @item.Phone
+                    </td>
+                    <td>
+                        @item.Title
+                    </td>
+                    <td>
+                        @item.StartDate
+                    </td>
+                    <td>
+                        @item.Grade
+                    </td>
+                    <td>
+                        @item.Language
+                    </td>
+                    <td>
+                        @item.Technology
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
