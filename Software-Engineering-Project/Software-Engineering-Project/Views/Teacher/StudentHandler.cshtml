@@ -1,20 +1,17 @@
-﻿@{
+﻿@{   
+    ViewData["Title"] = "Manage your Students";
 }
 
-    <div class="forms-container">  
-        <div class="signin">
-            <form asp-controller="Teacher" asp-action="Search" method="post" class="sign-in-form">
+    <div > 
+            <form asp-controller="Teacher" asp-action="Search" method="get" >
                 <h2 class="title">Search for a student by name or id</h2>
 
                 <div class="inputs">
-                    <img src="@Url.Content("~/images/user.png")" alt="User" class="icons">
-                    <h1>@ViewBag.Username</h1>
-                    <input type="text" placeholder="Username"  />
+                    <input type="text" name="queryString" placeholder="Name or id"  />
                 </div>
                 <!-- Submit button -->
                 <input type="submit" class="btn solid" value="Login"/>
             </form>
-        </div>
     </div>
 
     <br /><br /><br />
