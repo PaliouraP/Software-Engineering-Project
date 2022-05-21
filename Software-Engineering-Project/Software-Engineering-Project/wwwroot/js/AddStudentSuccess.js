@@ -1,3 +1,3 @@
 ﻿window.onload = function () {
-    alert('You have successfully entered a student');
+    alert('You have successfully added a new student.');
 }

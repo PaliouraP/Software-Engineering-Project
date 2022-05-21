@@ -7,7 +7,7 @@ namespace Software_Engineering_Project.Database
         public static NpgsqlConnection GetConnection()
         {
             return new NpgsqlConnection("Server=localhost;Port=5432;" +
-                 "Database=software-engineering-database;User Id=postgres;Password=;");
+                 "Database=software-engineering-database;User Id=postgres;Password=root;");
         }
 
         public static NpgsqlDataReader ExecuteQuery(string query, NpgsqlConnection con)
