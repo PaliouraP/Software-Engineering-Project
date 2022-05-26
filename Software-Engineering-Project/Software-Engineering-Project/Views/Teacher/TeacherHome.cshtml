@@ -5,23 +5,65 @@
 <!-- Stylesheet connection for TeacherHome page -->
 @section Styles {
     <link rel="stylesheet" href="~/css/TeacherHome_style.css" />
-}
+    <link rel="stylesheet" href="~/css/NavbarStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/js/BurgerMenu.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+}
 <section>
-    <div class="circle"></div>
-    <header>
-        <a href="#" class="logo">
-            <img src="@Url.Content("~/images/unipi_logo.png")" alt="logo">
+
+
+
+<!-- Top Navigation Menu -->
+<div class="topnav" >
+     <picture> 
+            <img src ="@Url.Content("~/images/unipi_logo.png")" />
+     </picture> 
+     <div class="menu_burger">
+     <div class="menu" id="bmenu">       
+        <a class="link" href="#">Home</a>
+        <a class="link" href="#">Appointments</a>
+        <a class="link" asp-action="StudentHandler">Students</a>        
+        <a class="link" href="#">Profile</a>
+     </div>
+     <div class="burger">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars fa-xxl"></i>    
         </a>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Thesis</a></li>
-            <li><a asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@Model.Username">Students</a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Profile</a></li>
-        </ul>
-    </header>
-    <div class="content">
+     </div>
+     </div>      
+</div>
+
+
+    <!--<div class="top">
+        <div class="logo_container">
+            <picture> 
+                <source class="image" media="(min-width:800px)" srcset="@Url.Content("~/images/unipi_logo.png")" alt="logo">
+                <source class="image" media="(min-width:400px)" srcset="@Url.Content("~/images/small_logo.png")" alt="logo">
+                <img src ="@Url.Content("~/images/small_logo.png")" />
+            </picture>
+           
+       </div>
+        
+        <div class="nav" id="navigation"> 
+            <a class="icon" onclick="myFunction()" href="javascript:void(0);">
+                <i class="fa fa-bars fa-xl"></i>
+            </a>
+            
+            <a class="links" href="#">Home</a>
+            <a class="links" href="#">Thesis</a>
+            <a class="links" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@Model.Username">Students</a>
+            <a class="links" href="#">Reports</a>
+            <a class="links" href="#">Profile</a>            
+        </div>
+    </div>
+        -->
+
+
+    <div class="content" >
+               <div class="circle"></div>
+
         <div class="textbox">
             <h2>Manage your advisees <br /><span>easier</span> and <span>faster</span></h2>
             <p>DTM stands for Dissertation Thesis Management system. The easiest way to track down your
@@ -30,7 +72,7 @@
             <a href="#">Learn more</a>
         </div>
         <div class="imgBox">
-            <img src="@Url.Content("~/images/TeacherHome_img.png")" class="basicImg">
+            <img  src="@Url.Content("~/images/TeacherHome_img.png")" class="basicImg">
         </div>
     </div>
 </section>

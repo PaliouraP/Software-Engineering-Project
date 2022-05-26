@@ -3,11 +3,9 @@
     "",
     "\\Software-Engineering-Project",
     "\\Software-Engineering-Project\\Software-Engineering-Project",
-    "\\Software-Engineering-Project\\Software-Engineering-Project\\Controllers",
     "\\Software-Engineering-Project\\Software-Engineering-Project\\Views",
-    "\\Software-Engineering-Project\\Software-Engineering-Project\\Views\\Home",
-    "\\Software-Engineering-Project\\Software-Engineering-Project\\Views\\Shared"
+    "\\Software-Engineering-Project\\Software-Engineering-Project\\Views\\Teacher"
   ],
-  "SelectedNode": "\\Software-Engineering-Project\\Software-Engineering-Project\\Views\\Home\\Login.cshtml",
+  "SelectedNode": "\\Software-Engineering-Project\\Software-Engineering-Project\\Views\\Teacher\\TeacherHome.cshtml",
   "PreviewInSolutionExplorer": false
 }
