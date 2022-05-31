@@ -4,12 +4,19 @@
     ViewData["Title"] = "Add Student";
 }
 
+<!-- Stylesheet connection for AddStudent page -->
+@section Styles {
+    <link rel="stylesheet" href="~/css/AddStudentStyle.css" />
+}
 
 <div class="row">
     <div class="col-md-4">
+        <div class="add">
         <form asp-controller="Teacher" asp-action="AddStudent" asp-route-proffesorName="@ViewBag.Username">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div><!--Used on the server side if the user has not entered correctly all the details-->
             
+            <h2 class="title">Add a Student</h2>
+
             <!--Input start year-->
             <div class="form-group">
                 <label asp-for="StartYear" class="control-label"></label>
@@ -67,12 +74,23 @@
             </div>
            
             <!--Submit button -->
-            <div class="form-group">
-                <input type="submit" value="Add" class="btn btn-primary" />
-            </div>
+            <input type="submit" value="Add" class="btn btn-primary" />
+
         </form>
+        </div>
     </div>
+
+
+    <!-- Image Container -->
+    <div class="image-container">
+        <div class="panel left-panel">
+            <img src="@Url.Content("~/images/add_student_img.png")" alt="" class="image" />
+        </div>
+    </div>
+
 </div>
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
