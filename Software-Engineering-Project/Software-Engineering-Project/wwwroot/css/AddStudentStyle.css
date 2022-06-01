@@ -68,11 +68,13 @@ form {
 }
 
     .form-group input {
+        text-align: center;
+        width: 80%;
         background: none;
         outline: none;
         border: none;
         line-height: 1px;
-        font-weight: 500;
+        font-weight: 450;
         font-size: 1.2rem;
         color: #333;
         display: block;
