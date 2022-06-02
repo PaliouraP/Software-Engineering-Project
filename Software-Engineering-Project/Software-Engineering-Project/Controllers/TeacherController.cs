@@ -17,6 +17,11 @@ namespace Software_Engineering_Project.Controllers
             return View(); 
         }
 
+        public IActionResult Meeting(string username)
+        {
+            return View();
+        }
+
         //GET
         public IActionResult AddStudent(string username)
         {

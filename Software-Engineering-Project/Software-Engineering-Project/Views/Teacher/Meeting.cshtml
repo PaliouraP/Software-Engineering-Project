@@ -1,0 +1,68 @@
+﻿@model Software_Engineering_Project.Models.MeetingModel
+@{
+    ViewData["Title"] = "Meeting";
+}
+
+<!-- Stylesheet connection for TeacherHome page -->
+@section Styles {
+    <link rel="stylesheet" href="~/css/Meeting_style.css" />
+    <link rel="stylesheet" href="~/css/NavbarStyle.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"> <!--added latest realese of fa-->
+    <script src="~/js/BurgerMenu.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+}
+
+<body>
+
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+        <picture>
+            <img src ="@Url.Content("~/images/unipi_logo.png")" />
+        </picture>
+        <div class="menu_burger">
+            <div class="menu" id="bmenu">
+                <a class="link" href="#">Home</a>
+                <a class="link" asp-controller="Teacher" asp-action="Meeting">Appointments</a>
+                <a class="link" asp-controller="Teacher" asp-action="StudentHandler">Students</a>
+                <a class="link" href="#">Profile</a>
+            </div>
+            <div class="burger">
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content" >
+               <div class="circle"></div>
+
+        <div class="container">
+            <div class="calendar">
+                <div class="month">
+                    <i class="fas fa-angle-left prev"></i>
+                    <div class="date">
+                        <h1></h1>
+                        <p></p>
+                    </div>
+                    <i class="fas fa-angle-right next"></i>
+                </div>
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div class="days"></div>
+            </div>
+        </div>
+       <div class="imgBox">
+            <img  src="@Url.Content("~/images/Meeting_img.png")" class="basicImg">
+        </div>
+    </div>
+
+    <script src="~/js/Meeting.js"></script> <!--woudn't work with script on the styles section-->
+</body>

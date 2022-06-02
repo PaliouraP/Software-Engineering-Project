@@ -1,0 +1,304 @@
+﻿++Solution 'Software-Engineering-Project' ‎(1 of 1 project)
+i:{00000000-0000-0000-0000-000000000000}:Software-Engineering-Project.sln
+++Software-Engineering-Project
+i:{00000000-0000-0000-0000-000000000000}:Software-Engineering-Project
+++Connected Services 
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:>871
+++No service dependencies discovered
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:>872
+++Dependencies
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:>870
+++Analyzers
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:analyzers
+++Frameworks
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:frameworks
+++Packages
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:packages
+++Properties
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\properties\
+++launchSettings.json
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\properties\launchsettings.json
+++wwwroot
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\
+++Controllers
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\controllers\
+++HomeController.cs
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\controllers\homecontroller.cs
+++TeacherController.cs
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\controllers\teachercontroller.cs
+++Database
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\database\
+++Database.cs
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\database\database.cs
+++Models
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\models\
+++ErrorViewModel.cs
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\models\errorviewmodel.cs
+++LoginModel.cs
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\models\loginmodel.cs
+++MeetingModel.cs
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\models\meetingmodel.cs
+++SearchModel.cs
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\models\searchmodel.cs
+++StudentModel.cs
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\models\studentmodel.cs
+++UserModel.cs
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\models\usermodel.cs
+++Views
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\
+++Home
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\home\
+++Index.cshtml
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\home\index.cshtml
+++Login.cshtml
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\home\login.cshtml
+++Login.cshtml.cs
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\home\login.cshtml.cs
+++Privacy.cshtml
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\home\privacy.cshtml
+++Shared
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\shared\
+++_Layout.cshtml
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\shared\_layout.cshtml
+++_ValidationScriptsPartial.cshtml
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\shared\_validationscriptspartial.cshtml
+++Error.cshtml
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\shared\error.cshtml
+++Teacher
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\teacher\
+++AddStudent.cshtml
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\teacher\addstudent.cshtml
+++Meeting.cshtml
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\teacher\meeting.cshtml
+++StudentHandler.cshtml
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\teacher\studenthandler.cshtml
+++StudentSearch.cshtml
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\teacher\studentsearch.cshtml
+++TeacherHome.cshtml
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\teacher\teacherhome.cshtml
+++TeacherHome.cshtml.cs
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\teacher\teacherhome.cshtml.cs
+++_ViewImports.cshtml
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\_viewimports.cshtml
+++_ViewStart.cshtml
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\_viewstart.cshtml
+++appsettings.json
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\appsettings.json
+++Program.cs
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\program.cs
+++MessagePackAnalyzer
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\.nuget\packages\messagepackanalyzer\2.1.152\analyzers\dotnet\messagepackanalyzer.dll
+++Microsoft.AspNetCore.Analyzers
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.App.Analyzers
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+++Microsoft.AspNetCore.App.CodeFixes
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.Razor.SourceGenerator.Tooling.Internal
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.sourcegenerator.tooling.internal.dll
+++Microsoft.CodeAnalysis.Analyzers
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2\analyzers\dotnet\cs\microsoft.codeanalysis.analyzers.dll
+++Microsoft.CodeAnalysis.CSharp.Analyzers
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2\analyzers\dotnet\cs\microsoft.codeanalysis.csharp.analyzers.dll
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++Microsoft.Extensions.Logging.Generators
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+++System.Text.Json.SourceGeneration
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++Microsoft.AspNetCore.App
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\microsoft.aspnetcore.app
+++Microsoft.NETCore.App
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\microsoft.netcore.app
+++Microsoft.VisualStudio.Web.CodeGeneration.Design (6.0.4)
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:>884
+++Npgsql (6.0.4)
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:>885
+++Swashbuckle.AspNetCore (6.3.0)
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:>883
+++css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\css\
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\
+++images
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\images\
+++js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\js\
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\js\
+++lib
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\
+++favicon.ico
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\favicon.ico
+++_Layout.cshtml.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\views\shared\_layout.cshtml.css
+++appsettings.Development.json
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\appsettings.development.json
+++login_style.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\css\login_style.css
+++NavbarStyle.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\css\navbarstyle.css
+++site.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\css\site.css
+++TeacherHome_style.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\css\teacherhome_style.css
+++lock.png
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\images\lock.png
+++login_img.png
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\images\login_img.png
+++small_logo.png
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\images\small_logo.png
+++TeacherHome_img.png
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\images\teacherhome_img.png
+++unipi_logo.png
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\images\unipi_logo.png
+++user.png
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\images\user.png
+++AddStudentFail.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\js\addstudentfail.js
+++AddStudentSuccess.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\js\addstudentsuccess.js
+++BurgerMenu.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\js\burgermenu.js
+++LoginFailed.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\js\loginfailed.js
+++site.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\js\site.js
+++bootstrap
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\
+++jquery
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery\
+++jquery-validation
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery-validation\
+++jquery-validation-unobtrusive
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery-validation-unobtrusive\
+++dist
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery\dist\
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery-validation\dist\
+++LICENSE
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\license
+++LICENSE.txt
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery\license.txt
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery-validation-unobtrusive\license.txt
+++LICENSE.md
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery-validation\license.md
+++jquery.validate.unobtrusive.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
+++jquery.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery\dist\jquery.js
+++additional-methods.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery-validation\dist\additional-methods.js
+++jquery.validate.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+++jquery.validate.unobtrusive.min.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
+++bootstrap.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+++bootstrap-grid.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+++bootstrap-reboot.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+++bootstrap-utilities.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+++bootstrap.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+++jquery.min.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery\dist\jquery.min.js
+++additional-methods.min.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+++jquery.validate.min.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+++bootstrap.css.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+++bootstrap.min.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+++bootstrap.rtl.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+++bootstrap-grid.css.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+++bootstrap-grid.min.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+++bootstrap-grid.rtl.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+++bootstrap-reboot.css.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+++bootstrap-reboot.min.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+++bootstrap-reboot.rtl.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+++bootstrap-utilities.css.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+++bootstrap-utilities.min.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+++bootstrap-utilities.rtl.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+++bootstrap.bundle.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+++bootstrap.esm.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+++bootstrap.js.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+++bootstrap.min.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+++jquery.min.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\jquery\dist\jquery.min.map
+++bootstrap.min.css.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+++bootstrap.rtl.css.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+++bootstrap.rtl.min.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+++bootstrap-grid.min.css.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+++bootstrap-grid.rtl.css.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+++bootstrap-grid.rtl.min.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+++bootstrap-reboot.min.css.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+++bootstrap-reboot.rtl.css.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+++bootstrap-reboot.rtl.min.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+++bootstrap-utilities.min.css.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+++bootstrap-utilities.rtl.css.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+++bootstrap-utilities.rtl.min.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+++bootstrap.bundle.js.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+++bootstrap.bundle.min.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+++bootstrap.esm.js.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+++bootstrap.esm.min.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+++bootstrap.min.js.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+++bootstrap.rtl.min.css.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+++bootstrap-grid.rtl.min.css.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+++bootstrap-reboot.rtl.min.css.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+++bootstrap-utilities.rtl.min.css.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+++bootstrap.bundle.min.js.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+++bootstrap.esm.min.js.map
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+++AddStudentFail - Copy.js
+++AddStudentFail - Copy (2).js
+++AddStudentFail - Copy (3).js
+++Meeting.js
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\js\meeting.js
+++Meeting_style.css
+i:{f5592f15-52de-4cd9-8a15-6b7697cc186a}:c:\users\evi palioura\source\repos\paliourap\software-engineering-project\software-engineering-project\software-engineering-project\wwwroot\css\meeting_style.css

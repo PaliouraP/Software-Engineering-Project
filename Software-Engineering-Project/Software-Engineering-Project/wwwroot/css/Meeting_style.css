@@ -1,0 +1,123 @@
+﻿.calendar {
+    margin: 100px auto;
+    width: 800px;
+    margin-left: 150px;
+    background-color: #FFF;
+    border-radius: 6px;
+    box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
+}
+
+.month {
+    width: 761px;
+    background-color: #067BC2;
+    color: #FFF;
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+    .month i {
+        font-size: 40px;
+        cursor: pointer;
+    }
+
+    .month h1 {
+        font-size: 28px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        margin-bottom: 0rem;
+    }
+
+    .month p {
+        font-size: 18px;
+    }
+
+.weekdays {
+    width: 800px;
+    height: 5rem;
+    padding: 0 0.4rem;
+    display: flex;
+    align-items: center;
+}
+
+    .weekdays div {
+        font-size: 1.5rem;
+        font-weight: 400;
+        letter-spacing: 0.1rem;
+        width: calc(800px / 7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    }
+
+.days {
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+}
+
+    .days div {
+        font-size: 1.4rem;
+        margin: 0.3rem;
+        width: calc(720px / 7);
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+        transition: background-color 0.2s;
+    }
+
+        .days div:hover:not(.today) {
+            background-color: #9BCAE7;
+            cursor: pointer;
+        }
+
+.prev-date,
+.next-date {
+    opacity: 0.5;
+}
+
+.today {
+    background-color: #067BC2;
+    color: #FFF;
+}
+
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.content .imgBox {
+    width: 500px;
+    display: flex;
+    padding-right: 0;
+    z-index: 2;
+}
+
+.content .imgBox img {
+    max-width: 400px;
+}
+
+.circle {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(-45deg, #067BC2, #449DD1, #78C0E0);
+    clip-path: circle(1000px at right 1000px);
+    z-index: -1;
+}
