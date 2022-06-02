@@ -1,20 +1,39 @@
 ﻿@{   
     ViewData["Title"] = "Manage your Students";
 }
+
+<!-- Stylesheet connection for StudentHandler page -->
+@section Styles {
+    <link rel="stylesheet" href="~/css/StudentHandlerStyle.css" />
+}
+
+
 <h1>@ViewBag.Username</h1>
 
-    <div > 
+    <div class="content"> 
+        <div class="md">
+            <div class="search">
             <form asp-controller="Teacher" asp-action="StudentSearch" method="post" >
-                <h2 class="title">Search for a student by name or id</h2>
+                <h2 class="title">Search for a student</h2>
 
                 <div class="inputs">
-                    <input type="text" name="queryString" placeholder="Name or id"  />
+                    <input type="text" name="queryString" placeholder="Search by name or id"  />
                 </div>
 
                 <input type="hidden" name="professorName" value="@ViewBag.Username"/>
                 <!-- Submit button -->
-                <input type="submit" class="btn solid" value="Login"/>
+                <input type="submit" class="btn solid" value="Search"/>
             </form>
+            </div>
+        </div>
+
+            <!-- Image Container -->
+     <div class="image-container">
+        <div class="panel left-panel">
+            <img src="@Url.Content("~/images/StudentHandler_img.png")" alt="" class="image" />
+        </div>
+     </div>
+
     </div>
 
     <br /><br /><br />

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bMu+tll8vd+NR68NUG3PeRgR0Kl0bvRhvLuI59c2H6c=",
+  "Hash": "F2qgy0+LrN0DuLY3vRAF8415M9WJ/fZ/B3ps131s+Pg=",
   "Source": "Software-Engineering-Project",
   "BasePath": "_content/Software-Engineering-Project",
   "Mode": "Default",
@@ -119,6 +119,23 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+      "Identity": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\css\\StudentHandlerStyle.css",
+      "SourceId": "Software-Engineering-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\",
+      "BasePath": "_content/Software-Engineering-Project",
+      "RelativePath": "css/StudentHandlerStyle.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\StudentHandlerStyle.css"
+    },
+    {
       "Identity": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\css\\TeacherHome_style.css",
       "SourceId": "Software-Engineering-Project",
       "SourceType": "Discovered",
@@ -219,6 +236,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\small_logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\images\\StudentHandler_img.png",
+      "SourceId": "Software-Engineering-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\",
+      "BasePath": "_content/Software-Engineering-Project",
+      "RelativePath": "images/StudentHandler_img.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\StudentHandler_img.png"
     },
     {
       "Identity": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\images\\TeacherHome_img.png",

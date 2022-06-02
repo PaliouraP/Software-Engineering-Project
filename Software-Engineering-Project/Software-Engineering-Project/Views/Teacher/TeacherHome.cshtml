@@ -24,7 +24,7 @@
      <div class="menu" id="bmenu">       
         <a class="link" href="#">Home</a>
         <a class="link" href="#">Appointments</a>
-        <a class="link" asp-action="StudentHandler">Students</a>        
+        <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@Model.Username">Students</a>        
         <a class="link" href="#">Profile</a>
      </div>
      <div class="burger">

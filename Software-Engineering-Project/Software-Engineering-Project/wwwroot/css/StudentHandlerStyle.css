@@ -8,7 +8,7 @@ body, input {
     font-family: 'Nirmala UI';
 }
 
-.row {
+.content {
     position: relative;
     width: 100%;
     background-color: #fff;
@@ -16,26 +16,26 @@ body, input {
     overflow: hidden;
 }
 
-.col-md-4 {
+.content::before {
+    content: '';
+    position: absolute;
+    height: 2000px;
+    width: 2000px;
+    top: -10%;
+    left: 48%;
+    background-image: linear-gradient(-45deg, #78C0E0, #449DD1, #067BC2);
+    transform: translateY(-35%);
+    border-radius: 50%;
+    z-index: 6;
+}
+
+.md {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
 }
-
-.row::before {
-    content: '';
-    position: absolute;
-    height: 2000px;
-    width: 2000px;
-    top: -10%;
-    right: 48%;
-    background-image: linear-gradient(-45deg, #067BC2, #449DD1, #78C0E0);
-    transform: translateY(-35%);
-    border-radius: 50%;
-    z-index: 6;
-} 
 
 form {
     display: flex;
@@ -48,26 +48,36 @@ form {
     grid-row: 1/2;
 }
 
+.search {
+    position: absolute;
+    top: 50%;
+    right: 75%;
+    transform: translate(50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr;
+    z-index: 5;
+}
+
 .title {
     font-size: 2.2rem;
     color: #444;
     margin-bottom: 10px;
+    text-align: center;
 }
 
-.form-group {
+.inputs {
     max-width: 380px;
     width: 90%;
     height: 55px;
     background-color: #f0f0f0;
     margin: 10px 0;
     border-radius: 55px;
-    display: grid;
-    grid-template-columns: 15% 85%;
     padding: 0 0.4rem;
     position: relative;
+    display: grid;
 }
 
-    .form-group input {
+    .inputs input {
         text-align: center;
         width: 70%;
         background: none;
@@ -75,7 +85,7 @@ form {
         border: none;
         line-height: 1px;
         font-weight: 200;
-        font-size: 1.0rem;
+        font-size: 1.1rem;
         color: #333;
         display: block;
         margin-left: auto;
@@ -83,16 +93,6 @@ form {
         margin-bottom: auto;
         margin-top: auto;
     }
-
-.control-label {
-    text-align: center;
-    line-height: 55px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    margin-top: auto;
-}
 
 .btn {
     width: 150px;
@@ -113,17 +113,7 @@ form {
         cursor: pointer;
     }
 
-.add {
-    position: absolute;
-    top: 50%;
-    left: 75%;
-    transform: translate(-50%, -50%);
-    display: grid;
-    grid-template-columns: 1fr;
-    z-index: 5;
-}
-
-.image {
+    .image {
     width: 80%
 }
 
@@ -132,7 +122,7 @@ form {
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0;
+    left: 55%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
@@ -149,4 +139,3 @@ form {
 .left-panel {
     padding: 3rem 17% 2rem 12%;
 }
-
