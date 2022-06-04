@@ -59,9 +59,12 @@
                 <div class="days"></div>
             </div>
         </div>
-       <div class="imgBox">
+       <div class="row imgBox">
             <img  src="@Url.Content("~/images/Meeting_img.png")" class="basicImg">
         </div>
+        <a asp-controller="Teacher" asp-action="AddMeeting" asp-route-username="@ViewBag.Username" >
+        New Meeting
+        </a>
     </div>
 
     <script src="~/js/Meeting.js"></script> <!--woudn't work with script on the styles section-->

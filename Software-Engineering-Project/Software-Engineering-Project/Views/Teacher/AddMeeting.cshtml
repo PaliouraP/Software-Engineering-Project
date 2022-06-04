@@ -1,0 +1,56 @@
+﻿@model Software_Engineering_Project.Models.MeetingModel
+
+@{
+    ViewData["Title"] = "Add Meeting";
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Teacher" asp-action="AddMeeting" asp-route-proffesorName="@ViewBag.Username">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div><!--Used on the server side if the user has not entered correctly all the details-->
+           
+            <!--Input student-->
+            <div class="form-group">
+                <label asp-for="Student" class="control-label"></label>
+                <input asp-for="Student" value="" class="form-control" />
+                <span asp-validation-for="Student" class="text-danger"></span>
+            </div>
+
+            <!--Input Date Time-->
+            <div class="form-group">
+                <label asp-for="DateTime" class="control-label"></label>
+                <input type="datetime-local" asp-for="DateTime" class="form-control" />
+                <span asp-validation-for="DateTime" class="text-danger"></span>
+            </div>
+
+            <!--Input Type of meeting-->
+            <div class="form-group">
+                <label asp-for="Type" class="control-label"></label>
+                <select asp-for="Type" class="form-control">
+                    <option value="in-person">In Person</option>
+                    <option value="online">Online</option>
+                </select>
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+           
+            <!--Submit button -->
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+@if (ViewBag.Success != null && ViewBag.Success)
+{
+    <script type="text/javascript" src="~/js/AddMeetingSuccess.js">
+    </script>
+}
+@if (ViewBag.Success != null && !ViewBag.Success){
+    <script type="text/javascript" src="~/js/AddMeetingFail.js"></script>
+}

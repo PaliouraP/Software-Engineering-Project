@@ -7,8 +7,9 @@
     "\\Software-Engineering-Project\\Software-Engineering-Project\\Views\\Home",
     "\\Software-Engineering-Project\\Software-Engineering-Project\\Views\\Teacher",
     "\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot",
-    "\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\css"
+    "\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\css",
+    "\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\js"
   ],
-  "SelectedNode": "\\Software-Engineering-Project\\Software-Engineering-Project.sln",
+  "SelectedNode": "\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\js\\AddStudentSuccess.js",
   "PreviewInSolutionExplorer": false
 }
