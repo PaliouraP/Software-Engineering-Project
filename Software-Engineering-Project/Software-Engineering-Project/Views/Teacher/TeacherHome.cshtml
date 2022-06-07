@@ -25,7 +25,7 @@
         <a class="link" href="#">Home</a>
         <a class="link" href="#">Appointments</a>
         <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@Model.Username">Students</a>        
-        <a class="link" href="#">Profile</a>
+        <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@Model.Username">Profile</a>
      </div>
      <div class="burger">
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">

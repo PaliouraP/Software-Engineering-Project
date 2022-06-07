@@ -11,10 +11,11 @@ namespace Software_Engineering_Project.Controllers
             return View();
         }
 
+        //GET
         public IActionResult StudentHandler(string username)
         {
             ViewBag.Username = username;
-            return View(); 
+            return View();
         }
 
         //GET
@@ -57,7 +58,7 @@ namespace Software_Engineering_Project.Controllers
 
             NpgsqlConnection conn = Database.Database.GetConnection();
 
-            if(queryString.Contains(' '))
+            if (queryString.Contains(' '))
             {
                 string firstName = queryString.Substring(0, queryString.IndexOf(' '));
                 string lastName = queryString.Substring(queryString.IndexOf(' ') + 1);
@@ -67,7 +68,7 @@ namespace Software_Engineering_Project.Controllers
                     "grade, language, technology from thesis natural join (select student, start_year," +
                     " first_name, last_name, email, phone from student as s join users as u on " +
                     "s.student = u.username where first_name='{0}' and last_name='{1}' " +
-                    "and professor='{2}') as student",firstName,lastName, professorName), conn);
+                    "and professor='{2}') as student", firstName, lastName, professorName), conn);
 
                 while (reader.Read())
                 {
@@ -115,6 +116,89 @@ namespace Software_Engineering_Project.Controllers
                 conn.Close();
             }
             return View(searchModels);
+        }
+
+        //GET
+        public IActionResult Profile(string username)
+        {
+            ViewBag.Username = username;
+            return View();
+        }
+
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ChangePassword(string oldPassword, string newPassword, string newPassword1, string professorName)
+        {
+            ViewBag.wrongPassword = 0;
+            ViewBag.notSamePasswords = 0;
+            ViewBag.success = 0;
+            ViewBag.failure = 0;
+            ViewBag.emptyPassword = 0;
+
+            string dbPassword = "";
+
+            NpgsqlConnection conn = Database.Database.GetConnection();
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select username, password " +
+                                                        "from users where username='{0}'", professorName), conn);
+            while (reader.Read())
+            {
+                dbPassword = reader.GetString(1);
+            }
+            conn.Close();
+
+            if (dbPassword != oldPassword)
+            {
+                ViewBag.wrongPassword = 1;
+            }
+            else if (newPassword == null || newPassword == "" || newPassword.Length == newPassword.Count(f => (f == (char)32)))
+            {
+                ViewBag.emptyPassword = 1;
+            }
+            else
+            {
+                if (newPassword != newPassword1)
+                {
+                    ViewBag.notSamePasswords = 1;
+                }
+                else
+                {
+                    int result = Database.Database.ExecuteUpdate(String.Format("update users set password='{0}'" +
+                        " where username='{1}'", newPassword.Trim(), professorName), conn);
+                    if (result == 1)
+                    {
+                        ViewBag.success = 1;
+                    }
+                    else
+                    {
+                        ViewBag.failure = 1;
+                    }
+                }
+            }
+            conn.Close();
+            ViewBag.Username = professorName;
+            return View("Profile");
+        }
+
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ChangePhone(string phone, string professorName)
+        {
+            NpgsqlConnection conn = Database.Database.GetConnection();
+            int result = Database.Database.ExecuteUpdate(String.Format("update users set phone='{0}' " +
+                                                    "where username='{1}'", phone, professorName), conn);
+            if (result==1)
+            {
+                ViewBag.success = 1;
+            }
+            else
+            {
+                ViewBag.failure = 1;
+            }
+            conn.Close();
+            ViewBag.Username = professorName;
+            return View("Profile");
         }
     }
 }
