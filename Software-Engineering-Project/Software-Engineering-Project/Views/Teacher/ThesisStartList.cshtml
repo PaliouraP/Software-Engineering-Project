@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Software_Engineering_Project.Models.ThesisStartModel>
+
+@{
+    ViewData["Title"] = "ThesisStartList";
+}
+
+<h1>ThesisStartList</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Start date
+            </th>
+            <th>More details</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.FirstName
+            </td>
+            <td>
+                @item.LastName
+            </td>
+            <td>
+                @item.StartDate.ToString()
+            </td>
+            <td>
+                <a asp-controller="Teacher" asp-action="StudentSearch" asp-route-queryString="@item.FirstName @item.LastName"
+                asp-route-professorName="@item.Professor">click here</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

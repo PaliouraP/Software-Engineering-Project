@@ -185,20 +185,71 @@ namespace Software_Engineering_Project.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult ChangePhone(string phone, string professorName)
         {
-            NpgsqlConnection conn = Database.Database.GetConnection();
-            int result = Database.Database.ExecuteUpdate(String.Format("update users set phone='{0}' " +
-                                                    "where username='{1}'", phone, professorName), conn);
-            if (result==1)
-            {
-                ViewBag.success = 1;
-            }
-            else
+            if (phone == null)
             {
                 ViewBag.failure = 1;
             }
-            conn.Close();
+            else
+            {
+                NpgsqlConnection conn = Database.Database.GetConnection();
+                int result = Database.Database.ExecuteUpdate(String.Format("update users set phone='{0}' " +
+                                                        "where username='{1}'", phone, professorName), conn);
+                if (result == 1)
+                {
+                    ViewBag.success = 1;
+                }
+                else
+                {
+                    ViewBag.failure = 1;
+                }
+                conn.Close();
+            }
             ViewBag.Username = professorName;
             return View("Profile");
+        }
+
+        public IActionResult GradeList(string username)
+        {
+            List<GradeModel> models = new();
+
+            NpgsqlConnection conn = Database.Database.GetConnection();
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select first_name, last_name, grade " +
+                "from users as u join(select student, grade from thesis where professor='{0}' order by grade desc) as foo" +
+                " on u.username = foo.student", username), conn);
+
+            while (reader.Read())
+            {
+                GradeModel model = new();
+                model.Professor = username;
+                model.FirstName = reader.GetString(0);
+                model.LastName = reader.GetString(1);
+                model.Grade = reader.GetInt32(2);
+                models.Add(model);
+            }
+            conn.Close();
+            return View(models);
+        }
+
+        public IActionResult ThesisStartList(string username)
+        {
+            List<ThesisStartModel> models = new();
+
+            NpgsqlConnection conn = Database.Database.GetConnection();
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select first_name, last_name, thesis_start_date " +
+                "from users as u join(select student, thesis_start_date from thesis where professor='{0}' " +
+                "order by thesis_start_date) as foo on u.username = foo.student", username), conn);
+
+            while (reader.Read())
+            {
+                ThesisStartModel model = new();
+                model.Professor = username;
+                model.FirstName = reader.GetString(0);
+                model.LastName = reader.GetString(1);
+                model.StartDate = (DateOnly)reader.GetDate(2);
+                models.Add(model);
+            }
+            conn.Close();
+            return View(models);
         }
     }
 }

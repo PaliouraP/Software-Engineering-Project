@@ -39,6 +39,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxBZGRTdHVkZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Ioake/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/GradeList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxHcmFkZUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Ioake/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -53,6 +57,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Ioake/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/TeacherHome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxUZWFjaGVySG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ioake/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/ThesisStartList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxUaGVzaXNTdGFydExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Ioake/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/_ViewImports.cshtml]
