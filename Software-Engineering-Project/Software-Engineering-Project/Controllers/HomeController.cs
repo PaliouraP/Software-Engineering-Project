@@ -64,7 +64,7 @@ namespace Software_Engineering_Project.Controllers
                     }
                     else
                     {
-                        return View("~/Views/Home/StudentHome.cshtml");
+                        return View("~/Views/Student/StudentHome.cshtml", model.Username);
                     }
                 }
             }

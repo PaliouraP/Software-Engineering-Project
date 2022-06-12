@@ -1,0 +1,11 @@
+﻿@model string
+@{
+}
+
+<h1>HOME</h1>
+<h1>@Model</h1>
+<a class="link" href="#">Home</a> 
+<a class="link" href="#">Appointments</a> 
+<a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="Upload">Upload a Thesis</a> 
+<a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="Thesis_Status">Thesis Status</a> 
+<a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="Profile">Profile</a> 
