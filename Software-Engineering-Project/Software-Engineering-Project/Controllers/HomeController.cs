@@ -64,7 +64,22 @@ namespace Software_Engineering_Project.Controllers
                     }
                     else
                     {
-                        return View("~/Views/Student/StudentHome.cshtml", model.Username);
+                        NpgsqlConnection new_conn = Database.Database.GetConnection();
+                        NpgsqlDataReader new_reader = Database.Database.ExecuteQuery(String.Format("select has_ever_connected" + 
+                            " from student where student = '{0}'", username), new_conn);
+                        if (new_reader.Read())
+                        {
+                            bool has_connected = new_reader.GetBoolean(0);
+                            if (has_connected) 
+                            {
+                                return View("~/Views/Student/StudentHome.cshtml", model.Username);
+                            }
+                            else
+                            {
+                                return View("~/Views/Student/SetPassword.cshtml", model.Username);
+                            }
+                        }
+                       
                     }
                 }
             }

@@ -39,8 +39,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Mirto/Πανεπιστήμιο/Github/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Student/SetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTZXRQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Mirto/Πανεπιστήμιο/Github/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Student/StudentHome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTdHVkZW50SG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Mirto/Πανεπιστήμιο/Github/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Student/Upload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxVcGxvYWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Mirto/Πανεπιστήμιο/Github/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/AddStudent.cshtml]

@@ -6,7 +6,7 @@
 
 <h1>Profile</h1>
 
-<h2>@ViewBag.Username</h2>
+<h2>@Model.Username</h2>
 
 <div>
     <hr />
@@ -64,9 +64,9 @@
 
 <h1>Thesis/Uploads</h1>
 
-<a class="link" asp-controller="Student" asp-action="Upload" asp-route-username="@ViewBag.Username">click here to upload a thesis</a>
+<a class="link" asp-controller="Student" asp-action="Upload" asp-route-username="@Model.Username">click here to upload a thesis</a>
 <br /><br />
-<a class="link" asp-controller="Student" asp-action="ThesisStatus" asp-route-username="@ViewBag.Username">click here to see your thesis status</a>
+<a class="link" asp-controller="Student" asp-action="ThesisStatus" asp-route-username="@Model.Username">click here to see your thesis status</a>
 
 <!--Change password form-->
 <form asp-controller="Student" asp-action="ChangePassword" method="post" >
@@ -77,7 +77,7 @@
         Enter your old password <input type="password" name="oldPassword"/> <br /><br />
         Enter your new password <input type="password" name="newPassword"/> <br /><br />
         Confirm your new password <input type="password" name="newPassword1"/> <br />
-        <input type="hidden" name="studentName" value="@ViewBag.Username" />
+        <input type="hidden" name="Username" value="@Model.Username" />
         <input type="submit" />
     </div>
 </form>
@@ -90,7 +90,7 @@
     </div> <br />
     <div>
         Enter your new phone number <input type="tel" pattern="[0-9]{10}" name="phone"/> <br />
-        <input type="hidden" name="studentName" value="@ViewBag.Username" />
+        <input type="hidden" name="Username" value="@Model.Username" />
         <input type="submit" />
     </div>
 </form>

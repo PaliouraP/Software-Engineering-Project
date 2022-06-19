@@ -61,5 +61,147 @@ namespace Software_Engineering_Project.Controllers
             return View(model);
         }
 
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ChangePassword(string oldPassword, string newPassword, string newPassword1, string Username)
+        {
+            ViewBag.wrongPassword = 0;
+            ViewBag.notSamePasswords = 0;
+            ViewBag.success = 0;
+            ViewBag.failure = 0;
+            ViewBag.emptyPassword = 0;
+
+            string dbPassword = "";
+
+            NpgsqlConnection conn = Database.Database.GetConnection();
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select username, password " +
+                                                        "from users where username='{0}'", Username), conn);
+            while (reader.Read())
+            {
+                dbPassword = reader.GetString(1);
+            }
+            conn.Close();
+
+            if (dbPassword != oldPassword)
+            {
+                ViewBag.wrongPassword = 1;
+            }
+            else if (newPassword == null || newPassword == "" || newPassword.Length == newPassword.Count(f => (f == (char)32)))
+            {
+                ViewBag.emptyPassword = 1;
+            }
+            else
+            {
+                if (newPassword != newPassword1)
+                {
+                    ViewBag.notSamePasswords = 1;
+                }
+                else
+                {
+                    int result = Database.Database.ExecuteUpdate(String.Format("update users set password='{0}'" +
+                        " where username='{1}'", newPassword.Trim(), Username), conn);
+                    if (result == 1)
+                    {
+                        ViewBag.success = 1;
+                    }
+                    else
+                    {
+                        ViewBag.failure = 1;
+                    }
+                }
+            }
+            conn.Close();
+            StudentModel model = new();
+            model.Username = Username;
+            return View("Profile", model);
+        }
+
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ChangePhone(string phone, string Username)
+        {
+            if (phone == null)
+            {
+                ViewBag.failure = 1;
+            }
+            else
+            {
+                NpgsqlConnection conn = Database.Database.GetConnection();
+                int result = Database.Database.ExecuteUpdate(String.Format("update users set phone='{0}' " +
+                                                        "where username='{1}'", phone, Username), conn);
+                if (result == 1)
+                {
+                    ViewBag.success = 1;
+                }
+                else
+                {
+                    ViewBag.failure = 1;
+                }
+                conn.Close();
+            }
+            StudentModel model = new();
+            model.Username = Username;
+            return View("Profile", model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult SetPassword(string oldPassword, string newPassword, string newPassword1, string Username)
+        {
+            ViewBag.wrongPassword = 0;
+            ViewBag.notSamePasswords = 0;
+            ViewBag.success = 0;
+            ViewBag.failure = 0;
+            ViewBag.emptyPassword = 0;
+
+            string dbPassword = "";
+
+            NpgsqlConnection conn = Database.Database.GetConnection();
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select username, password " +
+                                                        "from users where username='{0}'", Username), conn);
+            while (reader.Read())
+            {
+                dbPassword = reader.GetString(1);
+            }
+            conn.Close();
+
+            if (dbPassword != oldPassword)
+            {
+                ViewBag.wrongPassword = 1;
+            }
+            else if (newPassword == null || newPassword == "" || newPassword.Length == newPassword.Count(f => (f == (char)32)))
+            {
+                ViewBag.emptyPassword = 1;
+            }
+            else
+            {
+                if (newPassword != newPassword1)
+                {
+                    ViewBag.notSamePasswords = 1;
+                }
+                else
+                {
+                    int result = Database.Database.ExecuteUpdate(String.Format("update users set password='{0}'" +
+                        " where username='{1}'", newPassword.Trim(), Username), conn);
+                    conn.Close();
+                    NpgsqlConnection conn1 = Database.Database.GetConnection();
+                    int result1 = Database.Database.ExecuteUpdate(String.Format("update student set has_ever_connected='true'" +
+                        " where student='{1}'", newPassword.Trim(), Username), conn1);
+                    conn.Close();
+
+                    if (result == 1 && result1 ==1)
+                    {
+                        return View("StudentHome", Username);
+                    }
+                    else
+                    {
+                        ViewBag.failure = 1;
+                    }
+                }
+            }
+                        return View("SetPassword", Username);
+        }
     }
 }
