@@ -1,0 +1,76 @@
+﻿@model List<Software_Engineering_Project.Models.SearchModel>
+
+@{
+    ViewData["Title"] = "Student Search";
+}
+
+<!-- Stylesheet connection for AddStudent page -->
+@section Styles {
+    <link rel="stylesheet" href="~/css/TeacherProfileStyle.css" />
+}
+
+<div class="content">
+
+<div class="card">
+	<img src="@Url.Content("~/images/hat.png")" alt="" class="icon" />
+	<h3 class="title">Anastasia Boublini</h3>
+	<h3 class="title">Undergraduate Student</h3>
+	<br />
+    <div class="container">
+        <table class="tbl">
+			<tr>
+				<th>Student Id:</th>
+				<td>p19117</td>
+			</tr>
+			<tr>
+				<th>Start year:</th>
+				<td>2017</td>
+			</tr>
+			<tr>
+				<th>First Name:</th>
+				<td>Anastasia</td>
+			</tr>
+			<tr>
+				<th>Last name:</th>
+				<td>Boublini</td>
+			</tr>
+			<tr>
+				<th>Email:</th>
+				<td>aboublini@gmail.com</td>
+			</tr>
+			<tr>
+				<th>Phone number:</th>
+				<td>6912345678</td>
+			</tr>
+			<tr>
+				<th>Thesis title:
+				</th>
+				<td>Interactive UI with React JS</td>
+			</tr>
+			<tr>
+				<th>Thesis start date:</th>
+				<td>2/7/21</td>
+			</tr>
+			<tr>
+				<th>Thesis grade:</th>
+				<td>9.5</td>
+			</tr>
+			<tr>
+				<th>Thesis Language:</th>
+				<td>English</td>
+			</tr>
+			<tr>
+				<th>Thesis Technology:</th>
+				<td>React JS, JS, HTML, CSS, Angular</td>
+			</tr>
+		</table>
+		<br />
+    </div>
+</div>  
+   <div class="image-container">
+        <div class="panel left-panel">
+            <img src="@Url.Content("~/images/StudentHandler_img.png")" alt="" class="image" />
+        </div>
+     </div>
+</div>
+

@@ -9,7 +9,6 @@
 
     <div class="content"> 
         <div class="md">
-            <h1>@ViewBag.Username</h1>
             <div class="search">
             <form asp-controller="Teacher" asp-action="StudentSearch" method="post" >
                 <h2 class="title">Search for a student</h2>
@@ -21,6 +20,10 @@
                 <input type="hidden" name="professorName" value="@ViewBag.Username"/>
                 <!-- Submit button -->
                 <input type="submit" class="btn solid" value="Search"/>
+                <p>Didn't find the student you were looking for?</p>
+                <a  asp-controller="Teacher" asp-action="AddStudent" asp-route-username="@ViewBag.Username" >
+                    Add Student
+                </a>
             </form>
             </div>
         </div>
@@ -31,9 +34,7 @@
             <img src="@Url.Content("~/images/StudentHandler_img.png")" alt="" class="image" />
         </div>
      </div>
-       <a  asp-controller="Teacher" asp-action="AddStudent" asp-route-username="@ViewBag.Username" >
-        Add Student
-    </a>
+
     </div>
    
   
