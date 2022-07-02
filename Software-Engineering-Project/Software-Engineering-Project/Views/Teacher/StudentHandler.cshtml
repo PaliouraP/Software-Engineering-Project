@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="~/css/StudentHandlerStyle.css" />
 }
 
-
-<h1>@ViewBag.Username</h1>
-
     <div class="content"> 
         <div class="md">
+            <h1>@ViewBag.Username</h1>
             <div class="search">
             <form asp-controller="Teacher" asp-action="StudentSearch" method="post" >
                 <h2 class="title">Search for a student</h2>
@@ -33,11 +31,9 @@
             <img src="@Url.Content("~/images/StudentHandler_img.png")" alt="" class="image" />
         </div>
      </div>
-
-    </div>
-
-    <br /><br /><br />
-    
-    <a  asp-controller="Teacher" asp-action="AddStudent" asp-route-username="@ViewBag.Username" >
+       <a  asp-controller="Teacher" asp-action="AddStudent" asp-route-username="@ViewBag.Username" >
         Add Student
     </a>
+    </div>
+   
+  

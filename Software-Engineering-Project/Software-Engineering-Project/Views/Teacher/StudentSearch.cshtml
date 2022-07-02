@@ -6,128 +6,71 @@
 
 <!-- Stylesheet connection for AddStudent page -->
 @section Styles {
-    <link rel="stylesheet" href="~/css/AddStudentStyle.css" />
+    <link rel="stylesheet" href="~/css/StudentSearchStyle.css" />
 }
 
-<h1>Student Search</h1>
+<div class="content">
 
+<div class="card">
+	<img src="@Url.Content("~/images/hat.png")" alt="" class="icon" />
+	<h3 class="title">Anastasia Boublini</h3>
+	<h3 class="title">Undergraduate Student</h3>
+	<br />
+    <div class="container">
+        <table class="tbl">
+			<tr>
+				<th>Student Id:</th>
+				<td>p19117</td>
+			</tr>
+			<tr>
+				<th>Start year:</th>
+				<td>2017</td>
+			</tr>
+			<tr>
+				<th>First Name:</th>
+				<td>Anastasia</td>
+			</tr>
+			<tr>
+				<th>Last name:</th>
+				<td>Boublini</td>
+			</tr>
+			<tr>
+				<th>Email:</th>
+				<td>aboublini@gmail.com</td>
+			</tr>
+			<tr>
+				<th>Phone number:</th>
+				<td>6912345678</td>
+			</tr>
+			<tr>
+				<th>Thesis title:
+				</th>
+				<td>Interactive UI with React JS</td>
+			</tr>
+			<tr>
+				<th>Thesis start date:</th>
+				<td>2/7/21</td>
+			</tr>
+			<tr>
+				<th>Thesis grade:</th>
+				<td>9.5</td>
+			</tr>
+			<tr>
+				<th>Thesis Language:</th>
+				<td>English</td>
+			</tr>
+			<tr>
+				<th>Thesis Technology:</th>
+				<td>React JS, JS, HTML, CSS, Angular</td>
+			</tr>
+		</table>
+		<br />
+    </div>
+</div>  
+   <div class="image-container">
+        <div class="panel left-panel">
+            <img src="@Url.Content("~/images/StudentHandler_img.png")" alt="" class="image" />
+        </div>
+     </div>
+</div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Student Id
-            </th>
-            <th>
-                Start year
-            </th>
-            <th>
-                First Name
-            </th>
-            <th>
-                Last name
-            </th>
-            <th>
-                Email
-            </th>
-            <th>
-                Phone number
-            </th>
-            <th>
-                Thesis title
-            </th>
-            <th>
-                Thesis start date
-            </th>
-            <th>
-                Thesis grade
-            </th>
-            <th>
-                Thesis Language
-            </th>
-            <th>
-                Thesis Technology
-            </th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <tr>
-            <th>
-               p19117
-            </th>
-            <th>
-                2017
-            </th>
-            <th>
-                Anastasia
-            </th>
-            <th>
-                Boublini
-            </th>
-            <th>
-                aboublini@gmail.com
-            </th>
-            <th>
-                6912345678
-            </th>
-            <th>
-                Interactive User Interfaces with React JS
-            </th>
-            <th>
-                2/7/21
-            </th>
-            <th>
-                9.5
-            </th>
-            <th>
-                English
-            </th>
-            <th>
-                React JS, JS, HTML, CSS, Angular
-            </th>
-        </tr>
-    </tbody>
-
-     @*
-    <tbody>     
-        @foreach (var item in Model) {
-                <tr>
-                    <td>
-                        @item.Student
-                    </td>
-                    <td>
-                       @item.StartYear
-                    </td>
-                    <td>
-                       @item.FirstName
-                    </td>
-                    <td>
-                        @item.LastName
-                    </td>
-                    <td>
-                        @item.Email
-                    </td>
-                    <td>
-                        @item.Phone
-                    </td>
-                    <td>
-                        @item.Title
-                    </td>
-                    <td>
-                        @item.StartDate
-                    </td>
-                    <td>
-                        @item.Grade
-                    </td>
-                    <td>
-                        @item.Language
-                    </td>
-                    <td>
-                        @item.Technology
-                    </td>
-                </tr>
-        } 
-       
-    </tbody> *@
-</table>

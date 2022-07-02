@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "F2qgy0+LrN0DuLY3vRAF8415M9WJ/fZ/B3ps131s+Pg=",
+  "Hash": "sZrFnvy9NmLGi5Ie3ie+hLVlgpjoOjzIFLfaoKflVOY=",
   "Source": "Software-Engineering-Project",
   "BasePath": "_content/Software-Engineering-Project",
   "Mode": "Default",
@@ -136,6 +136,23 @@
       "OriginalItemSpec": "wwwroot\\css\\StudentHandlerStyle.css"
     },
     {
+      "Identity": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\css\\StudentSearchStyle.css",
+      "SourceId": "Software-Engineering-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\",
+      "BasePath": "_content/Software-Engineering-Project",
+      "RelativePath": "css/StudentSearchStyle.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\StudentSearchStyle.css"
+    },
+    {
       "Identity": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\css\\TeacherHome_style.css",
       "SourceId": "Software-Engineering-Project",
       "SourceType": "Discovered",
@@ -185,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\add_student_img.png"
+    },
+    {
+      "Identity": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\images\\hat.png",
+      "SourceId": "Software-Engineering-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\",
+      "BasePath": "_content/Software-Engineering-Project",
+      "RelativePath": "images/hat.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\hat.png"
     },
     {
       "Identity": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\images\\lock.png",
