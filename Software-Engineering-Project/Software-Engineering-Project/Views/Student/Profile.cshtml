@@ -108,11 +108,15 @@
 <div class="thesis_info">
     <h1>Thesis</h1>
     <div class="buttons">
-        <img src="@Url.Content("~/images/upload.png")" alt="User" class="icons">
+        <a href="javascript:void(0);" class="icon" >
+            <i class="fa fa-upload" ></i>    
+        </a>
         <a class="link" asp-controller="Student" asp-action="Upload" asp-route-username="@Model.Username">Upload Thesis</a>
     </div>
     <div class="buttons">
-        <img src="@Url.Content("~/images/search.png")" alt="User" class="icons">
+        <a href="javascript:void(0);" class="icon" >
+            <i class="fa fa-search"></i>    
+        </a>
         <a class="link" asp-controller="Student" asp-action="ThesisStatus" asp-route-username="@Model.Username">Thesis Status</a>
 
     </div>

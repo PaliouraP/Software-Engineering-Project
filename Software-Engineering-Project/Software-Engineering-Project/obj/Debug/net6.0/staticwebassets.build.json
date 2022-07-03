@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+/ZY6FkCNRqY1WGBe9eFzfL5NFqZHR3ir1t+EmyTayQ=",
+  "Hash": "vNi5fc7G/tbZivBQHUA3a5ns25vQrt1HsZO5C6/f7TI=",
   "Source": "Software-Engineering-Project",
   "BasePath": "_content/Software-Engineering-Project",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\NavbarStyle.css"
+    },
+    {
+      "Identity": "C:\\Users\\maria\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\css\\SetPassword_style.css",
+      "SourceId": "Software-Engineering-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\maria\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\",
+      "BasePath": "_content/Software-Engineering-Project",
+      "RelativePath": "css/SetPassword_style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\SetPassword_style.css"
     },
     {
       "Identity": "C:\\Users\\maria\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\css\\site.css",
@@ -236,6 +253,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\lock.png"
+    },
+    {
+      "Identity": "C:\\Users\\maria\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\images\\lock_yellow.png",
+      "SourceId": "Software-Engineering-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\maria\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\",
+      "BasePath": "_content/Software-Engineering-Project",
+      "RelativePath": "images/lock_yellow.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\lock_yellow.png"
     },
     {
       "Identity": "C:\\Users\\maria\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\images\\login_img.png",

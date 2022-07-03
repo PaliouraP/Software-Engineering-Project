@@ -51,7 +51,10 @@
     padding: 30px;
     height:200px;
 }
-    .thesis_info .img{
+    .thesis_info i {
+        color: rgba(6,120,194,0.6);
+        font-size:20px;
+        margin:5px;
     }
     .thesis_info .buttons {
         background-color: #f0f0f0;
@@ -86,10 +89,9 @@
         width: 100%;
         margin: 5px;
         border-radius: 20px;
-        background-color:#286090;
-        color:white;
-        padding:8px;
-
+        background-color: rgba(6,123,194,0.6);
+        color: white;
+        padding: 8px;
     }
         .settings .submit:hover {
             background-color: rgba(6,120,194,0.06);
