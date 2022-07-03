@@ -1,9 +1,7 @@
 ﻿body {
     font-family: 'Nirmala UI';
 }
-
 * {
- 
     box-sizing: border-box;
     font-family: 'Nirmala UI';
 }
@@ -16,25 +14,25 @@ section {
     background: #fff;
     display: flex;
     align-content: stretch;
-    flex-direction:column;
+    flex-direction: column;
 }
+
+
 .content {
     position: absolute;
     width: 100%;
-    height:100%;
-    top:10%;
-    left:20px;
+    height: 100%;
+    top: 10%;
+    left: 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;  
-    overflow:hidden;
-
+    align-items: center;
+    overflow: hidden;
 }
-
     .content .textbox {
         position: relative;
         max-width: 650px;
-        top:30px;
+        top: 30px;
     }
 
         .content .textbox h2 {
@@ -73,20 +71,19 @@ section {
         width: 600px;
         display: flex;
         padding-right: 0;
-        z-index:2;
+        z-index: 2;
     }
 
         .content .imgBox img {
             max-width: 500px;
         }
+
 .circle {
     position: absolute;
     display: block;
-    
-    height:100%;
+    height: 100%;
     width: 100%;
     background: linear-gradient(-45deg, #067BC2, #449DD1, #78C0E0);
     clip-path: circle(850px at right 1100px);
-}/**/
-
-
+}
+/**/

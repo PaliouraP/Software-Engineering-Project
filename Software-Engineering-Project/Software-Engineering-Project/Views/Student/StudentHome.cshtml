@@ -1,11 +1,52 @@
-﻿@model string
-@{
+﻿
+@{   
+    ViewData["Title"] = "StudentHomePage";
+
 }
 
-<h1>HOME</h1>
-<h1>@Model</h1>
-<a class="link" href="#">Home</a> 
-<a class="link" href="#">Appointments</a> 
-<a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="Upload">Upload a Thesis</a> 
-<a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="Thesis_Status">Thesis Status</a> 
-<a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="Profile">Profile</a> 
+@section Styles{
+        <link rel="stylesheet" href="~/css/StudentHome_Style.css" />
+        <link rel="stylesheet" href="~/css/NavbarStyle.css" />
+        <script src="~/js/BurgerMenu.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+}
+
+<section>
+<!-- Top Navigation Menu -->
+<div class="topnav" >
+     <picture> 
+            <img src ="@Url.Content("~/images/unipi_logo.png")" />
+     </picture> 
+     <div class="menu_burger">
+     <div class="menu" id="bmenu">       
+       <a class="link" href="#">Home</a> 
+        <a class="link" href="#">Appointments</a> 
+        <a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="Upload">Upload a Thesis</a> 
+        <a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="Thesis_Status">Thesis Status</a> 
+        <a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="Profile">Profile</a> 
+     </div>
+     <div class="burger">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars fa-xxl"></i>    
+        </a>
+     </div>
+     </div>      
+</div>
+
+<!--Main Content -->
+ <div class="content" >
+               <div class="circle"></div>
+
+        <div class="textbox">
+            <h2><span><br>Welcome</span><br /> to your Thesis Management System</h2>
+            <p>DTM stands for Dissertation Thesis Management system. The easiest way to track down your
+                dissertations. Upload, view your progress, chat and schedule meetings. All in one place!
+            </p>
+            <a href="#">Learn more</a>
+        </div>
+        <div class="imgBox">
+            <img  src="@Url.Content("~/images/StudentHome_image.png")" class="basicImg">
+        </div>
+    </div>
+</section>

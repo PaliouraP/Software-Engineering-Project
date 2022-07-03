@@ -3,97 +3,127 @@
 @{
     ViewData["Title"] = "Profile";
 }
+@section Styles{
+        <link rel="stylesheet" href="~/css/StudentProfile.css" />        
+        <link rel="stylesheet" href="~/css/NavbarStyle.css" />
+        <script src="~/js/BurgerMenu.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
-<h1>Profile</h1>
+}
 
-<h2>@Model.Username</h2>
+<!-- Top Navigation Menu -->
 
-<div>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StartYear)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StartYear)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Professor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Professor)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Username)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
-    </dl>
+<div class="topnav" >
+     <picture> 
+            <img src ="@Url.Content("~/images/unipi_logo.png")" />
+            
+     </picture> 
+     <div class="menu_burger">
+     <div class="menu" id="bmenu">       
+        <a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="StudentHomePage">Home</a> 
+        <a class="link" href="#">Appointments</a> 
+        <a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="Upload">Upload a Thesis</a> 
+        <a class="link" href="#">Thesis Status</a> 
+        <a class="link" href="#">Profile</a> 
+     </div>
+     <div class="burger">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars fa-xxl"></i>    
+        </a>
+     </div>
+     </div>      
 </div>
 
-<h1>Thesis/Uploads</h1>
+<div class="information">
 
-<a class="link" asp-controller="Student" asp-action="Upload" asp-route-username="@Model.Username">click here to upload a thesis</a>
-<br /><br />
-<a class="link" asp-controller="Student" asp-action="ThesisStatus" asp-route-username="@Model.Username">click here to see your thesis status</a>
+<!--Personal Information Card-->
+
+<div class="personal_info">
+    <h1>Personal Card</h1>
+    <img src ="@Url.Content("~/images/profile_picture.png")" />
+    <h2>@Html.DisplayFor(model => model.FirstName)
+    @Html.DisplayFor(model => model.LastName)</h2>
+    <div class="all_info">  
+        <div class="info-name">
+            <p>Username</p>
+            <p>Supervised by </p>
+            <p>Started</p>
+            <p>Email</p>
+            <p>Gender</p>
+            <a>Tel</a>
+        </div>
+        <div class="info">
+            <p>@Html.DisplayFor(model => model.Username)</p>
+            <p>@Html.DisplayFor(model => model.Professor)</p>
+            <p>@Html.DisplayFor(model => model.StartYear)</p>
+            <p>@Html.DisplayFor(model => model.Email)</p>
+            <p>@Html.DisplayFor(model => model.Gender)</p>
+            <a>@Html.DisplayFor(model => model.Phone)</a>
+        </div> 
+</div>
+</div>
+
+
+<!--Settings-->
+
+<div class="settings">
+    <h1>Settings</h1>
 
 <!--Change password form-->
-<form asp-controller="Student" asp-action="ChangePassword" method="post" >
-    <div>
-        <h3>Change your password</h3>
-    </div> <br />
-    <div>
-        Enter your old password <input type="password" name="oldPassword"/> <br /><br />
-        Enter your new password <input type="password" name="newPassword"/> <br /><br />
-        Confirm your new password <input type="password" name="newPassword1"/> <br />
-        <input type="hidden" name="Username" value="@Model.Username" />
-        <input type="submit" />
-    </div>
-</form>
-<br /><br />
+
+    <form asp-controller="Student" asp-action="ChangePassword" method="post" >
+        <div>
+            <p class="explanation">Change password</p>
+        </div> 
+        <div>
+            
+            <input type="password" placeholder="Old Password" name="oldPassword" class="inpt"/> 
+            <input type="password" placeholder="New Password" name="newPassword" class="inpt"/> 
+            <input type="password" placeholder="Confirm new Password" name="newPassword1" class="inpt"/> 
+            <input type="hidden" name="Username" value="@Model.Username" />
+            <input class="submit" type="submit"/>
+        </div>
+    </form>
+
 
 <!--Change phone number form-->
+
 <form asp-controller="Student" asp-action="ChangePhone" method="post" >
     <div>
-        <h3>Change your phone number</h3>
-    </div> <br />
+        <p class="explanation">Change phone number</p>
+    </div> 
     <div>
-        Enter your new phone number <input type="tel" pattern="[0-9]{10}" name="phone"/> <br />
-        <input type="hidden" name="Username" value="@Model.Username" />
-        <input type="submit" />
+         <input placeholder="New phone number" type="tel" pattern="[0-9]{10}" name="phone" class="inpt"/> <br />
+        <input type="hidden"  name="Username" value="@Model.Username" />
+        <input class="submit" type="SUBMIT" />
     </div>
-</form>
+</form></div>  
+
+<div class="thesis_image">
+
+
+<!--Thesis Actions-->
+
+<div class="thesis_info">
+    <h1>Thesis</h1>
+    <div class="buttons">
+        <img src="@Url.Content("~/images/upload.png")" alt="User" class="icons">
+        <a class="link" asp-controller="Student" asp-action="Upload" asp-route-username="@Model.Username">Upload Thesis</a>
+    </div>
+    <div class="buttons">
+        <img src="@Url.Content("~/images/search.png")" alt="User" class="icons">
+        <a class="link" asp-controller="Student" asp-action="ThesisStatus" asp-route-username="@Model.Username">Thesis Status</a>
+
+    </div>
+
+</div>
+<div class="pic">
+    <img src="@Url.Content("~/images/profile_img.png")" />
+</div>
+
+</div>
+
 
 @if(ViewBag.wrongPassword == 1){
     <script type="text/javascript">
@@ -134,3 +164,67 @@
     }
     </script>
 }
+
+
+
+
+
+
+<div>
+    </div>
+
+    
+        <!--
+            <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StartYear)
+        </dt>
+        <dd class = "col-sm-2">
+            @Html.DisplayFor(model => model.StartYear)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Professor)
+        </dt>
+        <dd class = "col-sm-2">
+            @Html.DisplayFor(model => model.Professor)
+        </dd> <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+        <dd class = "col-sm-2">
+            @Html.DisplayFor(model => model.Username)
+        </dd>-->
+              
+        <!--<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>      
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+    </dl>-->
+  
+</div>

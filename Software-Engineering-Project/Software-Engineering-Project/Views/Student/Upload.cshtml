@@ -2,6 +2,31 @@
 @{
     ViewData["Title"] = "Upload";
 }
+@section Styles{
+        <link rel="stylesheet" href="~/css/NavbarStyle.css" />
+        <script src="~/js/BurgerMenu.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+}
+
+<!-- Top Navigation Menu -->
+<div class="topnav" >
+     <picture> 
+            <img src ="@Url.Content("~/images/unipi_logo.png")" />
+     </picture> 
+     <div class="menu_burger">
+     <div class="menu" id="bmenu">       
+       <a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="StudentHomePage">Home</a> 
+        <a class="link" href="#">Appointments</a> 
+        <a class="link"  href="#">Upload a Thesis</a> 
+        <a class="link"  href="#">Thesis Status</a> 
+        <a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="Profile">Profile</a> 
+     </div>
+     <div class="burger">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars fa-xxl"></i>    
+        </a>
+     </div>
+     </div>      
+</div>
 <h1>Upload</h1>
-
