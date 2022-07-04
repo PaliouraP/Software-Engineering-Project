@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="~/css/StudentHandlerStyle.css" />
 }
 
-
-
     <div class="content"> 
         <div class="md">
             <div class="search">
@@ -22,6 +20,10 @@
                 <input type="hidden" name="professorName" value="@ViewBag.Username"/>
                 <!-- Submit button -->
                 <input type="submit" class="btn solid" value="Search"/>
+                <p>Didn't find the student you were looking for?</p>
+                <a  asp-controller="Teacher" asp-action="AddStudent" asp-route-username="@ViewBag.Username" >
+                    Add Student
+                </a>
             </form>
             </div>
         </div>
@@ -34,9 +36,5 @@
      </div>
 
     </div>
-
-    <br /><br /><br />
-    
-    <a  asp-controller="Teacher" asp-action="AddStudent" asp-route-username="@ViewBag.Username" >
-        Add Student
-    </a>
+   
+  
