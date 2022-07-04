@@ -11,11 +11,6 @@ namespace Software_Engineering_Project.Controllers
             return View();
         }
 
-        public IActionResult TeacherProfile()
-        {
-            return View();
-        }
-
         public IActionResult StudentHandler(string username)
         {
             ViewBag.Username = username;

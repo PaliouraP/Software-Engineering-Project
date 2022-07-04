@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Hh8FZCxTCNgPT0wxBRosBt7g7Zw9/+mzAtETfBQprxI=",
+  "Hash": "sZrFnvy9NmLGi5Ie3ie+hLVlgpjoOjzIFLfaoKflVOY=",
   "Source": "Software-Engineering-Project",
   "BasePath": "_content/Software-Engineering-Project",
   "Mode": "Default",
@@ -168,23 +168,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\TeacherHome_style.css"
-    },
-    {
-      "Identity": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\css\\TeacherProfileStyle.css",
-      "SourceId": "Software-Engineering-Project",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\",
-      "BasePath": "_content/Software-Engineering-Project",
-      "RelativePath": "css/TeacherProfileStyle.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\TeacherProfileStyle.css"
     },
     {
       "Identity": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\favicon.ico",
