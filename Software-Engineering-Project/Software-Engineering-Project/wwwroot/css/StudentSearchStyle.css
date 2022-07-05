@@ -22,10 +22,10 @@ body, input {
         height: 2000px;
         width: 2000px;
         top: -10%;
-        left: 48%;
+        left: 45%;
         background-image: linear-gradient(-45deg, #78C0E0, #449DD1, #067BC2);
-        transform: translateY(-35%);
-        border-radius: 50%;
+        transform: translateY(10%);
+        border-radius: 45%;
         z-index: 6;
     }
 
@@ -67,7 +67,7 @@ th, td {
 }
 
 .image {
-    width: 80%
+    width: 85%
 }
 
 .image-container {

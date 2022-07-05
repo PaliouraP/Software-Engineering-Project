@@ -40,18 +40,19 @@ section {
         .content .textbox h2 {
             color: #333;
             font-size: 4em;
-            line-height: 1.4em;
+            line-height: 1.3em;
             font-weight: 500;
         }
 
             .content .textbox h2 span {
                 color: #067BC2;
-                font-size: 1.2em;
+                font-size: 1.1em;
                 font-weight: 900;
             }
 
         .content .textbox p {
             color: #333;
+            font-size: 1.1em;
         }
 
         .content .textbox a {
@@ -62,6 +63,7 @@ section {
             color: #fff;
             border-radius: 40px;
             font-weight: 500;
+            font-size: 1.1em;
             text-decoration: none;
         }
 
@@ -79,14 +81,14 @@ section {
         .content .imgBox img {
             max-width: 500px;
         }
+
 .circle {
     position: absolute;
     display: block;
-    
     height:100%;
     width: 100%;
     background: linear-gradient(-45deg, #067BC2, #449DD1, #78C0E0);
-    clip-path: circle(850px at right 1100px);
+    clip-path: circle(850px at right 900px);
 }/**/
 
 

@@ -7,9 +7,35 @@
 <!-- Stylesheet connection for AddStudent page -->
 @section Styles {
     <link rel="stylesheet" href="~/css/AddStudentStyle.css" />
+    <link rel="stylesheet" href="~/css/NavbarStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/js/BurgerMenu.js"></script>
 }
 
 <div class="row">
+
+    <!-- Top Navigation Menu -->
+        <div class="topnav" >
+             <picture> 
+                    <img src ="@Url.Content("~/images/unipi_logo.png")" />
+             </picture> 
+             <div class="menu_burger">
+             <div class="menu" id="bmenu">       
+                <a class="link" href="#">Home</a>
+                <a class="link" href="#">Appointments</a>
+                <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@Model">Students</a>        
+                <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@Model">Profile</a>
+             </div>
+             <div class="burger">
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars fa-xxl"></i>    
+                </a>
+             </div>
+             </div>      
+        </div>
+        <br />
+        <br />
+
     <div class="col-md-4">
         <div class="add">
         <form asp-controller="Teacher" asp-action="AddStudent" asp-route-proffesorName="@ViewBag.Username">
