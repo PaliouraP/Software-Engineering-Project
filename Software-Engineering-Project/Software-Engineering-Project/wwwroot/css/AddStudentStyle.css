@@ -52,14 +52,15 @@ form {
     font-size: 2.2rem;
     color: #444;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .form-group {
-    max-width: 380px;
+    max-width: 400px;
     width: 90%;
-    height: 55px;
+    height: 45px;
     background-color: #f0f0f0;
-    margin: 10px 0;
+    margin: 7px 0;
     border-radius: 55px;
     display: grid;
     grid-template-columns: 15% 85%;
@@ -86,7 +87,7 @@ form {
 
 .control-label {
     text-align: center;
-    line-height: 55px;
+    line-height: 45px;
     display: block;
     margin-left: auto;
     margin-right: auto;

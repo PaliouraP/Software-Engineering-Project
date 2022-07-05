@@ -1,0 +1,147 @@
+﻿* {
+    box-sizing: border-box;
+    font-family: 'Nirmala UI';
+}
+
+.information {
+    display: flex;
+    flex-direction: row;
+    color: #3e3e3e;
+}
+
+
+.personal_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    box-shadow: 4px 4px 14px 4px rgba(0, 0.1, 0.1, 0.1);
+    border-radius: 18px;
+    margin: 3%;
+    padding: 30px;
+}
+
+    .personal_info img {
+        width: 200px;
+    }
+
+    .personal_info .all_info {
+        display: flex;
+        flex-direction: row;
+    }
+
+        .personal_info .all_info .info {
+            text-align: right;
+        }
+
+    .personal_info a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .personal_info p {
+        padding: 3px;
+    }
+
+.thesis_info {
+    text-align: center;
+    margin: 3%;
+    align-items: center;
+    width: 400px;
+    box-shadow: 4px 4px 14px 4px rgba(0, 0.1, 0.1, 0.1);
+    border-radius: 18px;
+    padding: 30px;
+    height: 200px;
+}
+
+    .thesis_info i {
+        color: rgba(6,120,194,0.6);
+        font-size: 20px;
+        margin: 5px;
+    }
+
+    .thesis_info .buttons {
+        background-color: #f0f0f0;
+        border-radius: 20px;
+        margin: 10px;
+        height: 33px;
+        align-items: center;
+    }
+
+        .thesis_info .buttons:hover {
+            background-color: rgba(6,120,194,0.06);
+        }
+
+        .thesis_info .buttons a {
+            text-decoration: none;
+            border-radius: 20px;
+            color: #3e3e3e;
+        }
+
+.settings {
+    text-align: center;
+    margin: 3%;
+    align-items: center;
+    width: 400px;
+    box-shadow: 4px 4px 14px 4px rgba(0, 0.1, 0.1, 0.1);
+    border-radius: 18px;
+    padding: 30px;
+}
+
+    .settings p {
+        text-align: left;
+    }
+
+    .settings .submit {
+        border: none;
+        width: 100%;
+        margin: 5px;
+        border-radius: 20px;
+        background-color: rgba(6,123,194,0.6);
+        color: white;
+        padding: 8px;
+    }
+
+        .settings .submit:hover {
+            background-color: rgba(6,120,194,0.06);
+            color: #3e3e3e;
+        }
+
+    .settings .inpt {
+        padding: 8px;
+        margin: 5px;
+        border-radius: 20px;
+        border: 0;
+        background-color: #f0f0f0;
+        width: 100%;
+    }
+
+    .settings .explanation {
+        font-size: 20px;
+        margin: 10px;
+    }
+
+
+
+.thesis_image {
+    display: flex;
+    flex-direction: column;
+    margin: 3%;
+    align-items: center;
+}
+
+    .thesis_image .pic img {
+        width: 250px;
+    }
+
+@media screen and (max-width: 1200px) {
+    .information {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .thesis_image .pic img {
+        display: none;
+    }
+}

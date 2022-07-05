@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rN2TmCVbAHdEpJj5TmoN/ahugeAqHw4TnyvAu7SESA0=",
+  "Hash": "MobuafcIWBglntHXB+jH01DGPt10FTH5OAQtuwGB3Is=",
   "Source": "Software-Engineering-Project",
   "BasePath": "_content/Software-Engineering-Project",
   "Mode": "Default",
@@ -202,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\StudentSearchStyle.css"
+    },
+    {
+      "Identity": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\css\\TeacheProfileStyle.css",
+      "SourceId": "Software-Engineering-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\",
+      "BasePath": "_content/Software-Engineering-Project",
+      "RelativePath": "css/TeacheProfileStyle.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\TeacheProfileStyle.css"
     },
     {
       "Identity": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\css\\TeacherHome_style.css",

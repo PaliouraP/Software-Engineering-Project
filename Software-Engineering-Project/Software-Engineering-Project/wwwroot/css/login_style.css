@@ -84,7 +84,8 @@ form {
     border: none;
     line-height: 1;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    width: 80%;
     color: #333;
 }
 
@@ -109,6 +110,7 @@ form {
 
     .btn:hover {
         background-color: #376996;
+        cursor: pointer;
     }
 
     .signin {
