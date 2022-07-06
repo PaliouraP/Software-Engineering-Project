@@ -24,13 +24,19 @@
         width: 200px;
     }
 
-    .personal_info .all_info .info {
-        text-align: right;
-    }
+.all_info {
+    text-align: center;
+}
 
-    .personal_info p {
-        padding: 3px;
-    }
+th, td {
+    padding: 6px;
+    font-size: 18px;
+}
+
+.tbl {
+    width: 100%;
+    color: #444;
+}
 
 .reports_info {
     text-align: center;
@@ -43,17 +49,17 @@
     height: 200px;
 }
 
-.reports_info i {
-    color: rgba(6,120,194,0.6);
-    font-size: 20px;
-    margin: 5px;
-}
+    .reports_info i {
+        color: #3893CE;
+        font-size: 22px;
+        margin: 7px;
+    }
 
 .reports_info .buttons {
     background-color: #f0f0f0;
     border-radius: 20px;
     margin: 10px;
-    height: 33px;
+    height: 35px;
     align-items: center;
 }
 
@@ -62,6 +68,7 @@
 }
 
 .reports_info .buttons a {
+    font-size: 18px;
     text-decoration: none;
     border-radius: 20px;
     color: #3e3e3e;
@@ -82,18 +89,20 @@
     }
 
     .settings .submit {
+        font-size: 18px;
         border: none;
         width: 100%;
         margin: 5px;
         border-radius: 20px;
-        background-color: rgba(6,123,194,0.6);
+        background-color: #3893CE;
         color: white;
         padding: 8px;
     }
 
         .settings .submit:hover {
-            background-color: rgba(6,120,194,0.06);
-            color: #3e3e3e;
+            background-color: #376996;
+            color: white;
+            cursor: pointer;
         }
 
     .settings .inpt {
@@ -103,11 +112,13 @@
         border: 0;
         background-color: #f0f0f0;
         width: 100%;
+        font-size: 18px;
     }
 
     .settings .explanation {
-        font-size: 20px;
+        font-size: 18px;
         margin: 10px;
+        font-weight: bold;
     }
 
 
@@ -119,7 +130,7 @@
 }
 
     .thesis_image .pic img {
-        width: 250px;
+        width: 350px;
     }
 
 @media screen and (max-width: 1200px) {
