@@ -1,4 +1,5 @@
 ﻿@{
+    ViewData["Title"] = "Profile";
 }
 
 <!-- Stylesheet connection for TeacherHome page -->
@@ -11,9 +12,9 @@
 
 }
 
-<h2>@ViewBag.Username</h2>
+<!--<h2>@ViewBag.Username</h2>-->
 
-<section>
+
 <!-- Top Navigation Menu -->
     <div class="topnav" >
      <picture> 
@@ -66,6 +67,7 @@
 </div>
 </div>
 
+
 <!--Settings-->
 <div class="settings">
     <h1>Settings</h1>
@@ -80,7 +82,7 @@
         <input type="password" name="newPassword"  placeholder="New Password" class="inpt"/> 
         <input type="password" name="newPassword1"  placeholder="Confirm New Password" class="inpt"/> 
         <input type="hidden" name="professorName" value="@ViewBag.Username" />
-        <input type="submit" />
+        <input type="submit" class="submit"/>
     </div>
 </form>
 
@@ -91,19 +93,40 @@
         <p class="explanation">Change your phone number</p>
     </div> 
     <div>
-        <input type="tel" pattern="[0-9]{10}" name="phone" placeholder="New Phone Number" class="inpt"/>
+        <input type="tel" pattern="[0-9]{10}" name="phone" placeholder="New Phone Number" class="inpt"/> <br />
         <input type="hidden" name="professorName" value="@ViewBag.Username" />
         <input type="submit" class="submit"/>
     </div>
 </form>
 </div>
 
-<div class="thesis_image"></div>
-<h1>Reports</h1>
 
-<a class="link" asp-controller="Teacher" asp-action="GradeList" asp-route-username="@ViewBag.Username">click here to see the grades of your students</a>
-<br /><br />
-<a class="link" asp-controller="Teacher" asp-action="ThesisStartList" asp-route-username="@ViewBag.Username">click here to see when your students started their thesis with you</a>
+
+<div class="thesis_image">
+
+<!--Reports Info-->
+
+<div class="reports_info">
+    <h1>Reports</h1>
+    <div class="buttons">
+        <a href="javascript:void(0);" class="icon" >
+            <i class="fa fa-search"></i>    
+        </a>
+        <a class="link" asp-controller="Teacher" asp-action="GradeList" asp-route-username="@ViewBag.Username">click here to see the grades of your students</a>
+    </div>
+
+    <div class="buttons">
+        <a href="javascript:void(0);" class="icon" >
+            <i class="fa fa-search"></i>    
+        </a>
+        <a class="link" asp-controller="Teacher" asp-action="ThesisStartList" asp-route-username="@ViewBag.Username">click here to see when your students started their thesis with you</a>
+    </div>
+</div>
+<div class="pic">
+    <img src="@Url.Content("~/images/profile_img.png")" />
+</div>
+</div>
+
 
 
 
@@ -148,4 +171,3 @@
     </script>
 }
 </div>
-</section>

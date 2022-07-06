@@ -9,7 +9,6 @@
     color: #3e3e3e;
 }
 
-
 .personal_info {
     display: flex;
     flex-direction: column;
@@ -25,25 +24,15 @@
         width: 200px;
     }
 
-    .personal_info .all_info {
-        display: flex;
-        flex-direction: row;
-    }
-
-        .personal_info .all_info .info {
-            text-align: right;
-        }
-
-    .personal_info a {
-        text-decoration: none;
-        color: black;
+    .personal_info .all_info .info {
+        text-align: right;
     }
 
     .personal_info p {
         padding: 3px;
     }
 
-.thesis_info {
+.reports_info {
     text-align: center;
     margin: 3%;
     align-items: center;
@@ -54,29 +43,29 @@
     height: 200px;
 }
 
-    .thesis_info i {
-        color: rgba(6,120,194,0.6);
-        font-size: 20px;
-        margin: 5px;
-    }
+.reports_info i {
+    color: rgba(6,120,194,0.6);
+    font-size: 20px;
+    margin: 5px;
+}
 
-    .thesis_info .buttons {
-        background-color: #f0f0f0;
-        border-radius: 20px;
-        margin: 10px;
-        height: 33px;
-        align-items: center;
-    }
+.reports_info .buttons {
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    margin: 10px;
+    height: 33px;
+    align-items: center;
+}
 
-        .thesis_info .buttons:hover {
-            background-color: rgba(6,120,194,0.06);
-        }
+.reports_info .buttons:hover {
+    background-color: rgba(6,120,194,0.06);
+}
 
-        .thesis_info .buttons a {
-            text-decoration: none;
-            border-radius: 20px;
-            color: #3e3e3e;
-        }
+.reports_info .buttons a {
+    text-decoration: none;
+    border-radius: 20px;
+    color: #3e3e3e;
+}
 
 .settings {
     text-align: center;
@@ -120,7 +109,6 @@
         font-size: 20px;
         margin: 10px;
     }
-
 
 
 .thesis_image {
