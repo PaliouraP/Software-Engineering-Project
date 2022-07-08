@@ -12,32 +12,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 }
 
-<body>
+<section>
+    <div class="content" >
 
     <!-- Top Navigation Menu -->
-    <div class="topnav">
-        <picture>
+    <div class="topnav" >
+     <picture> 
             <img src ="@Url.Content("~/images/unipi_logo.png")" />
-        </picture>
-        <div class="menu_burger">
-            <div class="menu" id="bmenu">
-                <a class="link" href="#">Home</a>
-                <a class="link" asp-controller="Teacher" asp-action="Meeting">Appointments</a>
-                <a class="link" asp-controller="Teacher" asp-action="StudentHandler">Students</a>
-                <a class="link" href="#">Profile</a>
-            </div>
-            <div class="burger">
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fas fa-bars"></i>
-                </a>
-            </div>
-        </div>
+     </picture> 
+     <div class="menu_burger">
+     <div class="menu" id="bmenu">       
+        <a class="link" href="#">Home</a>
+        <a class="link" href="#">Appointments</a>
+        <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@Model">Students</a>        
+        <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@Model">Profile</a>
+     </div>
+     <div class="burger">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars fa-xxl"></i>    
+        </a>
+     </div>
+     </div>      
     </div>
     
-    <div class="content" >
-               <div class="circle"></div>
+
 
         <div class="container">
+
+            <div class="info">
+
             <div class="calendar">
                 <div class="month">
                     <i class="fas fa-angle-left prev"></i>
@@ -57,15 +60,25 @@
                     <div>Sat</div>
                 </div>
                 <div class="days"></div>
+                <input type="submit" value="Schedule Meeting" class="btn btn-primary" />
             </div>
+
+
+
+            </div>
+
+            <a asp-controller="Teacher" asp-action="AddMeeting" asp-route-username="@ViewBag.Username" class="btn"> New Meeting</a>
+
         </div>
-       <div class="row imgBox">
-            <img  src="@Url.Content("~/images/Meeting_img.png")" class="basicImg">
-        </div>
-        <a asp-controller="Teacher" asp-action="AddMeeting" asp-route-username="@ViewBag.Username" >
-        New Meeting
-        </a>
+
+
+               <!-- Image Container -->
+         <div class="image-container">
+            <div class="panel left-panel">
+                <img src="@Url.Content("~/images/Meeting_img.png")" alt="" class="image" />
+            </div>
+         </div>
     </div>
 
     <script src="~/js/Meeting.js"></script> <!--woudn't work with script on the styles section-->
-</body>
+</section>
