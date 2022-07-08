@@ -8875,11 +8875,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
+      "projectUniqueName": "C:\\Users\\aboub\\Downloads\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
       "projectName": "Software-Engineering-Project",
-      "projectPath": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
+      "projectPath": "C:\\Users\\aboub\\Downloads\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
       "packagesPath": "C:\\Users\\aboub\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\obj\\",
+      "outputPath": "C:\\Users\\aboub\\Downloads\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\aboub\\AppData\\Roaming\\NuGet\\NuGet.Config",

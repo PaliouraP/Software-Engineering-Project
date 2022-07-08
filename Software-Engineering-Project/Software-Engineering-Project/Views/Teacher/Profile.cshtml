@@ -24,8 +24,8 @@
      <div class="menu" id="bmenu">       
         <a class="link" href="#">Home</a>
         <a class="link" href="#">Appointments</a>
-        <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@Model">Students</a>        
-        <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@Model">Profile</a>
+        <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@ViewBag.Username">Students</a>        
+        <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@ViewBag.Username">Profile</a>
      </div>
      <div class="burger">
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">

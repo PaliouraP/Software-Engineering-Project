@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fEFs+KguiqTD37vDW08wzBVD9xhAjclMsjPp8owoHqUjEzR99nK3d84lM+STbQABwbX7h9ncL5ln6HqBh1S8UQ==",
+  "dgSpecHash": "j5YpFwr9LGcjZOolH0Kq7BT/qg3+5Y7jRtAm6T82pjF/WQylcyds4zcJFlZU8MFPyx1xpisLIn5oOUQtw1UaOQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aboub\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
+  "projectFilePath": "C:\\Users\\aboub\\Downloads\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aboub\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\aboub\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
