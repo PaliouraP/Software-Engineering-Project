@@ -4,16 +4,54 @@
     ViewData["Title"] = "Add Meeting";
 }
 
+<!-- Stylesheet connection for TeacherHome page -->
+@section Styles {
+    <link rel="stylesheet" href="~/css/AddMeetingStyle.css" />
+    <link rel="stylesheet" href="~/css/NavbarStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/js/BurgerMenu.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="row">
-    <div class="col-md-4">
+}
+<section>
+<div class="content">
+<!-- Top Navigation Menu -->
+    <div class="topnav" >
+     <picture> 
+            <img src ="@Url.Content("~/images/unipi_logo.png")" />
+     </picture> 
+     <div class="menu_burger">
+     <div class="menu" id="bmenu">       
+        <a class="link" href="#">Home</a>
+        <a class="link" href="#">Appointments</a>
+        <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@Model">Students</a>        
+        <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@Model">Profile</a>
+     </div>
+     <div class="burger">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars fa-xxl"></i>    
+        </a>
+     </div>
+     </div>      
+</div>
+
+<div class="md">
+    <div class="add">
         <form asp-controller="Teacher" asp-action="AddMeeting" asp-route-proffesorName="@ViewBag.Username">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div><!--Used on the server side if the user has not entered correctly all the details-->
            
+            <h2 class="title">Schedule Appointment</h2>
+
             <!--Input student-->
             <div class="form-group">
                 <label asp-for="Student" class="control-label"></label>
-                <input asp-for="Student" value="" class="form-control" />
+                <select asp-for="Student" class="form-control" placeholder="Choose Student">
+                    <option value="in-person">Evi Palioura</option>
+                    <option value="online">Anastasia Boublini</option>
+                    <option value="online">Maria Petropoulou</option>
+                    <option value="online">Mirto Spatha</option>
+                    <option value="online">Ioakeim Bristogiannis</option>
+                </select>
                 <span asp-validation-for="Student" class="text-danger"></span>
             </div>
 
@@ -22,6 +60,19 @@
                 <label asp-for="DateTime" class="control-label"></label>
                 <input type="datetime-local" asp-for="DateTime" class="form-control" />
                 <span asp-validation-for="DateTime" class="text-danger"></span>
+            </div>
+
+            <!--Duration of meeting-->
+            <div class="form-group">
+                <label asp-for="Duration" class="control-label"></label>
+                <select asp-for="Duration" class="form-control">
+                    <option value="in-person">00:30 hour</option>
+                    <option value="online">01:00 hour</option>
+                    <option value="online">01:30 hour</option>
+                    <option value="online">02:00 hours</option>
+                    <option value="online">Fixed</option>
+                </select>
+                <span asp-validation-for="Duration" class="text-danger"></span>
             </div>
 
             <!--Input Type of meeting-->
@@ -34,13 +85,31 @@
                 <span asp-validation-for="Type" class="text-danger"></span>
             </div>
            
-            <!--Submit button -->
+            <!--Input student-->
             <div class="form-group">
-                <input type="submit" value="Add" class="btn btn-primary" />
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Student" value="" class="form-control" placeholder="Write something"/>
+                <span asp-validation-for="Description" class="text-danger"></span>
             </div>
+            <!--Submit button -->
+
+                <input type="submit" value="Schedule" class="btn btn-primary" />
+
         </form>
     </div>
 </div>
+
+    <!-- Image Container -->
+     <div class="image-container">
+        <div class="panel left-panel">
+            <img src="@Url.Content("~/images/Meeting_img.png")" alt="" class="image" />
+        </div>
+     </div>
+
+</div>
+</section>
+               
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
