@@ -35,70 +35,71 @@
              </div>      
         </div>
 
-
-<div class="card">
-	<img src="@Url.Content("~/images/hat.png")" alt="" class="icon" />
-	<h3 class="title">@Model[0].FirstName @Model[0].LastName</h3>
-	<h3 class="title">Undergraduate Student</h3>
-	<br />
-    <div class="container">
-        <table class="tbl">
-			@foreach (var item in Model) {
-			<tr>
-				<th>Student Id:</th>
-				<td> @item.Student</td>
-			</tr>
-			<tr>
-				<th>Start year:</th>
-				<td>@item.StartYear</td>
-			</tr>
-			<tr>
-				<th>First Name:</th>
-				<td>@item.FirstName</td>
-			</tr>
-			<tr>
-				<th>Last name:</th>
-				<td>@item.LastName</td>
-			</tr>
-			<tr>
-				<th>Email:</th>
-				<td>@item.Email</td>
-			</tr>
-			<tr>
-				<th>Phone number:</th>
-				<td>@item.Phone</td>
-			</tr>
-			<tr>
-				<th>Thesis title:
-				</th>
-				<td>@item.Title</td>
-			</tr>
-			<tr>
-				<th>Thesis start date:</th>
-				<td>@item.StartDate</td>
-			</tr>
-			<tr>
-				<th>Thesis grade:</th>
-				<td>@item.Grade</td>
-			</tr>
-			<tr>
-				<th>Thesis Language:</th>
-				<td>@item.Language</td>
-			</tr>
-			<tr>
-				<th>Thesis Technology:</th>
-				<td>@item.Technology</td>
-			</tr>
-			}
-		</table>
-		<br />
-    </div>
-</div>  
-   <div class="image-container">
-        <div class="panel left-panel">
-            <img src="@Url.Content("~/images/StudentHandler_img.png")" alt="" class="image" />
-        </div>
-     </div>
-</div>
+		<div class="view">
+		<div class="card">
+			<img src="@Url.Content("~/images/hat.png")" alt="" class="icon" />
+			<h3 class="title">@Model[0].FirstName @Model[0].LastName</h3>
+			<h3 class="title">Undergraduate Student</h3>
+			<br />
+			<div class="container">
+				<table class="tbl">
+					@foreach (var item in Model) {
+					<tr>
+						<th>Student Id:</th>
+						<td> @item.Student</td>
+					</tr>
+					<tr>
+						<th>Start year:</th>
+						<td>@item.StartYear</td>
+					</tr>
+					<tr>
+						<th>First Name:</th>
+						<td>@item.FirstName</td>
+					</tr>
+					<tr>
+						<th>Last name:</th>
+						<td>@item.LastName</td>
+					</tr>
+					<tr>
+						<th>Email:</th>
+						<td>@item.Email</td>
+					</tr>
+					<tr>
+						<th>Phone number:</th>
+						<td>@item.Phone</td>
+					</tr>
+					<tr>
+						<th>Thesis title:
+						</th>
+						<td>@item.Title</td>
+					</tr>
+					<tr>
+						<th>Thesis start date:</th>
+						<td>@item.StartDate</td>
+					</tr>
+					<tr>
+						<th>Thesis grade:</th>
+						<td>@item.Grade</td>
+					</tr>
+					<tr>
+						<th>Thesis Language:</th>
+						<td>@item.Language</td>
+					</tr>
+					<tr>
+						<th>Thesis Technology:</th>
+						<td>@item.Technology</td>
+					</tr>
+					}
+				</table>
+				<br />
+			</div>
+		</div>  
+		     <div class="image-container">
+				<div class="panel left-panel">
+					<img src="@Url.Content("~/images/StudentHandler_img.png")" alt="" class="image" />
+				</div>
+			 </div>
+		</div>
+		</div>
 
 </section>

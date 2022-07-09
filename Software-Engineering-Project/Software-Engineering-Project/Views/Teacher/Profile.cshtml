@@ -130,20 +130,29 @@
 <!--Reports Info-->
 
 <div class="reports_info">
-    <h1>Reports</h1>
+    <h1>Actions</h1>
+    <p class="explanation">Grading</p>
     <div class="buttons">
         <a href="javascript:void(0);" class="icon" >
-            <i class="fa fa-pencil"></i>    
+            <i class="fa fa-graduation-cap"></i>    
         </a>
-        <a class="link" asp-controller="Teacher" asp-action="GradeList" asp-route-username="@ViewBag.Username">Grade a thesis</a>
+        <a class="link" >Grading a Thesis</a>
     </div>
 
+    <p class="explanation">Reports</p>
     <div class="buttons">
         <a href="javascript:void(0);" class="icon" >
             <i class="fa fa-graduation-cap"></i>    
         </a>
         <a class="link" asp-controller="Teacher" asp-action="ThesisStartList" asp-route-username="@ViewBag.Username">Your Students</a>
     </div>
+    <div class="buttons">
+        <a href="javascript:void(0);" class="icon" >
+            <i class="fa fa-pencil"></i>    
+        </a>
+        <a class="link" asp-controller="Teacher" asp-action="GradeList" asp-route-username="@ViewBag.Username">Grading Statistics</a>
+    </div>
+
 </div>
 <div class="pic">
     <img src="@Url.Content("~/images/profile_img.png")" />
