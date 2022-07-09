@@ -8870,19 +8870,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maria\\.nuget\\packages\\": {}
+    "C:\\Users\\mirto\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maria\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
+      "projectUniqueName": "C:\\Mirto\\Πανεπιστήμιο\\Github\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
       "projectName": "Software-Engineering-Project",
-      "projectPath": "C:\\Users\\maria\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
-      "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maria\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\obj\\",
+      "projectPath": "C:\\Mirto\\Πανεπιστήμιο\\Github\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
+      "packagesPath": "C:\\Users\\mirto\\.nuget\\packages\\",
+      "outputPath": "C:\\Mirto\\Πανεπιστήμιο\\Github\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mirto\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8939,7 +8939,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -16,10 +16,10 @@
      </picture> 
      <div class="menu_burger">
      <div class="menu" id="bmenu">       
-       <a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="StudentHomePage">Home</a> 
+       <a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="StudentHome">Home</a> 
         <a class="link" href="#">Appointments</a> 
         <a class="link"  href="#">Upload a Thesis</a> 
-        <a class="link"  href="#">Thesis Status</a> 
+        <a class="link"  asp-controller="Student" asp-route-username="@Model" asp-action="ThesisStatus">Thesis Status</a> 
         <a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="Profile">Profile</a> 
      </div>
      <div class="burger">
@@ -30,3 +30,13 @@
      </div>      
 </div>
 <h1>Upload</h1>
+
+<form method="post" runat="server" EncType="multipart/form-data" asp-controller="Student" asp-route-username="@Model" asp-action="Upload">
+    <h3> Upload your final thesis: </h3>
+    <h3> (Format: zip file) </h3>
+    <INPUT id="oFile" type="file" runat="server" NAME="oFile">   
+    <asp:Button id="btnUpload" type="submit" text="Upload" runat="server"></asp:Button>
+        <asp:Panel ID="frmConfirmation" Visible="False" Runat="server">
+        <asp:Label id="lblUploadResult" Runat="server"></asp:Label>
+    </asp:Panel>
+</form>

@@ -6,22 +6,33 @@ namespace Software_Engineering_Project.Controllers
 {
     public class StudentController : Controller
     {
-        //public IActionResult StudentHome(string Username)
-        //{
-        //    ViewBag.Username = Username;
-        //    return View();
-        //}
+        public IActionResult StudentHome(string Username)
+        {
+            ViewBag.Username = Username;
+            return View();
+        }
 
         public IActionResult Upload(string Username) 
-        { 
+        {
+            ViewBag.Username = Username;
             return View();
+        }
+
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Upload()
+        {
+            //TEST
+            return View("StudentHome");
         }
 
         public IActionResult ThesisStatus(string Username)
         {
             StudentModel model = new();
             NpgsqlConnection conn = Database.Database.GetConnection();
-            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select title, thesis_start_date, professor, grade, language, technology from thesis where student = '{0}'; ", Username), conn);
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select title," +
+                " thesis_start_date, professor, grade, language, technology from thesis where student = '{0}'; ", Username), conn);
 
             while (reader.Read())
             {
@@ -35,7 +46,7 @@ namespace Software_Engineering_Project.Controllers
                 model.Professor = reader.GetString(6);
             }
             conn.Close();
-            return View();
+            return View(model);
         }
 
         public IActionResult Profile(string Username) 
