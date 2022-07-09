@@ -4,41 +4,90 @@
     ViewData["Title"] = "ThesisStartList";
 }
 
-<h1>ThesisStartList</h1>
 
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                First Name
-            </th>
-            <th>
-                Last Name
-            </th>
-            <th>
-                Start date
-            </th>
-            <th>More details</th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @item.FirstName
-            </td>
-            <td>
-                @item.LastName
-            </td>
-            <td>
-                @item.StartDate.ToString()
-            </td>
-            <td>
-                <a asp-controller="Teacher" asp-action="StudentSearch" asp-route-queryString="@item.FirstName @item.LastName"
-                asp-route-professorName="@item.Professor">click here</a>
-            </td>
-        </tr>
+<!-- Stylesheet connection for AddStudent page -->
+@section Styles {
+    <link rel="stylesheet" href="~/css/ThesisStartListStyle.css" />
+	<link rel="stylesheet" href="~/css/NavbarStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/js/BurgerMenu.js"></script>
 }
-    </tbody>
-</table>
+
+
+<section>
+<div class="content">
+
+    <!-- Top Navigation Menu -->
+            <div class="topnav" >
+                 <picture> 
+                        <img src ="@Url.Content("~/images/unipi_logo.png")" />
+                 </picture> 
+                 <div class="menu_burger">
+                 <div class="menu" id="bmenu">       
+                    <a class="link" href="#">Home</a>
+                    <a class="link" href="#">Appointments</a>
+                    <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@Model">Students</a>        
+                    <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@Model">Profile</a>
+                 </div>
+                 <div class="burger">
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars fa-xxl"></i>    
+                    </a>
+                 </div>
+                 </div>      
+            </div>
+
+    <div class="view">
+        <div class="card">
+            <br />
+            <img src="@Url.Content("~/images/hat.png")" alt="" class="icon" />
+			<h3 class="title">Your Students</h3>
+			<div class="container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Firstname
+                            </th>
+                            <th>
+                                Lastname
+                            </th>
+                            <th>
+                                Start date
+                            </th>
+                            <th>More details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                @foreach (var item in Model) {
+                        <tr>
+                            <td>
+                                @item.FirstName
+                            </td>
+                            <td>
+                                @item.LastName
+                            </td>
+                            <td>
+                                @item.StartDate.ToString()
+                            </td>
+                            <td>
+                                <a asp-controller="Teacher" asp-action="StudentSearch" asp-route-queryString="@item.FirstName @item.LastName"
+                                asp-route-professorName="@item.Professor">Click Here</a>
+                            </td>
+                        </tr>
+                }
+                    </tbody>
+                </table>
+            </div>
+            <br />
+        </div>
+
+        <div class="image-container">
+				<div class="panel left-panel">
+					<img src="@Url.Content("~/images/report.png")" alt="" class="image" />
+				</div>
+		</div>
+	</div>
+    </div>
+
+</section>
