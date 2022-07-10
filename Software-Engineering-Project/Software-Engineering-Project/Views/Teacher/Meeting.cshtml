@@ -12,6 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 }
 
+
+
 <section>
     <div class="content" >
 
@@ -38,11 +40,13 @@
 
 
         <div class="container">
-
+            
             <div class="info">
 
             <div class="calendar">
+                
                 <div class="month">
+
                     <i class="fas fa-angle-left prev"></i>
                     <div class="date">
                         <h1></h1>
@@ -59,15 +63,22 @@
                     <div>Fri</div>
                     <div>Sat</div>
                 </div>
-                <div class="days"></div>
-                <input type="submit" value="Schedule Meeting" class="btn btn-primary" />
+                <div class="days">
+                </div>
+                
+                <input type="submit" value="Schedule Meeting" class="btn btn-primary" onclick="window.location.href='Teacher/AddMeeting'" />
+            </div>
+            <!--<a asp-controller="Teacher" asp-action="AddMeeting" asp-route-username="@ViewBag.Username" class="btn btn-primary"> Schedule Meeting</a>-->
+
             </div>
 
+            <div class="dialog" id="dialog" title="Basic dialog">
+                <div class="dialogtext" id="dialogtext">
+                    <h2>Date</h2>
+                    <p>events of the day</p>
 
-
+                </div>
             </div>
-
-            <a asp-controller="Teacher" asp-action="AddMeeting" asp-route-username="@ViewBag.Username" class="btn"> New Meeting</a>
 
         </div>
 
