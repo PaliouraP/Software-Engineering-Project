@@ -1,4 +1,4 @@
-﻿
+﻿@model Software_Engineering_Project.Models.FileModel
 @{
     ViewData["Title"] = "Upload";
 }
@@ -16,11 +16,11 @@
      </picture> 
      <div class="menu_burger">
      <div class="menu" id="bmenu">       
-       <a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="StudentHome">Home</a> 
+       <a class="link" asp-controller="Student" asp-route-username="@ViewBag.Username" asp-action="StudentHome">Home</a> 
         <a class="link" href="#">Appointments</a> 
         <a class="link"  href="#">Upload a Thesis</a> 
-        <a class="link"  asp-controller="Student" asp-route-username="@Model" asp-action="ThesisStatus">Thesis Status</a> 
-        <a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="Profile">Profile</a> 
+        <a class="link"  asp-controller="Student" asp-route-username="@ViewBag.Username" asp-action="ThesisStatus">Thesis Status</a> 
+        <a class="link" asp-controller="Student" asp-route-username="@ViewBag.Username" asp-action="Profile">Profile</a> 
      </div>
      <div class="burger">
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -31,12 +31,93 @@
 </div>
 <h1>Upload</h1>
 
-<form method="post" runat="server" EncType="multipart/form-data" asp-controller="Student" asp-route-username="@Model" asp-action="Upload">
-    <h3> Upload your final thesis: </h3>
-    <h3> (Format: zip file) </h3>
-    <INPUT id="oFile" type="file" runat="server" NAME="oFile">   
-    <asp:Button id="btnUpload" type="submit" text="Upload" runat="server"></asp:Button>
-        <asp:Panel ID="frmConfirmation" Visible="False" Runat="server">
-        <asp:Label id="lblUploadResult" Runat="server"></asp:Label>
-    </asp:Panel>
+<!-- Upload the first draft -->
+<div id="version1">
+<form asp-controller="Student" asp-action="Upload" enctype="multipart/form-data" method="post">
+    <dl>
+        <dt>
+            <label asp-for="@Model.File"></label>
+        </dt>
+        <dd>
+            <input type="text" asp-for="@Model.Title">
+            <input type="date" asp-for="@Model.ThesisStartDate" />
+            <input type="text" asp-for="@Model.Language" />
+            <input type="text" asp-for="@Model.Technology" />
+            <input type="hidden" asp-for="@Model.version" value = "1">
+            <input type="hidden" asp-for="@Model.Username" value = "@ViewBag.Username">
+            <input asp-for="@Model.File" type="file" name = "file">
+            <span asp-validation-for="@Model.File"></span>
+        </dd>
+    </dl>
+    <input asp-page-handler="Upload" class="btn" type="submit" value="Upload" />
 </form>
+</div>
+
+<!-- Upload the second draft -->
+<form asp-controller="Student" asp-action="Upload" enctype="multipart/form-data" method="post" id="version2">
+    <dl>
+        <dt>
+            <label asp-for="@Model.File"></label>
+        </dt>
+        <dd>
+            <input type="hidden" asp-for="@Model.version" value = "2">
+            <input type="hidden" asp-for="@Model.Username" value = "@ViewBag.Username">
+            <input asp-for="@Model.File" type="file" name = "file">
+            <span asp-validation-for="@Model.File"></span>
+        </dd>
+    </dl>
+    <input asp-page-handler="Upload" class="btn" type="submit" value="Upload" />
+</form>
+
+<!-- Upload the final draft -->
+<form asp-controller="Student" asp-action="Upload" enctype="multipart/form-data" method="post" id="version3">
+    <dl>
+        <dt>
+            <label asp-for="@Model.File"></label>
+        </dt>
+        <dd>
+            <input type="hidden" asp-for="@Model.version" value = "3">
+            <input type="hidden" asp-for="@Model.Username" value = "@ViewBag.Username">
+            <input asp-for="@Model.File" type="file" name = "file">
+            <span asp-validation-for="@Model.File"></span>
+        </dd>
+    </dl>
+    <input asp-page-handler="Upload" class="btn" type="submit" value="Upload" />
+</form>
+
+@if (ViewBag.Success == true)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+    alert('Success');
+    }
+    </script>
+}
+
+@if (ViewBag.version1 != null && ViewBag.version1 == false)
+{
+    <script>
+        function demoDisplay() {
+            var form = document.getElementById("version1");
+            form.style.display = "none"; 
+        }
+    </script>
+}
+
+@if (ViewBag.version2 != null && ViewBag.version2 == false)
+{
+    <script>
+        function demoDisplay() {
+    document.getElementById("version2").style.display = "none";
+    }
+    </script>
+}
+
+@if (ViewBag.version3 != null && ViewBag.version3 == false)
+{
+    <script>
+        function demoDisplay() {
+    document.getElementById("version3").style.display = "none";
+    }
+    </script>
+}

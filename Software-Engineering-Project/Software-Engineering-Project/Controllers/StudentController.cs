@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Npgsql;
 using Software_Engineering_Project.Models;
+using System.IO.Compression;
 
 namespace Software_Engineering_Project.Controllers
 {
@@ -15,16 +16,92 @@ namespace Software_Engineering_Project.Controllers
         public IActionResult Upload(string Username) 
         {
             ViewBag.Username = Username;
-            return View();
+            ViewBag.Success = false;
+            NpgsqlConnection conn = Database.Database.GetConnection();
+            NpgsqlDataReader result = Database.Database.ExecuteQuery(String.Format("select upload1,upload2,upload3 from student where student='{0}';", Username), conn);
+            if (result.Read())
+            {
+                if ((byte[])result[0] != null)
+                {
+                    ViewBag.version1 = false;
+                }
+                else if ((byte[])result[1] != null)
+                {
+                    ViewBag.version2 = false;
+                }
+                else if((byte[])result[2] != null)
+                {
+                    ViewBag.version3 = false;
+                }
+            }
+                return View();
         }
 
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Upload()
-        {
-            //TEST
-            return View("StudentHome");
+        public IActionResult Upload(FileModel model)
+        { 
+            MemoryStream target = new MemoryStream();
+            model.File.CopyTo(target); 
+            byte[] bytes = target.ToArray();
+            NpgsqlConnection conn1 = Database.Database.GetConnection();
+            
+            if (model.Title != null)
+            {
+
+            }
+            
+
+
+            int result1 = Database.Database.ExecuteUpdate(String.Format("update student set upload"+ model.version +"= '{0}' where student = '{1}';", bytes, model.Username), conn1);
+            if (result1 != 0)
+            {
+                conn1.Close();
+                ViewBag.Success = true;
+                ViewBag.Username = model.Username;
+                NpgsqlConnection conn = Database.Database.GetConnection();
+                NpgsqlDataReader result = Database.Database.ExecuteQuery(String.Format("select upload1,upload2,upload3 from student where student='{0}';", model.Username), conn);
+                if (result.Read())
+                {
+                    if ((byte[])result[0] != null)
+                    {
+                        ViewBag.version1 = false;
+                    }
+                    else if ((byte[])result[1] != null)
+                    {
+                        ViewBag.version2 = false;
+                    }
+                    else if ((byte[])result[2] != null)
+                    {
+                        ViewBag.version3 = false;
+                    }
+                }
+                return View();
+            }
+            conn1.Close();
+            ViewBag.Success = false;
+            ViewBag.Username = model.Username;
+
+            NpgsqlConnection conn2 = Database.Database.GetConnection();
+            NpgsqlDataReader result2 = Database.Database.ExecuteQuery(String.Format("select upload1,upload2,upload3 from student where student='{0}';", model.Username), conn2);
+            if (result2.Read())  
+            {
+                if ((byte[]) result2[0] != null)
+                {
+                    ViewBag.version1 = false;
+                }
+                else if ((byte[])result2[0] != null)
+                {
+                    ViewBag.version2 = false;
+                }
+                else if ((byte[])result2[0] != null)
+                {
+                    ViewBag.version3 = false;
+                }
+            }
+
+            return View();
         }
 
         public IActionResult ThesisStatus(string Username)
