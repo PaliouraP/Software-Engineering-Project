@@ -17,24 +17,8 @@ namespace Software_Engineering_Project.Controllers
         {
             ViewBag.Username = Username;
             ViewBag.Success = false;
-            NpgsqlConnection conn = Database.Database.GetConnection();
-            NpgsqlDataReader result = Database.Database.ExecuteQuery(String.Format("select upload1,upload2,upload3 from student where student='{0}';", Username), conn);
-            if (result.Read())
-            {
-                if ((byte[])result[0] != null)
-                {
-                    ViewBag.version1 = false;
-                }
-                else if ((byte[])result[1] != null)
-                {
-                    ViewBag.version2 = false;
-                }
-                else if((byte[])result[2] != null)
-                {
-                    ViewBag.version3 = false;
-                }
-            }
-                return View();
+            FormHidingHandler(Username);
+            return View();
         }
 
         //POST
@@ -45,63 +29,46 @@ namespace Software_Engineering_Project.Controllers
             MemoryStream target = new MemoryStream();
             model.File.CopyTo(target); 
             byte[] bytes = target.ToArray();
-            NpgsqlConnection conn1 = Database.Database.GetConnection();
-            
-            if (model.Title != null)
+
+            // inserts the student's thesis data to db
+            // (this code is only executed when the first form is displayed which means that the first upload is not done yet)
+            if (model.Title != null && model.Language != null && model.ThesisStartDate != null && model.Technology != null)
             {
-
+                NpgsqlConnection conn = Database.Database.GetConnection();
+                NpgsqlDataReader result = Database.Database.ExecuteQuery(String.Format("select professor from student where student = '{0}';", model.Username), conn);
+                if (result.Read())
+                {
+                    model.Professor = result.GetString(0);
+                }
+                NpgsqlConnection conn_1 = Database.Database.GetConnection();
+                int result_1 = Database.Database.ExecuteUpdate(String.Format("insert into thesis (professor, student, title, thesis_start_date, language, technology)" +
+                    " values ('{0}','{1}','{2}','{3}','{4}','{5}');",
+                    model.Professor, model.Username, model.Title, model.ThesisStartDate, model.Language, model.Technology), conn_1);
+                if (result_1 != 0)
+                {
+                    conn_1.Close();
+                }
+                conn.Close();
             }
-            
 
-
+            NpgsqlConnection conn1 = Database.Database.GetConnection();
             int result1 = Database.Database.ExecuteUpdate(String.Format("update student set upload"+ model.version +"= '{0}' where student = '{1}';", bytes, model.Username), conn1);
             if (result1 != 0)
             {
                 conn1.Close();
                 ViewBag.Success = true;
                 ViewBag.Username = model.Username;
-                NpgsqlConnection conn = Database.Database.GetConnection();
-                NpgsqlDataReader result = Database.Database.ExecuteQuery(String.Format("select upload1,upload2,upload3 from student where student='{0}';", model.Username), conn);
-                if (result.Read())
-                {
-                    if ((byte[])result[0] != null)
-                    {
-                        ViewBag.version1 = false;
-                    }
-                    else if ((byte[])result[1] != null)
-                    {
-                        ViewBag.version2 = false;
-                    }
-                    else if ((byte[])result[2] != null)
-                    {
-                        ViewBag.version3 = false;
-                    }
-                }
+                FormHidingHandler(model.Username);
                 return View();
             }
-            conn1.Close();
-            ViewBag.Success = false;
-            ViewBag.Username = model.Username;
-
-            NpgsqlConnection conn2 = Database.Database.GetConnection();
-            NpgsqlDataReader result2 = Database.Database.ExecuteQuery(String.Format("select upload1,upload2,upload3 from student where student='{0}';", model.Username), conn2);
-            if (result2.Read())  
+            else
             {
-                if ((byte[]) result2[0] != null)
-                {
-                    ViewBag.version1 = false;
-                }
-                else if ((byte[])result2[0] != null)
-                {
-                    ViewBag.version2 = false;
-                }
-                else if ((byte[])result2[0] != null)
-                {
-                    ViewBag.version3 = false;
-                }
+                conn1.Close();
+                ViewBag.Success = false;
+                ViewBag.Username = model.Username;
+                FormHidingHandler(model.Username);
+                return View();
             }
-
-            return View();
         }
 
         public IActionResult ThesisStatus(string Username)
@@ -290,6 +257,29 @@ namespace Software_Engineering_Project.Controllers
                 }
             }
                         return View("SetPassword", Username);
+        }
+
+        public void FormHidingHandler(string Username)
+        {
+            //query to check whether the student has uploaded anything to hide the equivalent form
+            NpgsqlConnection conn = Database.Database.GetConnection();
+            NpgsqlDataReader result = Database.Database.ExecuteQuery(String.Format("select upload1,upload2,upload3 from student where student='{0}';", Username), conn);
+            if (result.Read())
+            {
+                if ((byte[])result[0] != null)
+                {
+                    ViewBag.version1 = false;
+                }
+                if ((byte[])result[1] != null)
+                {
+                    ViewBag.version2 = false;
+                }
+                if ((byte[])result[2] != null)
+                {
+                    ViewBag.version3 = false;
+                }
+            }
+            conn.Close();
         }
     }
 }
