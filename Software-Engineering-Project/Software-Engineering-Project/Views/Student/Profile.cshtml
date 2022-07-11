@@ -21,10 +21,10 @@
      </picture> 
      <div class="menu_burger">
      <div class="menu" id="bmenu">       
-        <a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="StudentHome">Home</a> 
+        <a class="link" asp-controller="Student" asp-route-username="@Model.Username" asp-action="StudentHome">Home</a> 
         <a class="link" href="#">Appointments</a> 
-        <a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="Upload">Upload a Thesis</a> 
-        <a class="link" asp-controller="Student" asp-route-username="@Model" asp-action="ThesisStatus">Thesis Status</a> 
+        <a class="link" asp-controller="Student" asp-route-username="@Model.Username" asp-action="Upload">Upload a Thesis</a> 
+        <a class="link" asp-controller="Student" asp-route-username="@Model.Username" asp-action="ThesisStatus">Thesis Status</a> 
         <a class="link" href="#">Profile</a> 
      </div>
      <div class="burger">

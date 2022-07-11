@@ -1,4 +1,4 @@
-﻿@model Software_Engineering_Project.Models.FileModel
+﻿@model Software_Engineering_Project.Models.ThesisModel
 @{
     ViewData["Title"] = "Upload";
 }
@@ -39,10 +39,15 @@
             <label asp-for="@Model.File"></label>
         </dt>
         <dd>
+            <h3>Add the title of your thesis:</h3>
             <input type="text" asp-for="@Model.Title">
+            <h3>Choose the date you started your thesis:</h3>
             <input type="date" asp-for="@Model.ThesisStartDate" />
+            <h3>Fill in the language your thesis is written at: (Greek, English, etc.) </h3>
             <input type="text" asp-for="@Model.Language" />
+            <h3>Add the technology your thesis is developped with:</h3>
             <input type="text" asp-for="@Model.Technology" />
+            <h3>Upload the first part of your thesis:</h3>
             <input type="hidden" asp-for="@Model.version" value = "1">
             <input type="hidden" asp-for="@Model.Username" value = "@ViewBag.Username">
             <input asp-for="@Model.File" type="file" name = "file">
@@ -60,6 +65,7 @@
             <label asp-for="@Model.File"></label>
         </dt>
         <dd>
+            <h3>Upload the second part of your thesis:</h3>
             <input type="hidden" asp-for="@Model.version" value = "2">
             <input type="hidden" asp-for="@Model.Username" value = "@ViewBag.Username">
             <input asp-for="@Model.File" type="file" name = "file">
@@ -76,6 +82,7 @@
             <label asp-for="@Model.File"></label>
         </dt>
         <dd>
+            <h3>Upload your finalised thesis:</h3>
             <input type="hidden" asp-for="@Model.version" value = "3">
             <input type="hidden" asp-for="@Model.Username" value = "@ViewBag.Username">
             <input asp-for="@Model.File" type="file" name = "file">

@@ -1,0 +1,84 @@
+﻿@model Software_Engineering_Project.Models.ThesisModel
+
+@{
+    ViewData["Title"] = "ThesisStatus";
+}
+
+@section Styles{
+        <link rel="stylesheet" href="~/css/StudentProfile.css" />        
+        <link rel="stylesheet" href="~/css/NavbarStyle.css" />
+        <script src="~/js/BurgerMenu.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+}
+
+<!-- Top Navigation Menu -->
+<div class="topnav" >
+     <picture> 
+            <img src ="@Url.Content("~/images/unipi_logo.png")" />
+     </picture> 
+     <div class="menu_burger">
+     <div class="menu" id="bmenu">       
+       <a class="link" asp-controller="Student" asp-route-username="@Model.Username" asp-action="StudentHome">Home</a> 
+        <a class="link" href="#">Appointments</a> 
+        <a class="link" asp-controller="Student" asp-route-username="@Model.Username" asp-action="Upload">Upload a Thesis</a> 
+        <a class="link" href="#">Thesis Status</a> 
+        <a class="link" asp-controller="Student" asp-route-username="@Model.Username" asp-action="Profile">Profile</a> 
+     </div>
+     <div class="burger">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars fa-xxl"></i>    
+        </a>
+     </div>
+     </div>      
+</div>
+
+<h1>ThesisStatus</h1>
+
+<div>
+    <h4>ThesisModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Professor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Professor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Grade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Grade)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Language)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Language)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Technology)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Technology)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

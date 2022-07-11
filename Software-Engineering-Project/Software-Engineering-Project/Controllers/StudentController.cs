@@ -24,7 +24,7 @@ namespace Software_Engineering_Project.Controllers
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Upload(FileModel model)
+        public IActionResult Upload(ThesisModel model)
         { 
             MemoryStream target = new MemoryStream();
             model.File.CopyTo(target); 
@@ -52,7 +52,7 @@ namespace Software_Engineering_Project.Controllers
             }
 
             NpgsqlConnection conn1 = Database.Database.GetConnection();
-            int result1 = Database.Database.ExecuteUpdate(String.Format("update student set upload"+ model.version +"= '{0}' where student = '{1}';", bytes, model.Username), conn1);
+            int result1 = Database.Database.ExecuteUpdate(String.Format("update thesis set upload"+ model.version +"= '{0}' where student = '{1}';", bytes, model.Username), conn1);
             if (result1 != 0)
             {
                 conn1.Close();
@@ -71,23 +71,45 @@ namespace Software_Engineering_Project.Controllers
             }
         }
 
+        public void FormHidingHandler(string Username)
+        {
+            //query to check whether the student has uploaded anything to hide the equivalent form
+            NpgsqlConnection conn = Database.Database.GetConnection();
+            NpgsqlDataReader result = Database.Database.ExecuteQuery(String.Format("select upload1,upload2,upload3 from thesis where student='{0}';", Username), conn);
+            if (result.Read())
+            {
+                if (!Convert.IsDBNull(result[0]))
+                {
+                    ViewBag.version1 = false;
+                }
+                if (!Convert.IsDBNull(result[1]))
+                {
+                    ViewBag.version2 = false;
+                }
+                if (!Convert.IsDBNull(result[2]))
+                { 
+                    ViewBag.version3 = false;
+                }
+            }
+            conn.Close();
+        }
+
         public IActionResult ThesisStatus(string Username)
         {
-            StudentModel model = new();
+            ThesisModel model = new();
             NpgsqlConnection conn = Database.Database.GetConnection();
-            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select title," +
-                " thesis_start_date, professor, grade, language, technology from thesis where student = '{0}'; ", Username), conn);
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select professor, title," +
+                " thesis_start_date, grade, language, technology from thesis where student = '{0}'; ", Username), conn);
 
             while (reader.Read())
             {
                 model.Username = Username;
-                model.FirstName = reader.GetString(0);
-                model.LastName = reader.GetString(1);
-                model.Gender = reader.GetString(2);
-                model.Email = reader.GetString(3);
-                model.Phone = reader.GetDecimal(4).ToString();
-                model.StartYear = reader.GetInt32(5);
-                model.Professor = reader.GetString(6);
+                model.Professor = reader.GetString(0);
+                model.Title = reader.GetString(1);
+                model.ThesisStartDate = (DateOnly) reader.GetDate(2);
+                model.Grade = reader.GetInt32(3);
+                model.Language = reader.GetString(4);
+                model.Technology = reader.GetString(5);
             }
             conn.Close();
             return View(model);
@@ -259,27 +281,5 @@ namespace Software_Engineering_Project.Controllers
                         return View("SetPassword", Username);
         }
 
-        public void FormHidingHandler(string Username)
-        {
-            //query to check whether the student has uploaded anything to hide the equivalent form
-            NpgsqlConnection conn = Database.Database.GetConnection();
-            NpgsqlDataReader result = Database.Database.ExecuteQuery(String.Format("select upload1,upload2,upload3 from student where student='{0}';", Username), conn);
-            if (result.Read())
-            {
-                if ((byte[])result[0] != null)
-                {
-                    ViewBag.version1 = false;
-                }
-                if ((byte[])result[1] != null)
-                {
-                    ViewBag.version2 = false;
-                }
-                if ((byte[])result[2] != null)
-                {
-                    ViewBag.version3 = false;
-                }
-            }
-            conn.Close();
-        }
     }
 }
