@@ -232,7 +232,7 @@ namespace Software_Engineering_Project.Controllers
 
         public IActionResult ThesisStartList(string username)
         {
-            List<ThesisStartModel> models = new();
+            List<ThesisModel> models = new();
 
             NpgsqlConnection conn = Database.Database.GetConnection();
             NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select first_name, last_name, thesis_start_date " +
@@ -241,11 +241,11 @@ namespace Software_Engineering_Project.Controllers
 
             while (reader.Read())
             {
-                ThesisStartModel model = new();
+                ThesisModel model = new();
                 model.Professor = username;
                 model.FirstName = reader.GetString(0);
                 model.LastName = reader.GetString(1);
-                model.StartDate = (DateOnly)reader.GetDate(2);
+                model.ThesisStartDate = (DateOnly)reader.GetDate(2);
                 models.Add(model);
             }
             conn.Close();
