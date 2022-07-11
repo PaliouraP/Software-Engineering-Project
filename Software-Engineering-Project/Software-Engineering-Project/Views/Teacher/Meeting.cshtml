@@ -1,4 +1,5 @@
-﻿@model Software_Engineering_Project.Models.MeetingModel
+﻿@model List<Software_Engineering_Project.Models.MeetingModel>
+
 @{
     ViewData["Title"] = "Meeting";
 }
@@ -66,7 +67,10 @@
                 <div class="days">
                 </div>
                 
-                <input type="submit" value="Schedule Meeting" class="btn btn-primary" onclick="window.location.href='Teacher/AddMeeting'" />
+                <input type="submit" value="Schedule Meeting" class="btn btn-primary" onclick="window.location.href='Teacher/AddMeeting' " />
+                <a  asp-controller="Teacher" asp-action="AddMeeting" asp-route-username="@ViewBag.Username" >
+                    Schedule Meeting
+                </a>
             </div>
             <!--<a asp-controller="Teacher" asp-action="AddMeeting" asp-route-username="@ViewBag.Username" class="btn btn-primary"> Schedule Meeting</a>-->
 
@@ -74,8 +78,38 @@
 
             <div class="dialog" id="dialog" title="Basic dialog">
                 <div class="dialogtext" id="dialogtext">
+                    <i class="fa-solid fa-circle-xmark fa-2xl" onclick="closePopup()"></i>
                     <h2>Date</h2>
                     <p>events of the day</p>
+                    <p>@ViewBag.Username</p>
+                    <form asp-controller="Teacher" asp-action="SearchMeeting" asp-route-username="@ViewBag.Username"></form>
+                    @if(Model!=null)
+                    {
+                        <table class="tbl">
+					    @foreach (var item in Model) {
+					        <tr>
+						        <th>Student Id</th>
+                                <th>Date and Time</th>
+                                <th>Duration</th>
+                                <th>Type</th>
+                                <th>Title</th>
+						        
+					        </tr>
+					        <tr>
+						        <td> @item.Student</td>
+						        <td> @item.DateTime</td> <!-- shows utc time so we should add 3 hours-->
+                                <td> @item.Duration</td>
+                                <td> @item.Type</td>
+                                <td> @item.Description</td>
+					        </tr>
+					    }
+                        </table>
+                    } else
+                    {
+                        <p>No meetings on this date!</p>
+                    }
+
+
 
                 </div>
             </div>

@@ -19,11 +19,13 @@ namespace Software_Engineering_Project.Controllers
 
         public IActionResult Meeting(string username)
         {
+            ViewBag.Username = username;
             return View();
         }
 
         public IActionResult AddMeeting(string username)
         {
+            ViewBag.Username = username;
             return View();
         }
 
@@ -37,6 +39,29 @@ namespace Software_Engineering_Project.Controllers
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
+        public IActionResult AddMeeting(MeetingModel model, string proffesorName)
+        {
+            model.Professor = proffesorName;
+            if (ModelState.IsValid)
+            {
+                NpgsqlConnection conn = Database.Database.GetConnection();
+                int result = Database.Database.ExecuteUpdate(String.Format("insert into meeting (professor, student, type" +
+                    ", duration, title, meet_date) values ('{0}','{1}','{2}','{3}','{4}','{5}');",
+                   model.Professor, model.Student, model.Type, model.Duration, model.Description, model.DateTime), conn);
+                if (result != 0)
+                {
+                    conn.Close();
+                    ViewBag.Success = true;
+                    return View();
+                }
+                conn.Close();
+            }
+            ViewBag.Success = false;
+            return View();
+
+        }
+
+
         public IActionResult AddStudent(StudentModel model, string proffesorName)
         {
             model.Professor = proffesorName;
@@ -125,6 +150,31 @@ namespace Software_Engineering_Project.Controllers
                 conn.Close();
             }
             return View(searchModels);
+        }
+
+        public IActionResult SearchMeeting(string professorName)
+        {
+            List<MeetingModel> meetingModels = new List<MeetingModel>();
+
+            NpgsqlConnection conn = Database.Database.GetConnection();
+
+                NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("SELECT student, " +
+                    "type, duration, title, meet_date FROM meeting WHERE professor='"+ professorName + "'"), conn);
+
+                while (reader.Read())
+                {
+                    MeetingModel model = new MeetingModel();
+                    model.Student = reader.GetString(0);
+                    model.Type = reader.GetString(1);
+                    model.Duration = reader.GetString(2);
+                    model.Description = reader.GetString(3);
+                    model.DateTime = reader.GetTimeStamp(4).ToString();
+
+                    meetingModels.Add(model);
+                }
+            ViewBag.popup = true;
+                conn.Close();
+            return View("Meeting", meetingModels);
         }
     }
 }

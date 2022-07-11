@@ -59,9 +59,9 @@ const renderCalendar = () => {
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
-        days += `<div class="today" id="${i}" onclick="myFunction()">${i}</div>`;
+        days += `<div class="today" id="${i}" onclick="popup()">${i}</div>`;
     } else {
-        days += `<div id="${i}" onclick="myFunction()">${i}</div>`;
+        days += `<div id="${i}" onclick="popup()">${i}</div>`;
       }
   }
 
@@ -86,9 +86,14 @@ document.querySelector(".next").addEventListener("click", () => {
 
 renderCalendar();
 
-function myFunction() {
-    //alert("Good Job :)");
-    //$("#dialog").dialog();
+function popup() {
     var dialog = document.getElementById("dialogtext");
     dialog.classList.toggle("show");
+    console.log("opened popup");
+}
+
+function closePopup() {
+    var dialog = document.getElementById("dialogtext");
+    dialog.classList.toggle("hide");
+    console.log("closed popup");
 }

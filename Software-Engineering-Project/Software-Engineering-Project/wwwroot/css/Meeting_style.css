@@ -206,8 +206,26 @@ body, input {
     /* Toggle this class - hide and show the popup */
     .dialog .show {
         visibility: visible;
-        -webkit-animation: fadeIn 1s;
-        animation: fadeIn 1s;
+        -webkit-animation: fadeIn 2s;
+        animation: fadeIn 2s;
+    }
+/*
+    .dialog .hide {
+        visibility: hidden;
+        -webkit-animation: fadeIn 2s;
+        animation: fadeIn 2s;
+    }
+*/
+
+.dialogtext i {
+    color: #000;
+    float: right;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .dialogtext i:hover {
+        color: #067BC2;
     }
 
 /* Add animation (fade in the popup) */
@@ -229,4 +247,16 @@ body, input {
     to {
         opacity: 1;
     }
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
