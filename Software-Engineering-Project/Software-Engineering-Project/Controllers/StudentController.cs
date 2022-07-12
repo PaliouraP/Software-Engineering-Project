@@ -281,5 +281,39 @@ namespace Software_Engineering_Project.Controllers
                         return View("SetPassword", Username);
         }
 
+        //GET
+        public IActionResult Meeting(string Username)
+        {
+            ViewBag.Username = Username;
+            return View("Meeting");
+        }
+
+        //POST
+        public IActionResult SearchMeeting(string selected_month, string selected_day, string Username)
+        {
+            List<MeetingModel> meetingModels = new List<MeetingModel>();
+
+            NpgsqlConnection conn = Database.Database.GetConnection();
+
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("SELECT professor, " +
+                "type, duration, title, meet_date FROM meeting WHERE student='{0}' "
+                + "and EXTRACT(month FROM meet_date)='{2}' and EXTRACT(day FROM meet_date)='{1}'", Username, selected_day, selected_month), conn);
+
+            while (reader.Read())
+            {
+                MeetingModel model = new MeetingModel();
+                model.Professor = reader.GetString(0);
+                model.Type = reader.GetString(1);
+                model.Duration = reader.GetString(2);
+                model.Title = reader.GetString(3);
+                model.DateTime = reader.GetDateTime(4);
+
+                meetingModels.Add(model);
+            }
+            ViewBag.popup = true;
+            ViewBag.Username = Username;
+            conn.Close();
+            return View("Meeting", meetingModels);
+        }
     }
 }
