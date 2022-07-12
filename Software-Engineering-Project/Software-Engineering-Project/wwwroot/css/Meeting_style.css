@@ -195,7 +195,7 @@ body, input {
         box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
         text-align: center;
         border-radius: 20px;
-        padding: 8px 0;
+        padding: 8px 10px;
         position: absolute;
         z-index: 1;
         bottom: 125%;
@@ -206,16 +206,10 @@ body, input {
     /* Toggle this class - hide and show the popup */
     .dialog .show {
         visibility: visible;
-        -webkit-animation: fadeIn 2s;
-        animation: fadeIn 2s;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
     }
-/*
-    .dialog .hide {
-        visibility: hidden;
-        -webkit-animation: fadeIn 2s;
-        animation: fadeIn 2s;
-    }
-*/
+
 
 .dialogtext i {
     color: #000;

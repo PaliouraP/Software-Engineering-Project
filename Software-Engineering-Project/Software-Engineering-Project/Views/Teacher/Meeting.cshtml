@@ -50,7 +50,7 @@
 
                     <i class="fas fa-angle-left prev"></i>
                     <div class="date">
-                        <h1></h1>
+                        <h1 id="month"></h1>
                         <p></p>
                     </div>
                     <i class="fas fa-angle-right next"></i>
@@ -75,18 +75,22 @@
             <!--<a asp-controller="Teacher" asp-action="AddMeeting" asp-route-username="@ViewBag.Username" class="btn btn-primary"> Schedule Meeting</a>-->
 
             </div>
-
-            <div class="dialog" id="dialog" title="Basic dialog">
+            
+            <div class="dialog" id="dialog">
                 <div class="dialogtext" id="dialogtext">
-                    <i class="fa-solid fa-circle-xmark fa-2xl" onclick="closePopup()"></i>
-                    <h2>Date</h2>
-                    <p>events of the day</p>
-                    <p>@ViewBag.Username</p>
-                    <form asp-controller="Teacher" asp-action="SearchMeeting" asp-route-username="@ViewBag.Username"></form>
+                    <form asp-controller="Teacher" asp-action="SearchMeeting" asp-route-username="@ViewBag.Username" method="post">
+                    <i class="fa-solid fa-circle-xmark fa-2xl" onclick="popup()"></i>
+                       
+                    <h2 id="selected_month" name="selected_month"></h2>
+                    <h2 id="selected_day" name="selected_day"></h2>
+                    <br />
+                    
+                    
+                    
                     @if(Model!=null)
                     {
                         <table class="tbl">
-					    @foreach (var item in Model) {
+					    
 					        <tr>
 						        <th>Student Id</th>
                                 <th>Date and Time</th>
@@ -95,6 +99,7 @@
                                 <th>Title</th>
 						        
 					        </tr>
+                        @foreach (var item in Model) {
 					        <tr>
 						        <td> @item.Student</td>
 						        <td> @item.DateTime</td> <!-- shows utc time so we should add 3 hours-->
@@ -109,7 +114,7 @@
                         <p>No meetings on this date!</p>
                     }
 
-
+                    </form>
 
                 </div>
             </div>

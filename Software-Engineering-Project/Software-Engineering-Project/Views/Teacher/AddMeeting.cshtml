@@ -44,27 +44,24 @@
 
             <!--Input student-->
             <div class="form-group">
-                <label asp-for="Student" class="control-label"></label>
+                <label asp-for="Student" class="control-label"></label> <!--asp-for="Student"-->
                 <select asp-for="Student" class="form-control" placeholder="Choose Student">
-                    <option value="in-person">Evi Palioura</option>
-                    <option value="online">Anastasia Boublini</option>
-                    <option value="online">Maria Petropoulou</option>
-                    <option value="online">Mirto Spatha</option>
-                    <option value="online">Ioakeim Bristogiannis</option>
+                        <option value="">--</option>
+                    
                 </select>
-                <span asp-validation-for="Student" class="text-danger"></span>
+                <span asp-validation-for="Student" class="text-danger"></span> <!--asp-validation-for="Student"-->
             </div>
 
             <!--Input Date Time-->
             <div class="form-group">
-                <label asp-for="DateTime" class="control-label"></label>
-                <input type="datetime-local" asp-for="DateTime" class="form-control" />
-                <span asp-validation-for="DateTime" class="text-danger"></span>
+                <label asp-for="DateTime" class="control-label"></label> <!--asp-for="DateTime"-->
+                <input asp-for="DateTime" type="datetime-local" class="form-control" />
+                <span asp-validation-for="DateTime" class="text-danger"></span> <!--asp-validation-for="DateTime"-->
             </div>
 
             <!--Duration of meeting-->
             <div class="form-group">
-                <label asp-for="Duration" class="control-label"></label>
+                <label asp-for="Duration" class="control-label"></label> <!--asp-validation-for="Duration"-->
                 <select asp-for="Duration" class="form-control">
                     <option value="in-person">00:30 hour</option>
                     <option value="online">01:00 hour</option>
@@ -77,7 +74,7 @@
 
             <!--Input Type of meeting-->
             <div class="form-group">
-                <label asp-for="Type" class="control-label"></label>
+                <label asp-for="Type" class="control-label"></label> <!--asp-validation-for="Type"-->
                 <select asp-for="Type" class="form-control">
                     <option value="in-person">In Person</option>
                     <option value="online">Online</option>
@@ -87,9 +84,9 @@
            
             <!--Input student-->
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Student" value="" class="form-control" placeholder="Write something"/>
-                <span asp-validation-for="Description" class="text-danger"></span>
+                <label asp-for="Description" class="control-label"></label> <!--asp-validation-for="Description"-->
+                <input asp-for="Description" value="" class="form-control" placeholder="Write something"/>
+                <span  asp-validation-for="Description" class="text-danger"></span>
             </div>
             <!--Submit button -->
 

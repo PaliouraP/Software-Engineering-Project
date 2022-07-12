@@ -43,9 +43,10 @@ const renderCalendar = () => {
     "December",
   ];
 
-  document.querySelector(".date h1").innerHTML = months[date.getMonth()];
+    document.querySelector(".date h1").innerHTML = months[date.getMonth()];
 
   document.querySelector(".date p").innerHTML = new Date().toDateString();
+
 
   let days = "";
 
@@ -59,9 +60,9 @@ const renderCalendar = () => {
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
-        days += `<div class="today" id="${i}" onclick="popup()">${i}</div>`;
+        days += `<div class="today" id="${i}" onclick="popup(this.id)">${i}</div>`;
     } else {
-        days += `<div id="${i}" onclick="popup()">${i}</div>`;
+        days += `<div id="${i}" onclick="popup(this.id)">${i}</div>`;
       }
   }
 
@@ -86,14 +87,23 @@ document.querySelector(".next").addEventListener("click", () => {
 
 renderCalendar();
 
-function popup() {
-    var dialog = document.getElementById("dialogtext");
-    dialog.classList.toggle("show");
-    console.log("opened popup");
+function dateFunction(day_id) {
+    var month = document.getElementById("month");
+    //if (day_id == 1 || day_id == 21 || day_id == 31) {
+    document.getElementById("selected_day").innerText = day_id; // + "st of " + month.innerText;
+    document.getElementById("selected_month").innerText = month.innerText;
+    /*} else if (day_id == 2 || day_id == 22) {
+        document.getElementById("selected_date").innerText = day_id + "nd of " + month.innerText;
+    } else if (day_id == 3 || day_id == 23) {
+        document.getElementById("selected_date").innerText = day_id + "rd of " + month.innerText;
+    } else {
+        document.getElementById("selected_date").innerText = day_id + "th of " + month.innerText;
+    }*/
 }
 
-function closePopup() {
+function popup(clicked_id) {
     var dialog = document.getElementById("dialogtext");
-    dialog.classList.toggle("hide");
-    console.log("closed popup");
+    dialog.classList.toggle("show");
+    dateFunction(clicked_id);
 }
+

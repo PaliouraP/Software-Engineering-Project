@@ -86,6 +86,29 @@ namespace Software_Engineering_Project.Controllers
 
         }
 
+        public IActionResult SearchMeetingStudent(string Username)
+        {
+            List<SearchModel> searchModels = new List<SearchModel>();
+
+            NpgsqlConnection conn = Database.Database.GetConnection();
+
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("SELECT student, first_name, last_name" +
+                "FROM student NATURAL JOIN users where professor = 'professor'"), conn);
+
+            while (reader.Read())
+            {
+                SearchModel model = new SearchModel();
+                model.Student = reader.GetString(0);
+                model.FirstName = reader.GetString(1);
+                model.LastName = reader.GetString(2);
+
+                searchModels.Add(model);
+            }
+            conn.Close();
+            return View("AddMeeting", searchModels);
+
+        }
+
         public IActionResult StudentSearch(string queryString, string professorName)
         {
             List<SearchModel> searchModels = new List<SearchModel>();
@@ -152,14 +175,20 @@ namespace Software_Engineering_Project.Controllers
             return View(searchModels);
         }
 
-        public IActionResult SearchMeeting(string professorName)
+        public IActionResult SearchMeeting(string selected_month, int selected_day,  string Username)
         {
+            selected_day += 13;
+            System.Diagnostics.Debug.WriteLine("this " + selected_month);
+
+            //string selected_month, string selected_day, 
             List<MeetingModel> meetingModels = new List<MeetingModel>();
 
             NpgsqlConnection conn = Database.Database.GetConnection();
 
                 NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("SELECT student, " +
-                    "type, duration, title, meet_date FROM meeting WHERE professor='"+ professorName + "'"), conn);
+                    "type, duration, title, meet_date FROM meeting WHERE professor='{0}' "
+                    + "and EXTRACT(month FROM meet_date)='7' and EXTRACT(day FROM meet_date)='{1}'", Username, selected_day), conn);
+            //+ "and EXTRACT(month FROM meet_date)='" + selected_month + "' and EXTRACT(day FROM meet_date)='" + selected_day + "'"
 
                 while (reader.Read())
                 {
