@@ -45,7 +45,7 @@
             <!--Input student-->
             <div class="form-group">
                 <label asp-for="Student" class="control-label"></label> <!--asp-validation-for="Description"-->
-                <input asp-for="Student" value="" class="form-control" placeholder="Write something"/>
+                <input asp-for="Student" class="form-control" placeholder="Write something"/>
                 <span  asp-validation-for="Student" class="text-danger"></span>
             </div>
 
@@ -60,11 +60,11 @@
             <div class="form-group">
                 <label asp-for="Duration" class="control-label"></label> <!--asp-validation-for="Duration"-->
                 <select asp-for="Duration" class="form-control">
-                    <option value="in-person">00:30 hour</option>
-                    <option value="online">01:00 hour</option>
-                    <option value="online">01:30 hour</option>
-                    <option value="online">02:00 hours</option>
-                    <option value="online">Fixed</option>
+                    <option value="00:30 hour">00:30 hour</option>
+                    <option value="01:00 hour">01:00 hour</option>
+                    <option value="01:30 hour">01:30 hour</option>
+                    <option value="02:00 hours">02:00 hours</option>
+                    <option value="Fixed">Fixed</option>
                 </select>
                 <span asp-validation-for="Duration" class="text-danger"></span>
             </div>
@@ -79,11 +79,11 @@
                 <span asp-validation-for="Type" class="text-danger"></span>
             </div>
            
-            <!--Input student-->
+            <!--Input title-->
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label> <!--asp-validation-for="Description"-->
-                <input asp-for="Description" value="" class="form-control" placeholder="Write something"/>
-                <span  asp-validation-for="Description" class="text-danger"></span>
+                <label asp-for="Title" class="control-label"></label> <!--asp-validation-for="Description"-->
+                <input asp-for="Title" class="form-control" placeholder="Write something"/>
+                <span  asp-validation-for="Title" class="text-danger"></span>
             </div>
             <!--Submit button -->
 

@@ -42,7 +42,7 @@ namespace Software_Engineering_Project.Controllers
                 NpgsqlConnection conn = Database.Database.GetConnection();
                 int result = Database.Database.ExecuteUpdate(String.Format("insert into meeting (professor, student, type" +
                     ", duration, title, meet_date) values ('{0}','{1}','{2}','{3}','{4}','{5}');",
-                   model.Professor, model.Student, model.Type, model.Duration, model.Description, model.DateTime), conn);
+                   model.Professor, model.Student, model.Type, model.Duration, model.Title, model.DateTime.ToString("yyyy-M-dd hh:mm:ss")), conn);
                 if (result != 0)
                 {
                     conn.Close();
@@ -180,10 +180,6 @@ namespace Software_Engineering_Project.Controllers
         //POST
         public IActionResult SearchMeeting(string selected_month, string selected_day,  string Username)
         {
-            //selected_day += 13;
-            System.Diagnostics.Debug.WriteLine("fuck this" + selected_month +  selected_day + Username);
-
-            //string selected_month, string selected_day, 
             List<MeetingModel> meetingModels = new List<MeetingModel>();
 
             NpgsqlConnection conn = Database.Database.GetConnection();
@@ -191,7 +187,6 @@ namespace Software_Engineering_Project.Controllers
                 NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("SELECT student, " +
                     "type, duration, title, meet_date FROM meeting WHERE professor='{0}' "
                     + "and EXTRACT(month FROM meet_date)='{2}' and EXTRACT(day FROM meet_date)='{1}'", Username, selected_day, selected_month), conn);
-            //+ "and EXTRACT(month FROM meet_date)='" + selected_month + "' and EXTRACT(day FROM meet_date)='" + selected_day + "'"
 
                 while (reader.Read())
                 {
@@ -199,7 +194,7 @@ namespace Software_Engineering_Project.Controllers
                     model.Student = reader.GetString(0);
                     model.Type = reader.GetString(1);
                     model.Duration = reader.GetString(2);
-                    model.Description = reader.GetString(3);
+                    model.Title = reader.GetString(3);
                     model.DateTime = reader.GetDateTime(4);
 
                     meetingModels.Add(model);
