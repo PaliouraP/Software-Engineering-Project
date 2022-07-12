@@ -25,10 +25,10 @@
      </picture> 
      <div class="menu_burger">
      <div class="menu" id="bmenu">       
-        <a class="link" href="#">Home</a>
-        <a class="link" href="#">Appointments</a>
-        <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@Model">Students</a>        
-        <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@Model">Profile</a>
+        <a class="link" asp-controller="Teacher" asp-action="TeacherHome" asp-route-username="@ViewBag.Username">Home</a>
+        <a class="link" asp-controller="Teacher" asp-action="Meeting" asp-route-username="@ViewBag.Username">Appointments</a>
+        <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@ViewBag.Username">Students</a>        
+        <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@ViewBag.Username">Profile</a>
      </div>
      <div class="burger">
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -67,24 +67,17 @@
                 <div class="days">
                 </div>
                 
-                <input type="submit" value="Schedule Meeting" class="btn btn-primary" onclick="window.location.href='Teacher/AddMeeting' " />
-                <a  asp-controller="Teacher" asp-action="AddMeeting" asp-route-username="@ViewBag.Username" >
-                    Schedule Meeting
-                </a>
+                <button type="submit" value="Schedule Meeting" class="btn btn-primary" onclick="window.location.href='AddMeeting?Username=@ViewBag.Username' " >Schedule Meeting</button>
+                
             </div>
-            <!--<a asp-controller="Teacher" asp-action="AddMeeting" asp-route-username="@ViewBag.Username" class="btn btn-primary"> Schedule Meeting</a>-->
 
             </div>
             
             <div class="dialog" id="dialog">
                 <div class="dialogtext" id="dialogtext">
-                    <!--<form asp-controller="Teacher" asp-action="SearchMeeting" asp-route-username="@ViewBag.Username" method="post">-->
                     <i class="fa-solid fa-circle-xmark fa-2xl" onclick="popup()"></i>
                     @if(Model!=null)
                     { 
-
-                    <!--<h2 id="selected_month" name="selected_month">Model[0].DateTime.Month</h2>-->
-                    <!--<h2 id="selected_day" name="selected_day">Model[0].DateTime.Day</h2>-->
                     <br />
                     
                     
@@ -114,8 +107,6 @@
                     {
                         <p>No meetings on this date!</p>
                     }
-
-                    <!--</form>-->
 
                 </div>
             </div>

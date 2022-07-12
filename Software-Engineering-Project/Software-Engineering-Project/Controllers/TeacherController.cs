@@ -6,8 +6,9 @@ namespace Software_Engineering_Project.Controllers
 {
     public class TeacherController : Controller
     {
-        public IActionResult Index()
+        public IActionResult TeacherHome(string username)
         {
+            ViewBag.Username = username;
             return View();
         }
 
