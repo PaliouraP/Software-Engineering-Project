@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4pD/oj6/rSxzlzj3IZsNb/yGG5+LFifbgLyWx4YCkjs=",
+  "Hash": "MCEy10y2j6YOF5KrExBDy37aESmXuCS4RRu9QwwEAG0=",
   "Source": "Software-Engineering-Project",
   "BasePath": "_content/Software-Engineering-Project",
   "Mode": "Default",
@@ -304,6 +304,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\ThesisStartListStyle.css"
+    },
+    {
+      "Identity": "C:\\Users\\Evi Palioura\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\css\\ThesisStatusStyle.css",
+      "SourceId": "Software-Engineering-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Evi Palioura\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\",
+      "BasePath": "_content/Software-Engineering-Project",
+      "RelativePath": "css/ThesisStatusStyle.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\ThesisStatusStyle.css"
+    },
+    {
+      "Identity": "C:\\Users\\Evi Palioura\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\css\\UpdateStyle.css",
+      "SourceId": "Software-Engineering-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Evi Palioura\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\",
+      "BasePath": "_content/Software-Engineering-Project",
+      "RelativePath": "css/UpdateStyle.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\UpdateStyle.css"
     },
     {
       "Identity": "C:\\Users\\Evi Palioura\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\wwwroot\\favicon.ico",

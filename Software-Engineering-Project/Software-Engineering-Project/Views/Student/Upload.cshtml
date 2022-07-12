@@ -3,6 +3,7 @@
     ViewData["Title"] = "Upload";
 }
 @section Styles{
+        <link rel="stylesheet" href="~/css/UpdateStyle.css" />
         <link rel="stylesheet" href="~/css/NavbarStyle.css" />
         <script src="~/js/BurgerMenu.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -29,102 +30,117 @@
      </div>
      </div>      
 </div>
-<h1>Upload</h1>
+
+<div class="title">
+    <h2>Here, you can upload each of the <span>three parts</span> of your thesis.</h2>
+    </div>
+
+
+<div class="main">
 
 <!-- Upload the first draft -->
-<div id="version1">
-<form asp-controller="Student" asp-action="Upload" enctype="multipart/form-data" method="post">
-    <dl>
-        <dt>
-            <label asp-for="@Model.File"></label>
-        </dt>
-        <dd>
-            <h3>Add the title of your thesis:</h3>
-            <input type="text" asp-for="@Model.Title">
-            <h3>Choose the date you started your thesis:</h3>
-            <input type="date" asp-for="@Model.ThesisStartDate" />
-            <h3>Fill in the language your thesis is written at: (Greek, English, etc.) </h3>
-            <input type="text" asp-for="@Model.Language" />
-            <h3>Add the technology your thesis is developped with:</h3>
-            <input type="text" asp-for="@Model.Technology" />
-            <h3>Upload the first part of your thesis:</h3>
-            <input type="hidden" asp-for="@Model.version" value = "1">
-            <input type="hidden" asp-for="@Model.Username" value = "@ViewBag.Username">
-            <input asp-for="@Model.File" type="file" name = "file">
-            <span asp-validation-for="@Model.File"></span>
-        </dd>
-    </dl>
-    <input asp-page-handler="Upload" class="btn" type="submit" value="Upload" />
-</form>
+<div class="version1">
+    <form asp-controller="Student" asp-action="Upload" enctype="multipart/form-data" method="post" id="version1">
+        <picture>
+            <img src ="@Url.Content("~/images/one.png")" />
+        </picture>
+        <input type="text" asp-for="@Model.Title" class="inputs" placeholder="Title of your thesis">
+        <input type="date" asp-for="@Model.ThesisStartDate" class="inputs" placeholder="Date you started your thesis" />
+        <input type="text" asp-for="@Model.Language" class="inputs" placeholder="Language your thesis is written at ex. English"/>
+        <input type="text" asp-for="@Model.Technology"  class="inputs" placeholder="Technology used"/>
+        <p>Upload the first part of your thesis</p>
+        <input type="hidden" asp-for="@Model.version" value = "1" >   
+        <input type="hidden" asp-for="@Model.Username" value = "@ViewBag.Username" >   
+        <input asp-for="@Model.File" type="file" name = "file" class="uploader">   
+        <span asp-validation-for="@Model.File"class="button"></span>          
+        <br />
+        <input asp-page-handler="Upload"  class="button" type="submit" value="Upload" />
+    </form>
 </div>
 
-<!-- Upload the second draft -->
-<form asp-controller="Student" asp-action="Upload" enctype="multipart/form-data" method="post" id="version2">
-    <dl>
-        <dt>
-            <label asp-for="@Model.File"></label>
-        </dt>
-        <dd>
-            <h3>Upload the second part of your thesis:</h3>
-            <input type="hidden" asp-for="@Model.version" value = "2">
-            <input type="hidden" asp-for="@Model.Username" value = "@ViewBag.Username">
-            <input asp-for="@Model.File" type="file" name = "file">
-            <span asp-validation-for="@Model.File"></span>
-        </dd>
-    </dl>
-    <input asp-page-handler="Upload" class="btn" type="submit" value="Upload" />
-</form>
 
+
+<div class="version2"><!-- Upload the second draft -->
+    <form asp-controller="Student" asp-action="Upload" enctype="multipart/form-data" method="post" id="version2">
+        <picture>
+            <img src ="@Url.Content("~/images/two.png")" />
+        </picture>
+    
+        <p>Upload second part </p>
+        <input type="hidden" asp-for="@Model.version" value = "2">
+        <input type="hidden" asp-for="@Model.Username" value = "@ViewBag.Username">
+        <input asp-for="@Model.File" type="file" name = "file"class="uploader">
+        <span asp-validation-for="@Model.File"></span>       
+        <br />
+        <input asp-page-handler="Upload" class="button" type="submit" value="Upload" />
+    </form>
+</div>
+
+<div class="version3">
 <!-- Upload the final draft -->
-<form asp-controller="Student" asp-action="Upload" enctype="multipart/form-data" method="post" id="version3">
-    <dl>
-        <dt>
-            <label asp-for="@Model.File"></label>
-        </dt>
-        <dd>
-            <h3>Upload your finalised thesis:</h3>
-            <input type="hidden" asp-for="@Model.version" value = "3">
-            <input type="hidden" asp-for="@Model.Username" value = "@ViewBag.Username">
-            <input asp-for="@Model.File" type="file" name = "file">
-            <span asp-validation-for="@Model.File"></span>
-        </dd>
-    </dl>
-    <input asp-page-handler="Upload" class="btn" type="submit" value="Upload" />
-</form>
+    <form asp-controller="Student" asp-action="Upload" enctype="multipart/form-data" method="post" id="version3">
+        <picture>
+            <img src ="@Url.Content("~/images/three.png")" />
+        </picture>
+        <p>Upload finalised thesis:</p>
+        <input type="hidden" asp-for="@Model.version" value = "3">
+        <input type="hidden" asp-for="@Model.Username" value = "@ViewBag.Username">
+        <input asp-for="@Model.File" type="file" name = "file" class="uploader">
+        <span asp-validation-for="@Model.File"></span>  
+        <br />
+        <input asp-page-handler="Upload" class="button" type="submit" value="Upload" />
+    </form>
+</div>
+
+
+</div>
+
 
 @if (ViewBag.Success == true)
 {
     <script type="text/javascript">
-        window.onload = function () {
+window.onload = function() {
     alert('Success');
-    }
-    </script>
+}
+</script>
 }
 
-@if (ViewBag.version1 != null && ViewBag.version1 == false)
+else if (ViewBag.version1 != null && ViewBag.version1 == false)
 {
     <script>
-        function demoDisplay() {
-            var form = document.getElementById("version1");
-            form.style.display = "none"; 
+    $(function disableElements() {
+        var form = document.getElementById("version1");
+
+        for (var i = 0; i < form.length; i++) {
+            form[i].disabled = true;
         }
+    });   
     </script>
 }
 
 @if (ViewBag.version2 != null && ViewBag.version2 == false)
 {
+
     <script>
-        function demoDisplay() {
-    document.getElementById("version2").style.display = "none";
-    }
+    function disableElements() { 
+            var form = document.getElementById("version2");
+            
+        for (var i = 0; i < form.length; i++) {
+                form[i].disabled = true;
+            }
+     }   
     </script>
 }
 
 @if (ViewBag.version3 != null && ViewBag.version3 == false)
 {
     <script>
-        function demoDisplay() {
-    document.getElementById("version3").style.display = "none";
-    }
+   function disableElements() { 
+            var form = document.getElementById("version3");
+            
+        for (var i = 0; i < form.length; i++) {
+                form[i].disabled = true;
+            }
+     }   
     </script>
 }

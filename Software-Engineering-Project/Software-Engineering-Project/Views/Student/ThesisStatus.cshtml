@@ -5,7 +5,7 @@
 }
 
 @section Styles{
-        <link rel="stylesheet" href="~/css/StudentProfile.css" />        
+        <link rel="stylesheet" href="~/css/ThesisStatusStyle.css" />        
         <link rel="stylesheet" href="~/css/NavbarStyle.css" />
         <script src="~/js/BurgerMenu.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -34,51 +34,47 @@
      </div>      
 </div>
 
-<h1>ThesisStatus</h1>
-
-<div>
-    <h4>ThesisModel</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Username)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Professor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Professor)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Grade)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Grade)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Language)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Language)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Technology)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Technology)
-        </dd>
-    </dl>
+<<div class="main">
+<div class="thesis_info">
+    <a href="javascript:void(0);" class="icon">
+        <i class="fa fa-file-text-o fa-xxl"></i>    
+    </a>
+    <h2>My Thesis Status</h2>
+    <table>
+        <tr>
+            <td class="title">@Html.DisplayNameFor(model => model.Username)</td>
+            <td class="info">@Html.DisplayFor(model => model.Username)</td>
+            <td><div class="pencil"><i class="fa fa-pencil" aria-hidden="true"></i></div></td>
+        </tr>   
+        <tr>
+            <td class="title">@Html.DisplayNameFor(model => model.Professor)</td>
+            <td class="info">@Html.DisplayFor(model => model.Professor)</td>
+            <td><div class="pencil"><i class="fa fa-pencil" aria-hidden="true"></i></div></td>
+        </tr>      
+        <tr>
+            <td class="title">@Html.DisplayNameFor(model => model.Title)</td>
+            <td class="info">@Html.DisplayFor(model => model.Title)</td>
+            <td><div class="pencil"><i class="fa fa-pencil" aria-hidden="true"></i></div></td>
+        </tr>  
+         <tr>
+            <td class="title">@Html.DisplayNameFor(model => model.Grade)</td>
+            <td class="info">@Html.DisplayFor(model => model.Grade)</td>
+            <td><div class="pencil"><i class="fa fa-pencil" aria-hidden="true"></i></div></td>
+        </tr> 
+         <tr>
+            <td class="title">@Html.DisplayNameFor(model => model.Language)</td>
+            <td class="info">@Html.DisplayFor(model => model.Language)</td>
+            <td><div class="pencil"><i class="fa fa-pencil" aria-hidden="true"></i></div></td>
+        </tr> 
+         <tr>
+            <td class="title">@Html.DisplayNameFor(model => model.Technology)</td>
+            <td class="info">@Html.DisplayFor(model => model.Technology)</td>
+            <td><div class="pencil"><i class="fa fa-pencil" aria-hidden="true"></i></div></td>
+        </tr>    
+    </table>
 </div>
 <div>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     <a asp-action="Index">Back to List</a>
+</div>
 </div>
