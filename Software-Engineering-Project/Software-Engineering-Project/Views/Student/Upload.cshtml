@@ -44,11 +44,6 @@
         <picture>
             <img src ="@Url.Content("~/images/one.png")" />
         </picture>
-        <input type="text" asp-for="@Model.Title" class="inputs" placeholder="Title of your thesis">
-        <input type="date" asp-for="@Model.ThesisStartDate" class="inputs" placeholder="Date you started your thesis" />
-        <input type="text" asp-for="@Model.Language" class="inputs" placeholder="Language your thesis is written at ex. English"/>
-        <input type="text" asp-for="@Model.Technology"  class="inputs" placeholder="Technology used"/>
-        <p>Upload the first part of your thesis</p>
         <input type="hidden" asp-for="@Model.version" value = "1" >   
         <input type="hidden" asp-for="@Model.Username" value = "@ViewBag.Username" >   
         <input asp-for="@Model.File" type="file" name = "file" class="uploader">   

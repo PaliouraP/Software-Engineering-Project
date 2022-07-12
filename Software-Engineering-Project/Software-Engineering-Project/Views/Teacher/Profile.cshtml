@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Software_Engineering_Project.Models.ProfessorModel
+@{
     ViewData["Title"] = "Profile";
 }
 
@@ -48,35 +49,35 @@
         <table class="tbl">
 			<tr>
 				<th>Firstname</th>
-				<td>Anastasia</td>
+				<td>@Model.FirstName</td>
 			</tr>
 			<tr>
 				<th>Lastname</th>
-				<td>Boublini</td>
+				<td>@Model.LastName</td>
 			</tr>
             <tr>
 				<th>Email</th>
-				<td>aboublini@mail.com</td>
+				<td>@Model.Email</td>
 			</tr>
             <tr>
 				<th>Phone Number</th>
-				<td>2106564852</td>
+				<td>@Model.Phone</td>
 			</tr>
             <tr>
 				<th>Office Address</th>
-				<td>Karaoli and Dimitriou, Central B. 305</td>
+				<td>@Model.OfficeAddress</td>
 			</tr>
             <tr>
 				<th>Username</th>
-				<td>aboublini</td>
+				<td>@Model.Username</td>
 			</tr>
             <tr>
 				<th>Technologies</th>
-				<td>React JS, Angular</td>
+				<td>@Model.Technology</td>
 			</tr>
             <tr>
 				<th>Languages</th>
-				<td>HTML, CSS, JS</td>
+				<td>@Model.Language</td>
 			</tr>
 		</table>
 </div>

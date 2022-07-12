@@ -1,18 +1,11 @@
 ﻿namespace Software_Engineering_Project.Models
 {
-    public class ThesisModel
+    public class ThesisModel : StudentModel
     {
-        public string Username { get; set; }
-
-        public string FirstName { get; set; }
-
-        public string LastName { get; set; }
-
-        public string Professor { get; set; }
-
+ 
         public string? Title { get; set; }
 
-        public DateOnly? ThesisStartDate { get; set; }
+        public DateOnly ThesisStartDate { get; set; }
 
         public int? Grade { get; set; }
 

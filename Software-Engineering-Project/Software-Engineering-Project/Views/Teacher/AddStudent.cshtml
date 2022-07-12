@@ -1,4 +1,4 @@
-﻿@model Software_Engineering_Project.Models.StudentModel
+﻿@model Software_Engineering_Project.Models.ThesisModel
 
 @{
     ViewData["Title"] = "Add Student";
@@ -97,7 +97,35 @@
                     <input asp-for="Phone" class="form-control" />
                     <span asp-validation-for="Phone" class="text-danger"></span>
                 </div>
+
+                <!--Input title-->
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <!--Input thesis start date-->
+                <div class="form-group">
+                    <label asp-for="ThesisStartDate" class="control-label"></label>
+                    <input type="date" asp-for="ThesisStartDate" class="form-control" />
+                    <span asp-validation-for="ThesisStartDate" class="text-danger"></span>
+                </div>
+
+                <!--Input language-->
+                <div class="form-group">
+                    <label asp-for="Language" class="control-label"></label>
+                    <input asp-for="Language" class="form-control" />
+                    <span asp-validation-for="Language" class="text-danger"></span>
+                </div>
            
+                <!--Input technology-->
+                <div class="form-group">
+                    <label asp-for="Technology" class="control-label"></label>
+                    <input asp-for="Technology" class="form-control" />
+                    <span asp-validation-for="Technology" class="text-danger"></span>
+                </div>
+
                 <!--Submit button -->
                 <input type="submit" value="Add" class="btn btn-primary" />
 

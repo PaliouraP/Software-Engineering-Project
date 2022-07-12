@@ -8870,19 +8870,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Evi Palioura\\.nuget\\packages\\": {}
+    "C:\\Users\\Ioake\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Evi Palioura\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
+      "projectUniqueName": "C:\\Users\\Ioake\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
       "projectName": "Software-Engineering-Project",
-      "projectPath": "C:\\Users\\Evi Palioura\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
-      "packagesPath": "C:\\Users\\Evi Palioura\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Evi Palioura\\Source\\Repos\\PaliouraP\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\obj\\",
+      "projectPath": "C:\\Users\\Ioake\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
+      "packagesPath": "C:\\Users\\Ioake\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ioake\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Evi Palioura\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ioake\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8939,7 +8939,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

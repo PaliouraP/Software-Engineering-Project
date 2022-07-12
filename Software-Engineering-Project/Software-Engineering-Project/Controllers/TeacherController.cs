@@ -59,8 +59,9 @@ namespace Software_Engineering_Project.Controllers
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult AddStudent(StudentModel model, string proffesorName)
+        public IActionResult AddStudent(ThesisModel model, string proffesorName)
         {
+            System.Console.Out.WriteLine(model.ThesisStartDate);
             model.Professor = proffesorName;
             if (ModelState.IsValid)
             {
@@ -68,17 +69,20 @@ namespace Software_Engineering_Project.Controllers
                 int result = Database.Database.ExecuteUpdate(String.Format("insert into users (username , password,first_name,last_name" +
                     ",gender,email,phone,role) values ('{0}','{1}','{2}','{3}','{4}','{5}',{6},'{7}');" +
                     " insert into student (student , start_year, professor) values ('{8}', {9}, '{10}');" +
-                    " insert into thesis (professor, student) values ('{10}', '{0}');",
+                    " insert into thesis (professor, student, title, thesis_start_date, grade, language, technology) " +
+                    "values ('{11}', '{12}', '{13}', '{14}', -1, '{15}', '{16}');",
                     model.Username, model.Password, model.FirstName, model.LastName, model.Gender, model.Email, model.Phone,
-                    model.Role, model.Username, model.StartYear, model.Professor), conn);
+                    model.Role, model.Username, model.StartYear, model.Professor, model.Professor, model.Username, model.Title, model.ThesisStartDate, model.Language, model.Technology), conn);
                 if (result != 0)
                 {
                     conn.Close();
                     ViewBag.Success = true;
+                    ViewBag.Username = proffesorName;
                     return View();
                 }
                 conn.Close();
             }
+            ViewBag.Username = proffesorName;
             ViewBag.Success = false;
             return View();
 
@@ -214,8 +218,28 @@ namespace Software_Engineering_Project.Controllers
         //GET
         public IActionResult Profile(string username)
         {
+            ProfessorModel model = new ProfessorModel();
+
+            NpgsqlConnection conn = Database.Database.GetConnection();
+
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select first_name, last_name, email, phone" +
+                ", office_address, technology,language from professor as p join users as u on p.professor=u.username" +
+                " where professor='{0}'",username), conn);
+
+            if (reader.Read())
+            {
+                model.FirstName = reader.GetString(0);
+                model.LastName = reader.GetString(1);
+                model.Email = reader.GetString(2);
+                model.Phone = reader.GetDecimal(3).ToString();
+                model.OfficeAddress = reader.GetString(4);
+                model.Technology = reader.GetString(5);
+                model.Language = reader.GetString(6);
+                model.Username = username;
+            }
+
             ViewBag.Username = username;
-            return View();
+            return View(model);
         }
 
         //POST
@@ -269,8 +293,29 @@ namespace Software_Engineering_Project.Controllers
                 }
             }
             conn.Close();
+
+            ProfessorModel model = new ProfessorModel();
+
+            NpgsqlConnection conn1 = Database.Database.GetConnection();
+
+            NpgsqlDataReader reader1 = Database.Database.ExecuteQuery(String.Format("select first_name, last_name, email, phone" +
+                ", office_address, technology,language from professor as p join users as u on p.professor=u.username" +
+                " where professor='{0}'", professorName), conn1);
+
+            if (reader1.Read())
+            {
+                model.FirstName = reader1.GetString(0);
+                model.LastName = reader1.GetString(1);
+                model.Email = reader1.GetString(2);
+                model.Phone = reader1.GetDecimal(3).ToString();
+                model.OfficeAddress = reader1.GetString(4);
+                model.Technology = reader1.GetString(5);
+                model.Language = reader1.GetString(6);
+                model.Username = professorName;
+            }
+
             ViewBag.Username = professorName;
-            return View("Profile");
+            return View("Profile", model);
         }
 
         //POST
@@ -297,8 +342,29 @@ namespace Software_Engineering_Project.Controllers
                 }
                 conn.Close();
             }
+
+            ProfessorModel model = new ProfessorModel();
+
+            NpgsqlConnection conn1 = Database.Database.GetConnection();
+
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select first_name, last_name, email, phone" +
+                ", office_address, technology,language from professor as p join users as u on p.professor=u.username" +
+                " where professor='{0}'", professorName), conn1);
+
+            if (reader.Read())
+            {
+                model.FirstName = reader.GetString(0);
+                model.LastName = reader.GetString(1);
+                model.Email = reader.GetString(2);
+                model.Phone = reader.GetDecimal(3).ToString();
+                model.OfficeAddress = reader.GetString(4);
+                model.Technology = reader.GetString(5);
+                model.Language = reader.GetString(6);
+                model.Username = professorName;
+            }
+
             ViewBag.Username = professorName;
-            return View("Profile");
+            return View("Profile",model);
         }
 
         public IActionResult GradeList(string username)
