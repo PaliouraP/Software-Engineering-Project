@@ -1,0 +1,97 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, input {
+    font-family: 'Nirmala UI';
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+    .content::before {
+        content: '';
+        position: absolute;
+        height: 2000px;
+        width: 2000px;
+        top: -10%;
+        left: 45%;
+        background-image: linear-gradient(-45deg, #78C0E0, #449DD1, #067BC2);
+        transform: translateY(10%);
+        border-radius: 45%;
+        z-index: 6;
+    }
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 30%;
+    border-radius: 5%;
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+th, td {
+    padding: 6px;
+    font-size: 18px;
+}
+
+.tbl {
+    width: 100%;
+    color: #444;
+}
+
+.container {
+   text-align: center;
+}
+
+.icon {
+    width: 20%;
+}
+
+.title {
+    font-size: 1.3rem;
+    color: #444;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.image {
+    width: 85%
+}
+
+.image-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 55%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 7;
+}
+
+.left-panel {
+    padding: 3rem 17% 2rem 12%;
+}

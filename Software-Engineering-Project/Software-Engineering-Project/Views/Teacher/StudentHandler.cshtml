@@ -1,15 +1,41 @@
 ﻿@{   
-    ViewData["Title"] = "Manage your Students";
+    ViewData["Title"] = "StudentHandler";
 }
 
 <!-- Stylesheet connection for StudentHandler page -->
 @section Styles {
     <link rel="stylesheet" href="~/css/StudentHandlerStyle.css" />
+    <link rel="stylesheet" href="~/css/NavbarStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/js/BurgerMenu.js"></script>
 }
 
+<section> 
 
 
     <div class="content"> 
+           
+            <!-- Top Navigation Menu -->
+        <div class="topnav" >
+             <picture> 
+                    <img src ="@Url.Content("~/images/unipi_logo.png")" />
+             </picture> 
+             <div class="menu_burger">
+             <div class="menu" id="bmenu">       
+                <a class="link" href="#">Home</a>
+                <a class="link" href="#">Appointments</a>
+                <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@ViewBag.Username">Students</a>        
+                <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@ViewBag.Username">Profile</a>
+             </div>
+             <div class="burger">
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars fa-xxl"></i>    
+                </a>
+             </div>
+             </div>      
+        </div>
+
+        <div class="main">
         <div class="md">
             <div class="search">
             <form asp-controller="Teacher" asp-action="StudentSearch" method="post" >
@@ -22,6 +48,10 @@
                 <input type="hidden" name="professorName" value="@ViewBag.Username"/>
                 <!-- Submit button -->
                 <input type="submit" class="btn solid" value="Search"/>
+                <p class="helper">Didn't find the student you were looking for?</p>
+                <a  asp-controller="Teacher" asp-action="AddStudent" asp-route-username="@ViewBag.Username" >
+                    Add Student
+                </a>
             </form>
             </div>
         </div>
@@ -32,11 +62,7 @@
             <img src="@Url.Content("~/images/StudentHandler_img.png")" alt="" class="image" />
         </div>
      </div>
-
     </div>
-
-    <br /><br /><br />
-    
-    <a  asp-controller="Teacher" asp-action="AddStudent" asp-route-username="@ViewBag.Username" >
-        Add Student
-    </a>
+    </div>
+  </section> 
+  

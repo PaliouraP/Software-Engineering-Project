@@ -35,7 +35,7 @@
             <div class="content">
                 <h3>Forgot your password?</h3>
                 <p>Click on the button below to reset your password.</p>
-                <button class="btn transparent" id="forgot-pswd">Reset password</button>
+                <button class="btn transparent" id="forgot-pswd" onclick="showMessage()">Reset password</button>
             </div>
             <img src="@Url.Content("~/images/login_img.png")" alt="" class="image" />
         </div>
@@ -49,3 +49,29 @@
     </script>
 }
 
+<!-- Reset password -->
+<script type="text/javascript">
+    //Executes when user presses the reset password button
+    function showMessage() {
+        let message = prompt("Please enter your registered mail:", "pXXXXX@unipi.gr");
+
+        // If inserts a mail something and presses okay
+        if (message != "" && message != null && message != "pXXXXX@unipi.gr") { 
+
+            // If the provided email address is correct
+            alert("An email has been sent to " + message + " with instructions on how to recover your password.");
+
+        } else if (message == null) { // If user presses cancel
+
+            // Do nothing
+
+        } else { 
+            // If the provided email address is wrong
+            alert("Please insert a valid email address or press Cancel.");
+            showMessage();
+
+        } 
+    }
+
+    
+</script>

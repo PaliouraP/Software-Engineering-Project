@@ -6,128 +6,100 @@
 
 <!-- Stylesheet connection for AddStudent page -->
 @section Styles {
-    <link rel="stylesheet" href="~/css/AddStudentStyle.css" />
+    <link rel="stylesheet" href="~/css/StudentSearchStyle.css" />
+	<link rel="stylesheet" href="~/css/NavbarStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/js/BurgerMenu.js"></script>
 }
 
-<h1>Student Search</h1>
+<section>
+<div class="content">
 
+	         <!-- Top Navigation Menu -->
+        <div class="topnav" >
+             <picture> 
+                    <img src ="@Url.Content("~/images/unipi_logo.png")" />
+             </picture> 
+             <div class="menu_burger">
+             <div class="menu" id="bmenu">       
+                <a class="link" href="#">Home</a>
+                <a class="link" href="#">Appointments</a>
+                <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@Model">Students</a>        
+                <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@Model">Profile</a>
+             </div>
+             <div class="burger">
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars fa-xxl"></i>    
+                </a>
+             </div>
+             </div>      
+        </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Student Id
-            </th>
-            <th>
-                Start year
-            </th>
-            <th>
-                First Name
-            </th>
-            <th>
-                Last name
-            </th>
-            <th>
-                Email
-            </th>
-            <th>
-                Phone number
-            </th>
-            <th>
-                Thesis title
-            </th>
-            <th>
-                Thesis start date
-            </th>
-            <th>
-                Thesis grade
-            </th>
-            <th>
-                Thesis Language
-            </th>
-            <th>
-                Thesis Technology
-            </th>
-        </tr>
-    </thead>
+		<div class="view">
+		<div class="card">
+			<img src="@Url.Content("~/images/hat.png")" alt="" class="icon" />
+			<h3 class="title">@Model[0].FirstName @Model[0].LastName</h3>
+			<h3 class="title">Undergraduate Student</h3>
+			<br />
+			<div class="container">
+				<table class="tbl">
+					@foreach (var item in Model) {
+					<tr>
+						<th>Student Id:</th>
+						<td> @item.Student</td>
+					</tr>
+					<tr>
+						<th>First Name:</th>
+						<td>@item.FirstName</td>
+					</tr>
+					<tr>
+						<th>Last name:</th>
+						<td>@item.LastName</td>
+					</tr>
+					<tr>
+						<th>Email:</th>
+						<td>@item.Email</td>
+					</tr>
+					<tr>
+						<th>Phone number:</th>
+						<td>@item.Phone</td>
+					</tr>
+					<tr>
+						<th>Start year:</th>
+						<td>@item.StartYear</td>
+					</tr>
+					<tr>
+						<th>Thesis title:
+						</th>
+						<td>@item.Title</td>
+					</tr>
+					<tr>
+						<th>Thesis start date:</th>
+						<td>@item.StartDate</td>
+					</tr>
+					<tr>
+						<th>Thesis grade:</th>
+						<td>@item.Grade</td>
+					</tr>
+					<tr>
+						<th>Thesis Language:</th>
+						<td>@item.Language</td>
+					</tr>
+					<tr>
+						<th>Thesis Technology:</th>
+						<td>@item.Technology</td>
+					</tr>
+					}
+				</table>
+				<br />
+			</div>
+		</div>  
+		     <div class="image-container">
+				<div class="panel left-panel">
+					<img src="@Url.Content("~/images/StudentHandler_img.png")" alt="" class="image" />
+				</div>
+			 </div>
+		</div>
+		</div>
 
-    <tbody>
-        <tr>
-            <th>
-               p19117
-            </th>
-            <th>
-                2017
-            </th>
-            <th>
-                Anastasia
-            </th>
-            <th>
-                Boublini
-            </th>
-            <th>
-                aboublini@gmail.com
-            </th>
-            <th>
-                6912345678
-            </th>
-            <th>
-                Interactive User Interfaces with React JS
-            </th>
-            <th>
-                2/7/21
-            </th>
-            <th>
-                9.5
-            </th>
-            <th>
-                English
-            </th>
-            <th>
-                React JS, JS, HTML, CSS, Angular
-            </th>
-        </tr>
-    </tbody>
-
-     @*
-    <tbody>     
-        @foreach (var item in Model) {
-                <tr>
-                    <td>
-                        @item.Student
-                    </td>
-                    <td>
-                       @item.StartYear
-                    </td>
-                    <td>
-                       @item.FirstName
-                    </td>
-                    <td>
-                        @item.LastName
-                    </td>
-                    <td>
-                        @item.Email
-                    </td>
-                    <td>
-                        @item.Phone
-                    </td>
-                    <td>
-                        @item.Title
-                    </td>
-                    <td>
-                        @item.StartDate
-                    </td>
-                    <td>
-                        @item.Grade
-                    </td>
-                    <td>
-                        @item.Language
-                    </td>
-                    <td>
-                        @item.Technology
-                    </td>
-                </tr>
-        } 
-       
-    </tbody> *@
-</table>
+</section>

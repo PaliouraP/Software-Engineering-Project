@@ -14,20 +14,22 @@ body, input {
     background-color: #fff;
     min-height: 100vh;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-.content::before {
-    content: '';
-    position: absolute;
-    height: 2000px;
-    width: 2000px;
-    top: -10%;
-    left: 48%;
-    background-image: linear-gradient(-45deg, #78C0E0, #449DD1, #067BC2);
-    transform: translateY(-35%);
-    border-radius: 50%;
-    z-index: 6;
-}
+    .content::before {
+        content: '';
+        position: absolute;
+        height: 2000px;
+        width: 2000px;
+        top: -10%;
+        left: 45%;
+        background-image: linear-gradient(-45deg, #78C0E0, #449DD1, #067BC2);
+        transform: translateY(10%);
+        border-radius: 45%;
+        z-index: 6;
+    }
 
 .md {
     position: absolute;
@@ -48,6 +50,10 @@ form {
     grid-row: 1/2;
 }
 
+.helper{
+    text-align: center;
+}
+
 .search {
     position: absolute;
     top: 50%;
@@ -59,7 +65,7 @@ form {
 }
 
 .title {
-    font-size: 2.2rem;
+    font-size: 1.9rem;
     color: #444;
     margin-bottom: 10px;
     text-align: center;
@@ -114,7 +120,7 @@ form {
     }
 
     .image {
-    width: 80%
+    width: 85%
 }
 
 .image-container {
