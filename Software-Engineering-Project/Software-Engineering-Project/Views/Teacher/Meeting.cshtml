@@ -38,7 +38,7 @@
      </div>      
     </div>
     
-
+    <h1 class="username" id="username">@ViewBag.Username</h1>
 
         <div class="container">
             
@@ -78,17 +78,17 @@
             
             <div class="dialog" id="dialog">
                 <div class="dialogtext" id="dialogtext">
-                    <form asp-controller="Teacher" asp-action="SearchMeeting" asp-route-username="@ViewBag.Username" method="post">
+                    <!--<form asp-controller="Teacher" asp-action="SearchMeeting" asp-route-username="@ViewBag.Username" method="post">-->
                     <i class="fa-solid fa-circle-xmark fa-2xl" onclick="popup()"></i>
-                       
-                    <h2 id="selected_month" name="selected_month"></h2>
-                    <h2 id="selected_day" name="selected_day"></h2>
+                    @if(Model!=null)
+                    { 
+                    <h2 id="selected_month" name="selected_month">@Model[0].DateTime.Month</h2>
+                    <h2 id="selected_day" name="selected_day">@Model[0].DateTime.Day</h2>
                     <br />
                     
                     
                     
-                    @if(Model!=null)
-                    {
+                    
                         <table class="tbl">
 					    
 					        <tr>
@@ -114,7 +114,7 @@
                         <p>No meetings on this date!</p>
                     }
 
-                    </form>
+                    <!--</form>-->
 
                 </div>
             </div>
@@ -131,4 +131,9 @@
     </div>
 
     <script src="~/js/Meeting.js"></script> <!--woudn't work with script on the styles section-->
+    <h1>@ViewBag.popup</h1>
+    @if(@ViewBag.popup != null && @ViewBag.popup)
+    {
+        <script src="~/js/popup.js"></script>
+    }
 </section>

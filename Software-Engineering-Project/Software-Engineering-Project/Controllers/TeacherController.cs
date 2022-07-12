@@ -14,7 +14,7 @@ namespace Software_Engineering_Project.Controllers
         public IActionResult StudentHandler(string username)
         {
             ViewBag.Username = username;
-            return View(); 
+            return View();
         }
 
         public IActionResult Meeting(string username)
@@ -115,7 +115,7 @@ namespace Software_Engineering_Project.Controllers
 
             NpgsqlConnection conn = Database.Database.GetConnection();
 
-            if(queryString.Contains(' '))
+            if (queryString.Contains(' '))
             {
                 string firstName = queryString.Substring(0, queryString.IndexOf(' '));
                 string lastName = queryString.Substring(queryString.IndexOf(' ') + 1);
@@ -125,7 +125,7 @@ namespace Software_Engineering_Project.Controllers
                     "grade, language, technology from thesis natural join (select student, start_year," +
                     " first_name, last_name, email, phone from student as s join users as u on " +
                     "s.student = u.username where first_name='{0}' and last_name='{1}' " +
-                    "and professor='{2}') as student",firstName,lastName, professorName), conn);
+                    "and professor='{2}') as student", firstName, lastName, professorName), conn);
 
                 while (reader.Read())
                 {
@@ -175,10 +175,20 @@ namespace Software_Engineering_Project.Controllers
             return View(searchModels);
         }
 
-        public IActionResult SearchMeeting(string selected_month, int selected_day,  string Username)
+        //GET
+        public IActionResult SearchMeeting(string Username)
         {
-            selected_day += 13;
-            System.Diagnostics.Debug.WriteLine("this " + selected_month);
+            ViewBag.Username = Username;
+            return View("Meeting");
+        }
+
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult SearchMeeting(string selected_month, string selected_day,  string Username)
+        {
+            //selected_day += 13;
+            //System.Diagnostics.Debug.WriteLine("this " + selected_month);
 
             //string selected_month, string selected_day, 
             List<MeetingModel> meetingModels = new List<MeetingModel>();
@@ -187,7 +197,7 @@ namespace Software_Engineering_Project.Controllers
 
                 NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("SELECT student, " +
                     "type, duration, title, meet_date FROM meeting WHERE professor='{0}' "
-                    + "and EXTRACT(month FROM meet_date)='7' and EXTRACT(day FROM meet_date)='{1}'", Username, selected_day), conn);
+                    + "and EXTRACT(month FROM meet_date)='{2}' and EXTRACT(day FROM meet_date)='{1}'", Username, selected_day, selected_month), conn);
             //+ "and EXTRACT(month FROM meet_date)='" + selected_month + "' and EXTRACT(day FROM meet_date)='" + selected_day + "'"
 
                 while (reader.Read())
@@ -197,7 +207,7 @@ namespace Software_Engineering_Project.Controllers
                     model.Type = reader.GetString(1);
                     model.Duration = reader.GetString(2);
                     model.Description = reader.GetString(3);
-                    model.DateTime = reader.GetTimeStamp(4).ToString();
+                    model.DateTime = reader.GetDateTime(4);
 
                     meetingModels.Add(model);
                 }
