@@ -1,0 +1,119 @@
+﻿@model Software_Engineering_Project.Models.MeetingModel
+
+@{
+    ViewData["Title"] = "Add Meeting";
+}
+
+<!-- Stylesheet connection for TeacherHome page -->
+@section Styles {
+    <link rel="stylesheet" href="~/css/AddMeetingStyle.css" />
+    <link rel="stylesheet" href="~/css/NavbarStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/js/BurgerMenu.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+}
+<section>
+<div class="content">
+<!-- Top Navigation Menu -->
+    <div class="topnav" >
+     <picture> 
+            <img src ="@Url.Content("~/images/unipi_logo.png")" />
+     </picture> 
+     <div class="menu_burger">
+     <div class="menu" id="bmenu">       
+        <a class="link" href="#">Home</a>
+        <a class="link" href="#">Appointments</a>
+        <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@Model">Students</a>        
+        <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@Model">Profile</a>
+     </div>
+     <div class="burger">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars fa-xxl"></i>    
+        </a>
+     </div>
+     </div>      
+</div>
+
+<div class="md">
+    <div class="add">
+        <form asp-controller="Teacher" asp-action="AddMeeting" asp-route-proffesorName="@ViewBag.Username">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div><!--Used on the server side if the user has not entered correctly all the details-->
+           
+            <h2 class="title">Schedule Appointment</h2>
+
+            <!--Input student-->
+            <div class="form-group">
+                <label asp-for="Student" class="control-label"></label> <!--asp-validation-for="Description"-->
+                <input asp-for="Student" class="form-control" placeholder="Write something"/>
+                <span  asp-validation-for="Student" class="text-danger"></span>
+            </div>
+
+            <!--Input Date Time-->
+            <div class="form-group">
+                <label asp-for="DateTime" class="control-label"></label> <!--asp-for="DateTime"-->
+                <input asp-for="DateTime" type="datetime-local" class="form-control" />
+                <span asp-validation-for="DateTime" class="text-danger"></span> <!--asp-validation-for="DateTime"-->
+            </div>
+
+            <!--Duration of meeting-->
+            <div class="form-group">
+                <label asp-for="Duration" class="control-label"></label> <!--asp-validation-for="Duration"-->
+                <select asp-for="Duration" class="form-control">
+                    <option value="00:30 hour">00:30 hour</option>
+                    <option value="01:00 hour">01:00 hour</option>
+                    <option value="01:30 hour">01:30 hour</option>
+                    <option value="02:00 hours">02:00 hours</option>
+                    <option value="Fixed">Fixed</option>
+                </select>
+                <span asp-validation-for="Duration" class="text-danger"></span>
+            </div>
+
+            <!--Input Type of meeting-->
+            <div class="form-group">
+                <label asp-for="Type" class="control-label"></label> <!--asp-validation-for="Type"-->
+                <select asp-for="Type" class="form-control">
+                    <option value="in-person">In Person</option>
+                    <option value="online">Online</option>
+                </select>
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+           
+            <!--Input title-->
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label> <!--asp-validation-for="Description"-->
+                <input asp-for="Title" class="form-control" placeholder="Write something"/>
+                <span  asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <!--Submit button -->
+
+                <input type="submit" value="Schedule" class="btn btn-primary" />
+
+        </form>
+    </div>
+</div>
+
+    <!-- Image Container -->
+     <div class="image-container">
+        <div class="panel left-panel">
+            <img src="@Url.Content("~/images/Meeting_img.png")" alt="" class="image" />
+        </div>
+     </div>
+
+</div>
+</section>
+               
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+@if (ViewBag.Success != null && ViewBag.Success)
+{
+    <script type="text/javascript" src="~/js/AddMeetingSuccess.js">
+    </script>
+}
+@if (ViewBag.Success != null && !ViewBag.Success){
+    <script type="text/javascript" src="~/js/AddMeetingFail.js"></script>
+}
