@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Mirto\\Πανεπιστήμιο\\Github\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj": {}
+    "C:\\Users\\Ioake\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj": {}
   },
   "projects": {
-    "C:\\Mirto\\Πανεπιστήμιο\\Github\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj": {
+    "C:\\Users\\Ioake\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Mirto\\Πανεπιστήμιο\\Github\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
+        "projectUniqueName": "C:\\Users\\Ioake\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
         "projectName": "Software-Engineering-Project",
-        "projectPath": "C:\\Mirto\\Πανεπιστήμιο\\Github\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
-        "packagesPath": "C:\\Users\\mirto\\.nuget\\packages\\",
-        "outputPath": "C:\\Mirto\\Πανεπιστήμιο\\Github\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\obj\\",
+        "projectPath": "C:\\Users\\Ioake\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project.csproj",
+        "packagesPath": "C:\\Users\\Ioake\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ioake\\Software-Engineering-Project\\Software-Engineering-Project\\Software-Engineering-Project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mirto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ioake\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

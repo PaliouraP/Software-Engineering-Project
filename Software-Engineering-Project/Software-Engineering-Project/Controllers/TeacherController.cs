@@ -18,6 +18,37 @@ namespace Software_Engineering_Project.Controllers
             return View();
         }
 
+        public IActionResult AddMeeting(string username)
+        {
+            ViewBag.Username = username;
+            return View();
+        }
+
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddMeeting(MeetingModel model, string proffesorName)
+        {
+            model.Professor = proffesorName;
+            if (ModelState.IsValid)
+            {
+                NpgsqlConnection conn = Database.Database.GetConnection();
+                int result = Database.Database.ExecuteUpdate(String.Format("insert into meeting (professor, student, type" +
+                    ", duration, title, meet_date) values ('{0}','{1}','{2}','{3}','{4}','{5}');",
+                   model.Professor, model.Student, model.Type, model.Duration, model.Title, model.DateTime.ToString("yyyy-M-dd hh:mm:ss")), conn);
+                if (result != 0)
+                {
+                    conn.Close();
+                    ViewBag.Success = true;
+                    return View();
+                }
+                conn.Close();
+            }
+            ViewBag.Success = false;
+            return View();
+
+        }
+
         //GET
         public IActionResult AddStudent(string username)
         {
@@ -52,7 +83,68 @@ namespace Software_Engineering_Project.Controllers
 
         }
 
-        public IActionResult StudentSearch(string queryString, string professorName)
+        public IActionResult SearchMeetingStudent(string Username)
+        {
+            List<SearchModel> searchModels = new List<SearchModel>();
+
+            NpgsqlConnection conn = Database.Database.GetConnection();
+
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("SELECT student, first_name, last_name" +
+                "FROM student NATURAL JOIN users where professor = 'professor'"), conn);
+
+            while (reader.Read())
+            {
+                SearchModel model = new SearchModel();
+                model.Student = reader.GetString(0);
+                model.FirstName = reader.GetString(1);
+                model.LastName = reader.GetString(2);
+
+                searchModels.Add(model);
+            }
+            conn.Close();
+            return View("AddMeeting", searchModels);
+
+        }
+
+        //GET
+        public IActionResult Meeting(string Username)
+        {
+            ViewBag.Username = Username;
+            return View("Meeting");
+        }
+
+
+        //POST
+        public IActionResult SearchMeeting(string selected_month, string selected_day, string Username)
+        {
+            List<MeetingModel> meetingModels = new List<MeetingModel>();
+
+            NpgsqlConnection conn = Database.Database.GetConnection();
+
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("SELECT student, " +
+                "type, duration, title, meet_date FROM meeting WHERE professor='{0}' "
+                + "and EXTRACT(month FROM meet_date)='{2}' and EXTRACT(day FROM meet_date)='{1}'", Username, selected_day, selected_month), conn);
+
+            while (reader.Read())
+            {
+                MeetingModel model = new MeetingModel();
+                model.Student = reader.GetString(0);
+                model.Type = reader.GetString(1);
+                model.Duration = reader.GetString(2);
+                model.Title = reader.GetString(3);
+                model.DateTime = reader.GetDateTime(4);
+
+                meetingModels.Add(model);
+            }
+            ViewBag.popup = true;
+            ViewBag.Username = Username;
+            conn.Close();
+            return View("Meeting", meetingModels);
+        }
+    
+
+
+    public IActionResult StudentSearch(string queryString, string professorName)
         {
             List<SearchModel> searchModels = new List<SearchModel>();
 

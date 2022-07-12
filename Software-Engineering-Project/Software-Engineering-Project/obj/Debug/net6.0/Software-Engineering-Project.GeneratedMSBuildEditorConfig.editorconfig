@@ -55,12 +55,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxVcGxvYWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Ioake/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/AddMeeting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxBZGRNZWV0aW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Ioake/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/AddStudent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxBZGRTdHVkZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Ioake/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/GradeList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxHcmFkZUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ioake/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/Meeting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxNZWV0aW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Ioake/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/Profile.cshtml]

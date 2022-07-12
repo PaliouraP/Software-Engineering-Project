@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Software_Engineering_Project.Models.ThesisStartModel>
+﻿@model IEnumerable<Software_Engineering_Project.Models.ThesisModel>
 
 @{
     ViewData["Title"] = "ThesisStartList";
@@ -68,7 +68,7 @@
                                 @item.LastName
                             </td>
                             <td>
-                                @item.StartDate.ToString()
+                                @item.ThesisStartDate.ToString()
                             </td>
                             <td>
                                 <a asp-controller="Teacher" asp-action="StudentSearch" asp-route-queryString="@item.FirstName @item.LastName"
