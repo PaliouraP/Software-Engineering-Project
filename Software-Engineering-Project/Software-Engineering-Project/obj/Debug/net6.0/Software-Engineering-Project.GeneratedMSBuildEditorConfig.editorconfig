@@ -8,101 +8,101 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Software_Engineering_Project
 build_property.RootNamespace = Software_Engineering_Project
-build_property.ProjectDir = C:\Users\Evi Palioura\Source\Repos\PaliouraP\Software-Engineering-Project\Software-Engineering-Project\Software-Engineering-Project\
+build_property.ProjectDir = C:\Users\maria\Source\Repos\PaliouraP\Software-Engineering-Project\Software-Engineering-Project\Software-Engineering-Project\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Evi Palioura\Source\Repos\PaliouraP\Software-Engineering-Project\Software-Engineering-Project\Software-Engineering-Project
+build_property.MSBuildProjectDirectory = C:\Users\maria\Source\Repos\PaliouraP\Software-Engineering-Project\Software-Engineering-Project\Software-Engineering-Project
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Home/Index.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Home/Login.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Home/Privacy.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Shared/Error.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Student/Meeting.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Student/Meeting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxNZWV0aW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Student/Profile.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Student/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Student/SetPassword.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Student/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTZXRQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Student/StudentHome.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Student/StudentHome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTdHVkZW50SG9tZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Student/ThesisStatus.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Student/ThesisStatus.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxUaGVzaXNTdGF0dXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Student/Upload.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Student/Upload.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxVcGxvYWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/AddMeeting.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/AddMeeting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxBZGRNZWV0aW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/AddStudent.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/AddStudent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxBZGRTdHVkZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/GradeList.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/GradeList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxHcmFkZUxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/Meeting.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/Meeting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxNZWV0aW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/Profile.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/StudentHandler.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/StudentHandler.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxTdHVkZW50SGFuZGxlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/StudentSearch.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/StudentSearch.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxTdHVkZW50U2VhcmNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/TeacherHome.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/TeacherHome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxUZWFjaGVySG9tZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/ThesisStartList.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Teacher/ThesisStartList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxUaGVzaXNTdGFydExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/_ViewImports.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/_ViewStart.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Evi Palioura/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Shared/_Layout.cshtml]
+[C:/Users/maria/Source/Repos/PaliouraP/Software-Engineering-Project/Software-Engineering-Project/Software-Engineering-Project/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-uboz5lth7n
