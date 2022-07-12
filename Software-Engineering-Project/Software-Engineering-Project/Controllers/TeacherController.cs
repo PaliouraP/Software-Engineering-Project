@@ -17,11 +17,6 @@ namespace Software_Engineering_Project.Controllers
             return View();
         }
 
-        public IActionResult Meeting(string username)
-        {
-            ViewBag.Username = username;
-            return View();
-        }
 
         public IActionResult AddMeeting(string username)
         {
@@ -176,19 +171,17 @@ namespace Software_Engineering_Project.Controllers
         }
 
         //GET
-        public IActionResult SearchMeeting(string Username)
+        public IActionResult Meeting(string Username)
         {
             ViewBag.Username = Username;
             return View("Meeting");
         }
 
         //POST
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult SearchMeeting(string selected_month, string selected_day,  string Username)
         {
             //selected_day += 13;
-            //System.Diagnostics.Debug.WriteLine("this " + selected_month);
+            System.Diagnostics.Debug.WriteLine("fuck this" + selected_month +  selected_day + Username);
 
             //string selected_month, string selected_day, 
             List<MeetingModel> meetingModels = new List<MeetingModel>();
@@ -212,7 +205,8 @@ namespace Software_Engineering_Project.Controllers
                     meetingModels.Add(model);
                 }
             ViewBag.popup = true;
-                conn.Close();
+            ViewBag.Username = Username;
+            conn.Close();
             return View("Meeting", meetingModels);
         }
     }

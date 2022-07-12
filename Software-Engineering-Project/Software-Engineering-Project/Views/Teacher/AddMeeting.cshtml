@@ -44,12 +44,9 @@
 
             <!--Input student-->
             <div class="form-group">
-                <label asp-for="Student" class="control-label"></label> <!--asp-for="Student"-->
-                <select asp-for="Student" class="form-control" placeholder="Choose Student">
-                        <option value="">--</option>
-                    
-                </select>
-                <span asp-validation-for="Student" class="text-danger"></span> <!--asp-validation-for="Student"-->
+                <label asp-for="Student" class="control-label"></label> <!--asp-validation-for="Description"-->
+                <input asp-for="Student" value="" class="form-control" placeholder="Write something"/>
+                <span  asp-validation-for="Student" class="text-danger"></span>
             </div>
 
             <!--Input Date Time-->

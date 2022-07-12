@@ -82,8 +82,9 @@
                     <i class="fa-solid fa-circle-xmark fa-2xl" onclick="popup()"></i>
                     @if(Model!=null)
                     { 
-                    <h2 id="selected_month" name="selected_month">@Model[0].DateTime.Month</h2>
-                    <h2 id="selected_day" name="selected_day">@Model[0].DateTime.Day</h2>
+
+                    <!--<h2 id="selected_month" name="selected_month">Model[0].DateTime.Month</h2>-->
+                    <!--<h2 id="selected_day" name="selected_day">Model[0].DateTime.Day</h2>-->
                     <br />
                     
                     
@@ -134,6 +135,7 @@
     <h1>@ViewBag.popup</h1>
     @if(@ViewBag.popup != null && @ViewBag.popup)
     {
+        <h1>yay</h1>
         <script src="~/js/popup.js"></script>
     }
 </section>
