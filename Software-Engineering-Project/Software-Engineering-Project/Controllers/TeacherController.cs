@@ -67,7 +67,8 @@ namespace Software_Engineering_Project.Controllers
                 NpgsqlConnection conn = Database.Database.GetConnection();
                 int result = Database.Database.ExecuteUpdate(String.Format("insert into users (username , password,first_name,last_name" +
                     ",gender,email,phone,role) values ('{0}','{1}','{2}','{3}','{4}','{5}',{6},'{7}');" +
-                    " insert into student (student , start_year, professor) values ('{8}', {9}, {10})",
+                    " insert into student (student , start_year, professor) values ('{8}', {9}, '{10}');" +
+                    " insert into thesis (professor, student) values ('{10}', '{0}');",
                     model.Username, model.Password, model.FirstName, model.LastName, model.Gender, model.Email, model.Phone,
                     model.Role, model.Username, model.StartYear, model.Professor), conn);
                 if (result != 0)
@@ -337,7 +338,15 @@ namespace Software_Engineering_Project.Controllers
                 model.Professor = username;
                 model.FirstName = reader.GetString(0);
                 model.LastName = reader.GetString(1);
-                model.ThesisStartDate = (DateOnly)reader.GetDate(2);
+                if (model.ThesisStartDate != null)
+                {
+                    model.ThesisStartDate = (DateOnly)reader.GetDate(2);
+                }
+                else
+                {
+                    model.ThesisStartDate = new DateOnly();
+                }
+                
                 models.Add(model);
             }
             conn.Close();

@@ -52,7 +52,7 @@ namespace Software_Engineering_Project.Controllers
             }
 
             NpgsqlConnection conn1 = Database.Database.GetConnection();
-            int result1 = Database.Database.ExecuteUpdate(String.Format("update thesis set upload"+ model.version +"= '{0}' where student = '{1}';", bytes, model.Username), conn1);
+            int result1 = Database.Database.ExecuteUpdate(String.Format("update student set upload"+ model.version +"= '{0}' where student = '{1}';", bytes, model.Username), conn1);
             if (result1 != 0)
             {
                 conn1.Close();
@@ -75,7 +75,7 @@ namespace Software_Engineering_Project.Controllers
         {
             //query to check whether the student has uploaded anything to hide the equivalent form
             NpgsqlConnection conn = Database.Database.GetConnection();
-            NpgsqlDataReader result = Database.Database.ExecuteQuery(String.Format("select upload1,upload2,upload3 from thesis where student='{0}';", Username), conn);
+            NpgsqlDataReader result = Database.Database.ExecuteQuery(String.Format("select upload1,upload2,upload3 from student where student='{0}';", Username), conn);
             if (result.Read())
             {
                 if (!Convert.IsDBNull(result[0]))
