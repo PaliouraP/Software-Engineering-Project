@@ -4,56 +4,101 @@
     ViewData["Title"] = "UngradedStudents";
 }
 
-<h1>UngradedStudents</h1>
-
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Student
-            </th>
-            <th>
-                Title
-            </th>
-            <th>
-                Start Date
-            </th>
-            <th>
-                Language
-            </th>
-            <th>
-                Technology
-            </th>
-            <th>
-                Grade them
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @item.Student
-            </td>
-            <td>
-                @item.Title
-            </td>
-            <td>
-                @item.StartDate
-            </td>
-            <td>
-                @item.Language
-            </td>
-            <td>
-                @item.Technology
-            </td>
-            <td>
-                <a asp-controller="Teacher" asp-action="Grade" asp-route-username="@ViewBag.Username" asp-route-student="@item.Student">
-                    Click here
-                </a>
-            </td>
-        </tr>
+<!-- Stylesheet connection for AddStudent page -->
+@section Styles {
+    <link rel="stylesheet" href="~/css/UngradedStyle.css" />
+	<link rel="stylesheet" href="~/css/NavbarStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/js/BurgerMenu.js"></script>
 }
-    </tbody>
-</table>
+
+<section>
+<div class="content">
+        <!-- Top Navigation Menu -->
+                <div class="topnav" >
+                     <picture> 
+                            <img src ="@Url.Content("~/images/unipi_logo.png")" />
+                     </picture> 
+                     <div class="menu_burger">
+                     <div class="menu" id="bmenu">       
+                        <a class="link" asp-controller="Teacher" asp-action="TeacherHome" asp-route-username="@ViewBag.Username">Home</a>
+                        <a class="link" asp-controller="Teacher" asp-action="Meeting" asp-route-username="@ViewBag.Username">Appointments</a>
+                        <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@ViewBag.Username">Students</a>        
+                        <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@ViewBag.Username">Profile</a>
+                     </div>
+                     <div class="burger">
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <i class="fa fa-bars fa-xxl"></i>    
+                        </a>
+                     </div>
+                     </div>      
+                </div>
+
+    <div class="view">
+        <div class="card">
+            <br />
+            <img src="@Url.Content("~/images/ungraded.png")" alt="" class="icon" />
+            <h3 class="title">Pending Students</h3>
+            <div class="container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Student
+                            </th>
+                            <th>
+                                Thesis Title
+                            </th>
+                            <th>
+                                Start Date
+                            </th>
+                            <th>
+                                Language
+                            </th>
+                            <th>
+                                Technology
+                            </th>
+                            <th>
+                                Grade
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                @foreach (var item in Model) {
+                        <tr>
+                            <td>
+                                @item.Student
+                            </td>
+                            <td>
+                                @item.Title
+                            </td>
+                            <td>
+                                @item.StartDate
+                            </td>
+                            <td>
+                                @item.Language
+                            </td>
+                            <td>
+                                @item.Technology
+                            </td>
+                            <td>
+                                <a asp-controller="Teacher" asp-action="Grade" asp-route-username="@ViewBag.Username" asp-route-student="@item.Student">
+                                    Click here
+                                </a>
+                            </td>
+                        </tr>
+                }
+                    </tbody>
+                </table>
+            </div>
+            <br />
+        </div>
+
+        <div class="image-container">
+				<div class="panel left-panel">
+					<img src="@Url.Content("~/images/ungraded_list.png")" alt="" class="image" />
+				</div>
+		</div>
+    </div>
+</div>
+</section>
