@@ -1,0 +1,30 @@
+﻿@model Dictionary<string,byte[]?>
+
+
+    @if (Model["upload1"] != null)
+    {
+        <p>upload1 <a asp-controller="Teacher" asp-action="Download" asp-route-username="@ViewBag.Username" 
+            asp-route-student="@ViewBag.Student" asp-route-filename="upload1">download</a></p>
+    }
+
+
+    @if (Model["upload2"] != null)
+    {
+        <p>upload2 <a asp-controller="Teacher" asp-action="Download" asp-route-username="@ViewBag.Username" 
+            asp-route-student="@ViewBag.Student" asp-route-filename="upload2">download</a></p>
+    }
+
+
+    @if (Model["upload3"] != null)
+    {
+        <p>upload3 <a asp-controller="Teacher" asp-action="Download" asp-route-username="@ViewBag.Username" 
+            asp-route-student="@ViewBag.Student" asp-route-filename="upload3">download</a></p>
+    }
+
+
+    <form asp-controller="Teacher" asp-action="FinalGrade" asp-route-username="@ViewBag.Username" 
+            asp-route-student="@ViewBag.Student">
+        grade the student
+        <input type="number" name="grade" />
+        <input type="submit" />
+    </form>

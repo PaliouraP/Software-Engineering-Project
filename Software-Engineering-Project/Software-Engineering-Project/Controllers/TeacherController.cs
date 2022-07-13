@@ -457,9 +457,62 @@ namespace Software_Engineering_Project.Controllers
             return View(models);
         }
 
-        //public IActionResult Grade(string username, string student)
-        //{
+        public IActionResult Grade(string username, string student)
+        {
 
-        //}
+            Dictionary<string, byte[]?> uploads = new Dictionary<string, byte[]?>() { { "upload1", null }, { "upload2", null }, { "upload3", null } };
+
+            NpgsqlConnection conn = Database.Database.GetConnection();
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select upload1, upload2, upload3 from thesis " +
+                "where professor='{0}' and student='{1}'", username, student), conn);
+
+            if (reader.Read())
+            {
+                if (!Convert.IsDBNull(reader[0]))
+                {
+                    uploads["upload1"] = (byte[]?)reader[0];
+                }
+                if (!Convert.IsDBNull(reader[1]))
+                {
+                    uploads["upload2"] = (byte[]?)reader[1];
+                }
+                if (!Convert.IsDBNull(reader[2]))
+                {
+                    uploads["upload3"] = (byte[]?)reader[2];
+                }
+            }
+
+            ViewBag.Username = username;
+            ViewBag.Student = student;
+            return View(uploads);
+
+        }
+
+        public FileResult Download(string username, string student, string filename)
+        {
+            byte[] file = null;
+
+            NpgsqlConnection conn = Database.Database.GetConnection();
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select {0} from thesis " +
+                "where professor='{1}' and student='{2}'", filename, username, student), conn);
+
+            if (reader.Read())
+            {
+                file = (byte[])reader[0];
+            }
+
+            return File(file, "application/zip", filename + ".zip");
+
+        }
+
+        public IActionResult FinalGrade(string username, string student, int grade)
+        {
+
+            NpgsqlConnection conn = Database.Database.GetConnection();
+            int result = Database.Database.ExecuteUpdate(String.Format("update thesis set grade = {0} where student = '{1}'", grade, student), conn);
+
+            ViewBag.Username = username;
+            return View("StudentHandler");
+        }
     }
 }
