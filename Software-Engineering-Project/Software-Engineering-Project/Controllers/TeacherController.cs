@@ -457,9 +457,9 @@ namespace Software_Engineering_Project.Controllers
             return View(models);
         }
 
-        public IActionResult Grade(string username, string student)
-        {
+        //public IActionResult Grade(string username, string student)
+        //{
 
-        }
+        //}
     }
 }
