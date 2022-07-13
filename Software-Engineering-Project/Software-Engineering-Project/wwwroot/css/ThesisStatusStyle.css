@@ -46,10 +46,10 @@
     .thesis_info .pencil {
         color: #067BC2;
     }
-    
-    .thesis_info table td{
-        padding:5px;
-        margin:10px;
-        font-weight:bold;
 
+    .thesis_info table td {
+        padding: 5px;
+        margin: 10px;
+        font-weight: bold;
+        font-size: 18px;
     }
