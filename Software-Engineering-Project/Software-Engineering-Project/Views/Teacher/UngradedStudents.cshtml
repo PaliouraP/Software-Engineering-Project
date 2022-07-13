@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Software_Engineering_Project.Models.SearchModel>
+
+@{
+    ViewData["Title"] = "UngradedStudents";
+}
+
+<h1>UngradedStudents</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Student
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Start Date
+            </th>
+            <th>
+                Language
+            </th>
+            <th>
+                Technology
+            </th>
+            <th>
+                Grade them
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.Student
+            </td>
+            <td>
+                @item.Title
+            </td>
+            <td>
+                @item.StartDate
+            </td>
+            <td>
+                @item.Language
+            </td>
+            <td>
+                @item.Technology
+            </td>
+            <td>
+                <a asp-controller="Teacher" asp-action="Grade" asp-route-username="@ViewBag.Username" asp-route-student="@item.Student">
+                    Click here
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

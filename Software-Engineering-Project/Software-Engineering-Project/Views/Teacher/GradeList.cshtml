@@ -61,6 +61,8 @@
                     </thead>
                     <tbody>
                 @foreach (var item in Model) {
+                    @if (item.Grade != -1)
+                    {
                         <tr>
                             <td>
                                 @item.FirstName
@@ -76,6 +78,7 @@
                                 asp-route-professorName="@item.Professor">Click Here</a>
                             </td>
                         </tr>
+                      }
                 }
                     </tbody>
                 </table>

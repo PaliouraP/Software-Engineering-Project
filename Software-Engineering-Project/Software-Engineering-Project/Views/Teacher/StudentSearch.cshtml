@@ -77,10 +77,17 @@
 						<th>Thesis start date:</th>
 						<td>@item.StartDate</td>
 					</tr>
+					@if(item.Grade == -1){
+					<tr>
+						<th>Grade Them</th>
+						<td><a asp-controller="Teacher" asp-action="Grade" asp-route-username="@ViewBag.Username" asp-route-student="@item.Student">Click here</a></td>
+					</tr>
+					}else{
 					<tr>
 						<th>Thesis grade:</th>
 						<td>@item.Grade</td>
 					</tr>
+					}
 					<tr>
 						<th>Thesis Language:</th>
 						<td>@item.Language</td>

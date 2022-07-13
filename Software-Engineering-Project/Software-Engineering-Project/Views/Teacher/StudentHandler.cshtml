@@ -66,3 +66,10 @@
     </div>
   </section> 
   
+  @if (ViewBag.Fail != null && ViewBag.Fail){
+    <script type="text/javascript">
+        window.onload = function () {
+    alert('The student your searched for does not exist');
+    }
+    </script>
+}

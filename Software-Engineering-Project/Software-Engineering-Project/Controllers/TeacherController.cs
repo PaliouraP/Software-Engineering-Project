@@ -152,6 +152,12 @@ namespace Software_Engineering_Project.Controllers
 
     public IActionResult StudentSearch(string queryString, string professorName)
         {
+            if(queryString == null)
+            {
+                ViewBag.Fail = true;
+                ViewBag.Username = professorName;
+                return View("StudentHandler");
+            }
             List<SearchModel> searchModels = new List<SearchModel>();
 
             NpgsqlConnection conn = Database.Database.GetConnection();
@@ -213,6 +219,13 @@ namespace Software_Engineering_Project.Controllers
                 }
                 conn.Close();
             }
+            if (searchModels.Count < 1)
+            {
+                ViewBag.Fail = true;
+                ViewBag.Username = professorName;
+                return View("StudentHandler");
+            }
+            ViewBag.Username = professorName;
             return View(searchModels);
         }
 
@@ -418,6 +431,35 @@ namespace Software_Engineering_Project.Controllers
             }
             conn.Close();
             return View(models);
+        }
+
+        public IActionResult UngradedStudents(string username)
+        {
+            List<SearchModel> models = new();
+
+            NpgsqlConnection conn = Database.Database.GetConnection();
+            NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select student, title, thesis_start_date, language, technology" +
+                " from student as s natural join (select * from thesis where grade = -1 and professor = '{0}') as t", username), conn);
+
+            while (reader.Read())
+            {
+                SearchModel model = new();
+                model.Student = reader.GetString(0);
+                model.Title = reader.GetString(1);
+                model.StartDate = (DateOnly)reader.GetDate(2);
+                model.Language = reader.GetString(3);
+                model.Technology = reader.GetString(4);
+                models.Add(model);
+            }
+            conn.Close();
+
+            ViewBag.Username = username;
+            return View(models);
+        }
+
+        public IActionResult Grade(string username, string student)
+        {
+
         }
     }
 }
