@@ -23,24 +23,30 @@
         padding:20px;
     }
 
-.main .version1 {
+.version1 {
+    font-size: 18px;
     display: flex;
     flex-direction: column;
-    width: 400px;
-    height: 500px;
+    text-align: center;
+    align-items: center;
+    width: 300px;
+    height: 350px;
     box-shadow: 4px 4px 14px 4px rgba(0, 0.1, 0.1, 0.1);
     border-radius: 18px;
     margin: 3%;
     padding: 30px;
 }
+
     .main .version1 .inputs{
         width:100%;
         border-radius:15px;
-        background-color:whitesmoke;
+        background-color: whitesmoke;
         border:0px;
         padding:8px;
         margin:10px;
     }
+
+
     .main  p{
         color:dimgray;
         padding:10px;
@@ -51,27 +57,32 @@
         color:dimgray;
     }
     .main .button {
-        background-color: #067BC2;
-        border-radius: 20px;
-        margin: 10px;
-        height: 33px;
         align-items: center;
-        border: 0px;
-        color: white;
         text-decoration: none;
+        width: 80%;
+        bottom: 10px;
+        font-size: 18px;
+        border: none;
+        margin: 5px;
         border-radius: 20px;
-        width:100%;
-        bottom:10px;
+        background-color: #3893CE;
+        color: white;
+        padding: 8px
     }
-        .main  .button:hover {
-            background-color: rgba(6,120,194,0.6);
+        .main .button:hover {
+            background-color: #376996;
+            color: white;
+            cursor: pointer;
         }
-  
+
 
 
 .version2 {
+    font-size: 18px;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    align-items: center;
     width: 300px;
     height: 350px;
     box-shadow: 4px 4px 14px 4px rgba(0, 0.1, 0.1, 0.1);
@@ -81,8 +92,11 @@
 }
 
 .version3 {
+    font-size: 18px;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    align-items: center;
     width: 300px;
     height: 350px;
     box-shadow: 4px 4px 14px 4px rgba(0, 0.1, 0.1, 0.1);
