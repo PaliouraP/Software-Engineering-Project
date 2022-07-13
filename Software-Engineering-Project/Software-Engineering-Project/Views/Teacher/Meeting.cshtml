@@ -38,88 +38,90 @@
      </div>      
     </div>
     
-    <h1 class="username" id="username">@ViewBag.Username</h1>
+    <div class="view">
+        <h1 class="username" id="username">@ViewBag.Username</h1>
 
-        <div class="container">
+            <div class="container">
             
-            <div class="info">
+                <div class="info">
 
-            <div class="calendar">
+                <div class="calendar">
                 
-                <div class="month">
+                    <div class="month">
 
-                    <i class="fas fa-angle-left prev"></i>
-                    <div class="date">
-                        <h1 id="month"></h1>
-                        <p></p>
+                        <i class="fas fa-angle-left prev"></i>
+                        <div class="date">
+                            <h1 id="month"></h1>
+                            <p></p>
+                        </div>
+                        <i class="fas fa-angle-right next"></i>
                     </div>
-                    <i class="fas fa-angle-right next"></i>
-                </div>
-                <div class="weekdays">
-                    <div>Sun</div>
-                    <div>Mon</div>
-                    <div>Tue</div>
-                    <div>Wed</div>
-                    <div>Thu</div>
-                    <div>Fri</div>
-                    <div>Sat</div>
-                </div>
-                <div class="days">
-                </div>
+                    <div class="weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="days">
+                    </div>
                 
-                <button type="submit" value="Schedule Meeting" class="btn btn-primary" onclick="window.location.href='AddMeeting?Username=@ViewBag.Username' " >Schedule Meeting</button>
+                    <button type="submit" value="Schedule Meeting" class="btn btn-primary" onclick="window.location.href='AddMeeting?Username=@ViewBag.Username' " >Schedule Meeting</button>
                 
-            </div>
+                </div>
 
-            </div>
+                </div>
             
-            <div class="dialog" id="dialog">
-                <div class="dialogtext" id="dialogtext">
-                    <i class="fa-solid fa-circle-xmark fa-2xl" onclick="popup()"></i>
-                    @if(Model!=null)
-                    { 
-                    <br />
+                <div class="dialog" id="dialog">
+                    <div class="dialogtext" id="dialogtext">
+                        <i class="fa-solid fa-circle-xmark fa-2xl" onclick="popup()"></i>
+                        @if(Model!=null)
+                        { 
+                        <br />
                     
                     
                     
                     
-                        <table class="tbl">
+                            <table class="tbl">
 					    
-					        <tr>
-						        <th>Student Id</th>
-                                <th>Date and Time</th>
-                                <th>Duration</th>
-                                <th>Type</th>
-                                <th>Title</th>
+					            <tr>
+						            <th>Student Id</th>
+                                    <th>Date and Time</th>
+                                    <th>Duration</th>
+                                    <th>Type</th>
+                                    <th>Title</th>
 						        
-					        </tr>
-                        @foreach (var item in Model) {
-					        <tr>
-						        <td> @item.Student</td>
-						        <td> @item.DateTime</td> <!-- shows utc time so we should add 3 hours-->
-                                <td> @item.Duration</td>
-                                <td> @item.Type</td>
-                                <td> @item.Title</td>
-					        </tr>
-					    }
-                        </table>
-                    } else
-                    {
-                        <p>No meetings on this date!</p>
-                    }
+					            </tr>
+                            @foreach (var item in Model) {
+					            <tr>
+						            <td> @item.Student</td>
+						            <td> @item.DateTime</td> <!-- shows utc time so we should add 3 hours-->
+                                    <td> @item.Duration</td>
+                                    <td> @item.Type</td>
+                                    <td> @item.Title</td>
+					            </tr>
+					        }
+                            </table>
+                        } else
+                        {
+                            <p>No meetings on this date!</p>
+                        }
 
+                    </div>
                 </div>
+
             </div>
 
-        </div>
 
-
-               <!-- Image Container -->
-         <div class="image-container">
-            <div class="panel left-panel">
-                <img src="@Url.Content("~/images/Meeting_img.png")" alt="" class="image" />
-            </div>
-         </div>
+                   <!-- Image Container -->
+             <div class="image-container">
+                <div class="panel left-panel">
+                    <img src="@Url.Content("~/images/Meeting_img.png")" alt="" class="image" />
+                </div>
+             </div>
+    </div>
     </div>
 
     <script src="~/js/Meeting.js"></script> <!--woudn't work with script on the styles section-->
