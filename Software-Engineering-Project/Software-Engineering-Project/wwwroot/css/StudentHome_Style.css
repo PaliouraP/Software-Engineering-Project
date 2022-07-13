@@ -84,6 +84,6 @@ section {
     height: 100%;
     width: 100%;
     background: linear-gradient(-45deg, #067BC2, #449DD1, #78C0E0);
-    clip-path: circle(850px at right 1100px);
+    clip-path: circle(850px at right 900px);
 }
 /**/
