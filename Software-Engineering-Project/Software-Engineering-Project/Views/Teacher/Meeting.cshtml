@@ -71,6 +71,8 @@
                     <button type="submit" value="Schedule Meeting" class="btn btn-primary" onclick="window.location.href='AddMeeting?Username=@ViewBag.Username' " >Schedule Meeting</button>
                 
                 </div>
+                <br />
+                <br />
 
                 </div>
             
@@ -87,7 +89,7 @@
                             <table class="tbl">
 					    
 					            <tr>
-						            <th>Student Id</th>
+						            <th>Id</th>
                                     <th>Date and Time</th>
                                     <th>Duration</th>
                                     <th>Type</th>
@@ -125,10 +127,10 @@
     </div>
 
     <script src="~/js/Meeting.js"></script> <!--woudn't work with script on the styles section-->
-    <h1>@ViewBag.popup</h1>
+    <!--<h1>ViewBag.popup</h1>-->
     @if(@ViewBag.popup != null && @ViewBag.popup)
     {
-        <h1>yay</h1>
+        <!--<h1>yay</h1>-->
         <script src="~/js/popup.js"></script>
     }
 </section>
