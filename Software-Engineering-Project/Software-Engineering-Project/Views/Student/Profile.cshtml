@@ -45,23 +45,36 @@
     <h2>@Html.DisplayFor(model => model.FirstName)
     @Html.DisplayFor(model => model.LastName)</h2>
     <div class="all_info">  
-        <div class="info-name">
-            <p>Username</p>
-            <p>Supervised by </p>
-            <p>Started</p>
-            <p>Email</p>
-            <p>Gender</p>
-            <a>Tel</a>
-        </div>
-        <div class="info">
-            <p>@Html.DisplayFor(model => model.Username)</p>
-            <p>@Html.DisplayFor(model => model.Professor)</p>
-            <p>@Html.DisplayFor(model => model.StartYear)</p>
-            <p>@Html.DisplayFor(model => model.Email)</p>
-            <p>@Html.DisplayFor(model => model.Gender)</p>
-            <a>@Html.DisplayFor(model => model.Phone)</a>
-        </div> 
-</div>
+       <table class="tbl">
+			<tr>
+				<th>Username</th>
+				<td>@Html.DisplayFor(model => model.Username)</td>
+			</tr>
+			<tr>
+				<th>Instructor</th>
+				<td>@Html.DisplayFor(model => model.Professor)</td>
+			</tr>
+            <tr>
+				<th>Start Year</th>
+				<td>@Html.DisplayFor(model => model.StartYear)</td>
+			</tr>
+            <tr>
+				<th>Email</th>
+				<td>@Html.DisplayFor(model => model.Email)</td>
+			</tr>
+            <tr>
+				<th>Gender</th>
+				<td>@Html.DisplayFor(model => model.Gender)</td>
+			</tr>
+            <tr>
+				<th>Phone Number</th>
+				<td>@Html.DisplayFor(model => model.Phone)</td>
+			</tr>
+		</table>
+        
+        
+   
+    </div>
 </div>
 
 
@@ -94,7 +107,8 @@
         <p class="explanation">Change phone number</p>
     </div> 
     <div>
-         <input placeholder="New phone number" type="tel" pattern="[0-9]{10}" name="phone" class="inpt"/> <br />
+         <input placeholder="New phone number" type="tel" pattern="[0-9]{10}" name="phone" class="inpt"/>
+         <input type="tel" pattern="[0-9]{10}" name="phone" placeholder="Confirm Phone Number" class="inpt"/> 
         <input type="hidden"  name="Username" value="@Model.Username" />
         <input class="submit" type="SUBMIT" />
     </div>
