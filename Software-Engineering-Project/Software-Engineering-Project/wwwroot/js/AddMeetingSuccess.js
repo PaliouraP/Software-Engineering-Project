@@ -1,3 +1,3 @@
 ﻿window.onload = function () {
-    alert('You have successfully added a new meeting.');
+    alert('New meeting scheduled succesfully!');
 }

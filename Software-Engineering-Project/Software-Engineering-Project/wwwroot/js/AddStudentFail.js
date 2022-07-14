@@ -1,3 +1,3 @@
 ﻿window.onload = function () {
-    alert('You have failed to enter a student');
+    alert('Student could not be added. Please try again.');
 }
