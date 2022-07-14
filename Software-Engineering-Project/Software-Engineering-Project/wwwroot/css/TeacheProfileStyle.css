@@ -1,0 +1,147 @@
+﻿* {
+    box-sizing: border-box;
+    font-family: 'Nirmala UI';
+}
+
+.information {
+    display: flex;
+    flex-direction: row;
+    color: #3e3e3e;
+}
+
+.personal_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    box-shadow: 4px 4px 14px 4px rgba(0, 0.1, 0.1, 0.1);
+    border-radius: 18px;
+    margin: 3%;
+    padding: 30px;
+}
+
+    .personal_info img {
+        width: 200px;
+    }
+
+.all_info {
+    text-align: center;
+}
+
+th, td {
+    padding: 6px;
+    font-size: 18px;
+}
+
+.tbl {
+    width: 100%;
+    color: #444;
+}
+
+.reports_info {
+    text-align: center;
+    margin: 3%;
+    align-items: center;
+    width: 400px;
+    box-shadow: 4px 4px 14px 4px rgba(0, 0.1, 0.1, 0.1);
+    border-radius: 18px;
+    padding: 30px;
+    height: 300px;
+}
+
+    .reports_info i {
+        color: #3893CE;
+        font-size: 22px;
+        margin: 7px;
+    }
+
+.reports_info .buttons {
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    margin: 10px;
+    height: 35px;
+    align-items: center;
+}
+
+.reports_info .buttons:hover {
+    background-color: rgba(6,120,194,0.06);
+    cursor: pointer;
+}
+
+.reports_info .buttons a {
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 20px;
+    color: #3e3e3e;
+}
+
+.settings {
+    text-align: center;
+    margin: 3%;
+    align-items: center;
+    width: 400px;
+    box-shadow: 4px 4px 14px 4px rgba(0, 0.1, 0.1, 0.1);
+    border-radius: 18px;
+    padding: 30px;
+}
+
+    .settings p {
+        text-align: left;
+    }
+
+    .settings .submit {
+        font-size: 18px;
+        border: none;
+        width: 100%;
+        margin: 5px;
+        border-radius: 20px;
+        background-color: #3893CE;
+        color: white;
+        padding: 8px;
+    }
+
+        .settings .submit:hover {
+            background-color: #376996;
+            color: white;
+            cursor: pointer;
+        }
+
+    .settings .inpt {
+        padding: 8px;
+        margin: 5px;
+        border-radius: 20px;
+        border: 0;
+        background-color: #f0f0f0;
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .settings .explanation {
+        font-size: 18px;
+        margin: 10px;
+        font-weight: bold;
+    }
+
+
+.thesis_image {
+    display: flex;
+    flex-direction: column;
+    margin: 3%;
+    align-items: center;
+}
+
+    .thesis_image .pic img {
+        width: 350px;
+    }
+
+@media screen and (max-width: 1200px) {
+    .information {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .thesis_image .pic img {
+        display: none;
+    }
+}

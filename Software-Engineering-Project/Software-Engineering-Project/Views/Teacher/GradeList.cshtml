@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Software_Engineering_Project.Models.ThesisModel>
+
+@{
+    ViewData["Title"] = "GradeList";
+}
+
+
+
+<!-- Stylesheet connection for AddStudent page -->
+@section Styles {
+    <link rel="stylesheet" href="~/css/GradeListStyle.css" />
+	<link rel="stylesheet" href="~/css/NavbarStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/js/BurgerMenu.js"></script>
+}
+
+
+<section>
+<div class="content">
+
+    <!-- Top Navigation Menu -->
+            <div class="topnav" >
+                 <picture> 
+                        <img src ="@Url.Content("~/images/unipi_logo.png")" />
+                 </picture> 
+                 <div class="menu_burger">
+                 <div class="menu" id="bmenu">       
+                    <a class="link" asp-controller="Teacher" asp-action="TeacherHome" asp-route-username="@ViewBag.Username">Home</a>
+                    <a class="link" asp-controller="Teacher" asp-action="Meeting" asp-route-username="@ViewBag.Username">Appointments</a>
+                    <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@ViewBag.Username">Students</a>        
+                    <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@ViewBag.Username">Profile</a>
+                    <a class="link" asp-controller="Home" asp-action="Login">Logout</a>
+                 </div>
+                 <div class="burger">
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars fa-xxl"></i>    
+                    </a>
+                 </div>
+                 </div>      
+            </div>
+
+    <div class="view">
+        <div class="card">
+            <br />
+            <img src="@Url.Content("~/images/grade_img.png")" alt="" class="icon" />
+			<h3 class="title">Grades</h3>
+			<div class="container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Firstname
+                            </th>
+                            <th>
+                                Lastname
+                            </th>
+                            <th>
+                                Grade
+                            </th>
+                            <th>More details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                @foreach (var item in Model) {
+                    @if (item.Grade != -1)
+                    {
+                        <tr>
+                            <td>
+                                @item.FirstName
+                            </td>
+                            <td>
+                                @item.LastName
+                            </td>
+                            <td>
+                                @item.Grade
+                            </td>
+                            <td>
+                                <a asp-controller="Teacher" asp-action="StudentSearch" asp-route-queryString="@item.FirstName @item.LastName"
+                                asp-route-professorName="@item.Professor">Click Here</a>
+                            </td>
+                        </tr>
+                      }
+                }
+                    </tbody>
+                </table>
+            </div>
+            <br />
+        </div>
+
+        <div class="image-container">
+				<div class="panel left-panel">
+					<img src="@Url.Content("~/images/report.png")" alt="" class="image" />
+				</div>
+		</div>
+	</div>
+    </div>
+
+</section>

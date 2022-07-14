@@ -1,0 +1,101 @@
+﻿@model Dictionary<string,byte[]?>
+
+    @section Styles{
+        <link rel="stylesheet" href="~/css/GradeStyle.css" />
+        <link rel="stylesheet" href="~/css/NavbarStyle.css" />
+        <script src="~/js/BurgerMenu.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    }
+
+        <!-- Top Navigation Menu -->
+        <div class="topnav" >
+             <picture> 
+                    <img src ="@Url.Content("~/images/unipi_logo.png")" />
+             </picture> 
+             <div class="menu_burger">
+             <div class="menu" id="bmenu">       
+                <a class="link" asp-controller="Teacher" asp-action="TeacherHome" asp-route-username="@ViewBag.Username">Home</a> <!--Model-->
+                <a class="link" asp-controller="Teacher" asp-action="Meeting" asp-route-username="@ViewBag.Username">Appointments</a>
+                <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@ViewBag.Username">Students</a>        
+                <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@ViewBag.Username">Profile</a>
+                <a class="link" asp-controller="Home" asp-action="Login">Logout</a>
+             </div>
+             <div class="burger">
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars fa-xxl"></i>    
+                </a>
+             </div>
+             </div>      
+        </div>
+
+    <div class="title">
+        <h2>Here, you can <span>grade</span> your student's thesis.</h2>
+    </div>
+
+    <div class="main">
+        <div class="version1">
+            <form asp-controller="Student" asp-action="Upload" enctype="multipart/form-data" method="post" id="version1">
+                <picture>
+                    <img src ="@Url.Content("~/images/one.png")" />
+                </picture>
+
+                <p class="text">Download first draft: </p>
+                <br />
+                @if (Model["upload1"] != null)
+                {
+                    <p class="bt"><a asp-controller="Teacher" asp-action="Download" asp-route-username="@ViewBag.Username" 
+                        asp-route-student="@ViewBag.Student" asp-route-filename="upload1">Download</a></p>
+                }
+            </form>
+        </div>
+    
+        <div class="version2">
+            <form asp-controller="Student" asp-action="Upload" enctype="multipart/form-data" method="post" id="version2">
+                <picture>
+                    <img src ="@Url.Content("~/images/two.png")" />
+                </picture>
+    
+                <p class="text">Download second draft:</p>
+                <br />
+                @if (Model["upload2"] != null)
+                {
+                    <p class="bt"><a asp-controller="Teacher" asp-action="Download" asp-route-username="@ViewBag.Username" 
+                        asp-route-student="@ViewBag.Student" asp-route-filename="upload2">Download</a></p>
+                }
+             </form>
+        </div>
+
+
+        <div class="version3">
+            <form asp-controller="Student" asp-action="Upload" enctype="multipart/form-data" method="post" id="version3">
+                <picture>
+                    <img src ="@Url.Content("~/images/three.png")" />
+                </picture>
+                <p class="text">Download final thesis:</p>
+                <br />
+                @if (Model["upload3"] != null)
+                {
+                    <p class="bt"><a asp-controller="Teacher" asp-action="Download" asp-route-username="@ViewBag.Username" 
+                        asp-route-student="@ViewBag.Student" asp-route-filename="upload3">Download</a></p>
+                }
+            </form>
+
+        </div>
+
+      <div class="final">
+     <form asp-controller="Teacher" asp-action="FinalGrade" asp-route-username="@ViewBag.Username" asp-route-student="@ViewBag.Student">
+    <picture>
+         <img src ="@Url.Content("~/images/check.png")" />
+    </picture>
+         
+     <p class="text">Final Grade:</p>
+    <input type="number" name="grade" class="inp" />
+    <input type="submit" class="bt" />
+    </form>
+    </div>
+    </div>
+
+    
+
+    

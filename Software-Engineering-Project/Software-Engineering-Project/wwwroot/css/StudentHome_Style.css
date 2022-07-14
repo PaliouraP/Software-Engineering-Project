@@ -1,0 +1,89 @@
+﻿body {
+    font-family: 'Nirmala UI';
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Nirmala UI';
+}
+
+section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: #fff;
+    display: flex;
+    align-content: stretch;
+    flex-direction: column;
+}
+
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 10%;
+    left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+    .content .textbox {
+        position: relative;
+        max-width: 650px;
+        top: 30px;
+    }
+
+        .content .textbox h2 {
+            color: #333;
+            font-size: 4em;
+            line-height: 1.4em;
+            font-weight: 500;
+        }
+
+            .content .textbox h2 span {
+                color: #067BC2;
+                font-size: 1.2em;
+                font-weight: 900;
+            }
+
+        .content .textbox p {
+            color: #333;
+        }
+
+        .content .textbox a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 20px;
+            background: #067BC2;
+            color: #fff;
+            border-radius: 40px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+            .content .textbox a:hover {
+                background-color: #376996;
+            }
+
+    .content .imgBox {
+        width: 600px;
+        display: flex;
+        padding-right: 0;
+        z-index: 2;
+    }
+
+        .content .imgBox img {
+            max-width: 500px;
+        }
+
+.circle {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(-45deg, #067BC2, #449DD1, #78C0E0);
+    clip-path: circle(850px at right 900px);
+}
+/**/

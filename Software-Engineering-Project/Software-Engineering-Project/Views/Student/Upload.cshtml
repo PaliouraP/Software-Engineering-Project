@@ -1,0 +1,146 @@
+﻿@model Software_Engineering_Project.Models.ThesisModel
+@{
+    ViewData["Title"] = "Upload";
+}
+@section Styles{
+        <link rel="stylesheet" href="~/css/UpdateStyle.css" />
+        <link rel="stylesheet" href="~/css/NavbarStyle.css" />
+        <script src="~/js/BurgerMenu.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+}
+
+<!-- Top Navigation Menu -->
+<div class="topnav" >
+     <picture> 
+            <img src ="@Url.Content("~/images/unipi_logo.png")" />
+     </picture> 
+     <div class="menu_burger">
+     <div class="menu" id="bmenu">       
+       <a class="link" asp-controller="Student" asp-action="StudentHome" asp-route-username="@ViewBag.Username">Home</a> 
+        <a class="link" asp-controller="Student" asp-action="Meeting" asp-route-username="@ViewBag.Username">Appointments</a>
+        <a class="link" asp-controller="Student" asp-route-username="@ViewBag.Username" asp-action="Upload">Upload a Thesis</a> 
+        <a class="link" asp-controller="Student" asp-route-username="@ViewBag.Username" asp-action="ThesisStatus">Thesis Status</a> 
+        <a class="link" asp-controller="Student" asp-route-username="@ViewBag.Username" asp-action="Profile">Profile</a> 
+        <a class="link" asp-controller="Home" asp-action="Login">Logout</a>
+     </div>
+     <div class="burger">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars fa-xxl"></i>    
+        </a>
+     </div>
+     </div>      
+</div>
+
+<div class="title">
+    <h2>Here, you can upload each of the <span>three parts</span> of your thesis.</h2>
+    </div>
+
+
+<div class="main">
+
+<!-- Upload the first draft -->
+<div class="version1">
+    <form asp-controller="Student" asp-action="Upload" enctype="multipart/form-data" method="post" id="version1">
+        <picture>
+            <img src ="@Url.Content("~/images/one.png")" />
+        </picture>
+
+        <p>Upload first draft: </p>
+        <input type="hidden" asp-for="@Model.version" value = "1" >   
+        <input type="hidden" asp-for="@Model.Username" value = "@ViewBag.Username" >   
+        <input asp-for="@Model.File" type="file" name = "file" class="uploader">   
+        <span asp-validation-for="@Model.File"class=""></span>          
+        <br />
+        <br />
+        <input asp-page-handler="Upload"  class="button" type="submit" value="Upload" />
+    </form>
+</div>
+
+
+
+<div class="version2"><!-- Upload the second draft -->
+    <form asp-controller="Student" asp-action="Upload" enctype="multipart/form-data" method="post" id="version2">
+        <picture>
+            <img src ="@Url.Content("~/images/two.png")" />
+        </picture>
+    
+        <p>Upload second draft:</p>
+        <input type="hidden" asp-for="@Model.version" value = "2">
+        <input type="hidden" asp-for="@Model.Username" value = "@ViewBag.Username">
+        <input asp-for="@Model.File" type="file" name = "file"class="uploader">
+        <span asp-validation-for="@Model.File"></span>       
+        <br />
+        <br />
+        <input asp-page-handler="Upload" class="button" type="submit" value="Upload" />
+    </form>
+</div>
+
+<div class="version3">
+<!-- Upload the final draft -->
+    <form asp-controller="Student" asp-action="Upload" enctype="multipart/form-data" method="post" id="version3">
+        <picture>
+            <img src ="@Url.Content("~/images/three.png")" />
+        </picture>
+        <p>Upload final thesis:</p>
+        <input type="hidden" asp-for="@Model.version" value = "3">
+        <input type="hidden" asp-for="@Model.Username" value = "@ViewBag.Username">
+        <input asp-for="@Model.File" type="file" name = "file" class="uploader">
+        <span asp-validation-for="@Model.File"></span>  
+        <br />
+        <br />
+        <input asp-page-handler="Upload" class="button" type="submit" value="Upload" />
+    </form>
+</div>
+
+</div>
+
+
+@if (ViewBag.Success == true)
+{
+    <script type="text/javascript">
+window.onload = function() {
+    alert('Successful upload!');
+}
+</script>
+}
+
+else if (ViewBag.version1 != null && ViewBag.version1 == false)
+{
+    <script>
+    $(function disableElements() {
+        var form = document.getElementById("version1");
+
+        for (var i = 0; i < form.length; i++) {
+            form[i].disabled = true;
+        }
+    });   
+    </script>
+}
+
+@if (ViewBag.version2 != null && ViewBag.version2 == false)
+{
+
+    <script>
+    function disableElements() { 
+            var form = document.getElementById("version2");
+            
+        for (var i = 0; i < form.length; i++) {
+                form[i].disabled = true;
+            }
+     }   
+    </script>
+}
+
+@if (ViewBag.version3 != null && ViewBag.version3 == false)
+{
+    <script>
+   function disableElements() { 
+            var form = document.getElementById("version3");
+            
+        for (var i = 0; i < form.length; i++) {
+                form[i].disabled = true;
+            }
+     }   
+    </script>
+}

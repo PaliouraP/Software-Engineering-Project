@@ -1,0 +1,249 @@
+﻿@model Software_Engineering_Project.Models.StudentModel
+
+@{
+    ViewData["Title"] = "Profile";
+}
+@section Styles{
+        <link rel="stylesheet" href="~/css/StudentProfile.css" />        
+        <link rel="stylesheet" href="~/css/NavbarStyle.css" />
+        <script src="~/js/BurgerMenu.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+}
+
+<!-- Top Navigation Menu -->
+
+<div class="topnav" >
+     <picture> 
+            <img src ="@Url.Content("~/images/unipi_logo.png")" />
+            
+     </picture> 
+     <div class="menu_burger">
+     <div class="menu" id="bmenu">       
+        <a class="link" asp-controller="Student" asp-action="StudentHome" asp-route-username="@ViewBag.Username">Home</a> 
+        <a class="link" asp-controller="Student" asp-action="Meeting" asp-route-username="@ViewBag.Username">Appointments</a>
+        <a class="link" asp-controller="Student" asp-route-username="@ViewBag.Username" asp-action="Upload">Upload a Thesis</a> 
+        <a class="link" asp-controller="Student" asp-route-username="@ViewBag.Username" asp-action="ThesisStatus">Thesis Status</a> 
+        <a class="link" asp-controller="Student" asp-route-username="@ViewBag.Username" asp-action="Profile">Profile</a> 
+        <a class="link" asp-controller="Home" asp-action="Login">Logout</a>
+     </div>
+     <div class="burger">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars fa-xxl"></i>    
+        </a>
+     </div>
+     </div>      
+</div>
+
+<div class="information">
+
+<!--Personal Information Card-->
+
+<div class="personal_info">
+    <h1>Personal Card</h1>
+    <img src ="@Url.Content("~/images/profile_picture.png")" />
+    <h2>@Html.DisplayFor(model => model.FirstName)
+    @Html.DisplayFor(model => model.LastName)</h2>
+    <div class="all_info">  
+       <table class="tbl">
+			<tr>
+				<th>Username</th>
+				<td>@Html.DisplayFor(model => model.Username)</td>
+			</tr>
+			<tr>
+				<th>Instructor</th>
+				<td>@Html.DisplayFor(model => model.Professor)</td>
+			</tr>
+            <tr>
+				<th>Start Year</th>
+				<td>@Html.DisplayFor(model => model.StartYear)</td>
+			</tr>
+            <tr>
+				<th>Email</th>
+				<td>@Html.DisplayFor(model => model.Email)</td>
+			</tr>
+            <tr>
+				<th>Gender</th>
+				<td>@Html.DisplayFor(model => model.Gender)</td>
+			</tr>
+            <tr>
+				<th>Phone Number</th>
+				<td>@Html.DisplayFor(model => model.Phone)</td>
+			</tr>
+		</table>
+        
+        
+   
+    </div>
+</div>
+
+
+<!--Settings-->
+
+<div class="settings">
+    <h1>Settings</h1>
+
+<!--Change password form-->
+
+    <form asp-controller="Student" asp-action="ChangePassword" method="post" >
+        <div>
+            <p class="explanation">Change password</p>
+        </div> 
+        <div>
+            
+            <input type="password" placeholder="Old Password" name="oldPassword" class="inpt"/> 
+            <input type="password" placeholder="New Password" name="newPassword" class="inpt"/> 
+            <input type="password" placeholder="Confirm new Password" name="newPassword1" class="inpt"/> 
+            <input type="hidden" name="Username" value="@ViewBag.Username" />
+            <input class="submit" type="submit"/>
+        </div>
+    </form>
+
+
+<!--Change phone number form-->
+
+<form asp-controller="Student" asp-action="ChangePhone" method="post" >
+    <div>
+        <p class="explanation">Change phone number</p>
+    </div> 
+    <div>
+         <input placeholder="New phone number" type="tel" pattern="[0-9]{10}" name="phone" class="inpt"/>
+         <input type="tel" pattern="[0-9]{10}" name="phone" placeholder="Confirm Phone Number" class="inpt"/> 
+        <input type="hidden"  name="Username" value="@ViewBag.Username" />
+        <input class="submit" type="SUBMIT" />
+    </div>
+</form></div>  
+
+<div class="thesis_image">
+
+
+<!--Thesis Actions-->
+
+<div class="thesis_info">
+    <h1>Thesis</h1>
+    <div class="buttons">
+        <a href="javascript:void(0);" class="icon" >
+            <i class="fa fa-upload" ></i>    
+        </a>
+        <a class="link" asp-controller="Student" asp-action="Upload" asp-route-username="@Model.Username">Upload Thesis</a>
+    </div>
+    <div class="buttons">
+        <a href="javascript:void(0);" class="icon" >
+            <i class="fa fa-search"></i>    
+        </a>
+        <a class="link" asp-controller="Student" asp-action="ThesisStatus" asp-route-username="@Model.Username">Thesis Status</a>
+
+    </div>
+
+</div>
+<div class="pic">
+    <img src="@Url.Content("~/images/profile_img.png")" />
+</div>
+
+</div>
+
+
+@if(ViewBag.wrongPassword == 1){
+    <script type="text/javascript">
+        window.onload = function () {
+    alert('The old password is wrong');
+    }
+    </script>
+}
+@if (ViewBag.notSamePasswords == 1)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+    alert('The new passwords do not match');
+    }
+    </script>
+}
+@if (ViewBag.failure == 1)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+    alert('Something went wrong please try again');
+    }
+    </script>
+}
+@if (ViewBag.success == 1)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+    alert('Success');
+    }
+    </script>
+}
+@if (ViewBag.emptyPassword == 1)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+    alert('Please enter a valid password');
+    }
+    </script>
+}
+
+
+
+
+
+
+<div>
+    </div>
+
+    
+        <!--
+            <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StartYear)
+        </dt>
+        <dd class = "col-sm-2">
+            @Html.DisplayFor(model => model.StartYear)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Professor)
+        </dt>
+        <dd class = "col-sm-2">
+            @Html.DisplayFor(model => model.Professor)
+        </dd> <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+        <dd class = "col-sm-2">
+            @Html.DisplayFor(model => model.Username)
+        </dd>-->
+              
+        <!--<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>      
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+    </dl>-->
+  
+</div>

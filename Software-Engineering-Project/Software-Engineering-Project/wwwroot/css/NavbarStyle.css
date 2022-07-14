@@ -1,0 +1,234 @@
+﻿* {
+    margin: 0;
+    font-family: 'Nirmala UI';
+}
+.topnav {
+    display:flex;
+    justify-content:space-between;
+    float:inherit;
+    z-index: 8;
+}
+    .topnav .menu_burger {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-radius: 12px;
+    }
+.topnav .burger{
+}
+    
+    .topnav a {
+        color: #067BC2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    .topnav .icon{
+        display:none;
+        font-size:25px;
+    }
+
+    .topnav .link {
+        color: #067BC2;
+        font-size: 17px;
+        border-radius: 8px;
+        box-shadow: inset 0 0 0 0 rgba(6,120,194,0.6);
+    }
+        .topnav .link:hover {
+            box-shadow: inset 840px 0 0 0 rgba(6,120,194,0.6);
+            color: white;
+            height:fit-content;
+        }
+    .topnav .menu{
+        position:relative;
+        display:flex;
+        flex-direction:row;
+        top:20px;
+    }
+@media screen and (max-width: 940px) {
+    .topnav{
+    }
+    .topnav a {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+    .content .textbox{
+
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .topnav{
+        flex-direction:column;
+    }
+    .menu.responsive {
+        flex-direction: column;
+        background-color: rgba(6,120,194,0.06);
+        border-radius: 8px;
+        width: 100%;
+        height: 140px;
+        flex-shrink: 2;
+    }
+
+        .menu.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .menu.responsive a {
+            display: block;
+            padding:4px 10px;
+            
+        }
+}
+
+
+
+
+/*body {
+    --blue-main: #017bc8;
+}
+
+* {
+    font-family: 'Nirmala UI';
+}
+.image{
+    
+    width:100%;
+    height:auto;
+    
+}
+.top{
+    top:0;
+}
+.nav {
+    overflow: hidden;
+    padding:20px;
+}
+
+    .nav a {
+        text-align: center;
+        padding: 10px 10px;
+        text-decoration: none;
+    }
+
+    .icon {
+        font-size: 20px;
+        display: none;
+        color: var(--blue-main);
+        position:absolute;
+        top:0;
+        right:0;
+    }
+
+    .links {
+        color: var(--blue-main);
+        font-size: 16px;
+        display: right;
+        box-shadow: inset 0 0 0 0 var(--blue-main);
+        transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    }
+
+        .links:hover {
+            box-shadow: inset 120px 0 0 0 var(--blue-main);
+            color: white;
+        }body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.topnav {
+    overflow: hidden;
+    background-color: white;
+    position: absolute;
+    width:100%;
+    top:0;
+}
+.icon{
+    display:none;
+}
+
+.topnav img{
+    width:350px;
+}
+
+.topnav a {
+        color: #067BC2;
+        text-align: center;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 17px;
+        border-radius:10px;
+        height:2px;
+
+    }
+
+.links {
+   box-shadow: inset 0 0 0 0 ;
+transition: color .3s ease-in-out, box-shadow .3s ease-in-out;}
+    .links:hover {
+         box-shadow: inset 150px 0 0 0 rgba(6,120,194,0.6);
+        color: white;
+        background: rgba(6,120,194,0.6);
+    }
+   
+.nav {
+    position:relative;
+    top:0;
+    
+}
+
+
+@media screen and (max-width:800px) {
+
+    .nav a:not(:first-child) {
+        display: none;
+    }
+
+    .nav a.icon {
+        display: block;
+        position:absolute;
+        right:0;
+    }
+
+    .topnav img {
+        width: 100px;
+        height:80px;
+        padding:5px;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .nav.responsive {
+        display:relative;
+    }
+
+    .icon {
+        display: absolute;
+    }
+
+       
+    .links {
+        text-align: left;
+        width: 100%;
+        position:relative;
+
+        display:block;
+    }
+
+        .links:hover {
+            box-shadow: inset 150px 0 0 0 rgba(6,120,194,0.6);
+            color: white;
+            background: rgba(6,120,194,0.6);
+        }
+}*/
+
+
+

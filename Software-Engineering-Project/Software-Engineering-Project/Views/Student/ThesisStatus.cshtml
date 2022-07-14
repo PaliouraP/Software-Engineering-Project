@@ -1,0 +1,83 @@
+﻿@model Software_Engineering_Project.Models.ThesisModel
+
+@{
+    ViewData["Title"] = "ThesisStatus";
+}
+
+@section Styles{
+        <link rel="stylesheet" href="~/css/ThesisStatusStyle.css" />        
+        <link rel="stylesheet" href="~/css/NavbarStyle.css" />
+        <script src="~/js/BurgerMenu.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+}
+
+<!-- Top Navigation Menu -->
+<div class="topnav" >
+     <picture> 
+            <img src ="@Url.Content("~/images/unipi_logo.png")" />
+     </picture> 
+     <div class="menu_burger">
+     <div class="menu" id="bmenu">       
+       <a class="link" asp-controller="Student" asp-route-username="@ViewBag.Username" asp-action="StudentHome">Home</a> 
+        <a class="link" asp-controller="Student" asp-action="Meeting" asp-route-username="@ViewBag.Username">Appointments</a>
+        <a class="link" asp-controller="Student" asp-route-username="@ViewBag.Username" asp-action="Upload">Upload a Thesis</a> 
+        <a class="link" href="#">Thesis Status</a> 
+        <a class="link" asp-controller="Student" asp-route-username="@ViewBag.Username" asp-action="Profile">Profile</a> 
+        <a class="link" asp-controller="Home" asp-action="Login">Logout</a>
+     </div>
+     <div class="burger">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars fa-xxl"></i>    
+        </a>
+     </div>
+     </div>      
+</div>
+
+<<div class="main">
+<div class="thesis_info">
+    <a href="javascript:void(0);" class="icon">
+        <i class="fa fa-file-text-o fa-xxl"></i>    
+    </a>
+    <h2>My Thesis Status</h2>
+    <table>
+        <tr>
+            <td class="title">@Html.DisplayNameFor(model => model.Username)</td>
+            <td class="info">@Html.DisplayFor(model => model.Username)</td>
+            <td><div class="pencil"><i class="fa fa-pencil" aria-hidden="true"></i></div></td>
+        </tr>   
+        <tr>
+            <td class="title">@Html.DisplayNameFor(model => model.Professor)</td>
+            <td class="info">@Html.DisplayFor(model => model.Professor)</td>
+            <td><div class="pencil"><i class="fa fa-pencil" aria-hidden="true"></i></div></td>
+        </tr>      
+        <tr>
+            <td class="title">@Html.DisplayNameFor(model => model.Title)</td>
+            <td class="info">@Html.DisplayFor(model => model.Title)</td>
+            <td><div class="pencil"><i class="fa fa-pencil" aria-hidden="true"></i></div></td>
+        </tr>  
+         <tr>
+            <td class="title">@Html.DisplayNameFor(model => model.Grade)</td>
+            @if (Model.Grade == -1)
+            {
+                <td class="info">-</td>
+            }else{
+            <td class="info">@Model.Grade</td>
+            }
+            <td><div class="pencil"><i class="fa fa-pencil" aria-hidden="true"></i></div></td>
+        </tr> 
+         <tr>
+            <td class="title">@Html.DisplayNameFor(model => model.Language)</td>
+            <td class="info">@Html.DisplayFor(model => model.Language)</td>
+            <td><div class="pencil"><i class="fa fa-pencil" aria-hidden="true"></i></div></td>
+        </tr> 
+         <tr>
+            <td class="title">@Html.DisplayNameFor(model => model.Technology)</td>
+            <td class="info">@Html.DisplayFor(model => model.Technology)</td>
+            <td><div class="pencil"><i class="fa fa-pencil" aria-hidden="true"></i></div></td>
+        </tr>  
+    </table>
+</div>
+
+</div>

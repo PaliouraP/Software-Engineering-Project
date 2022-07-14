@@ -1,0 +1,55 @@
+﻿* {
+    box-sizing: border-box;
+    font-family: 'Nirmala UI';
+
+}
+.main {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.thesis_info {
+    display:flex;
+    flex-direction:column;
+    width: 500px;
+    height:400px;
+    box-shadow: 4px 4px 14px 4px rgba(0, 0.1, 0.1, 0.1);
+    border-radius: 18px;
+    margin: 3%;
+    padding: 30px;
+}
+    .thesis_info .icon {
+        font-size: 60px;
+        color: #067BC2;
+        align-self: center;
+    }
+    .thesis_info h2 {
+        align-self: center;
+        padding: 10px;
+        color: #067BC2;
+    }
+    .thesis_info table{
+        width:100%;
+    }
+    .thesis_info table .info{
+        text-align:left;
+        /*background-color:whitesmoke;*/
+        border-radius:15px;
+        color:dimgray;
+        width:600px;
+        }
+    .thesis_info table .title{
+        width:400px;
+    }
+    .thesis_info .pencil {
+        color: #067BC2;
+    }
+
+    .thesis_info table td {
+        padding: 5px;
+        margin: 10px;
+        font-weight: bold;
+        font-size: 18px;
+    }
