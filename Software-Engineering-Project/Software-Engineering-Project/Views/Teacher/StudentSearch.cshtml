@@ -1,4 +1,4 @@
-﻿@model List<Software_Engineering_Project.Models.SearchModel>
+﻿@model List<Software_Engineering_Project.Models.ThesisModel>
 
 @{
     ViewData["Title"] = "Student Search";
@@ -47,7 +47,7 @@
 					@foreach (var item in Model) {
 					<tr>
 						<th>Student Id:</th>
-						<td> @item.Student</td>
+						<td> @item.Username</td>
 					</tr>
 					<tr>
 						<th>First Name:</th>
@@ -76,12 +76,12 @@
 					</tr>
 					<tr>
 						<th>Thesis start date:</th>
-						<td>@item.StartDate</td>
+						<td>@item.ThesisStartDate</td>
 					</tr>
 					@if(item.Grade == -1){
 					<tr>
 						<th>Grade Them</th>
-						<td><a asp-controller="Teacher" asp-action="Grade" asp-route-username="@ViewBag.Username" asp-route-student="@item.Student">Click here</a></td>
+						<td><a asp-controller="Teacher" asp-action="Grade" asp-route-username="@ViewBag.Username" asp-route-student="@item.Username">Click here</a></td>
 					</tr>
 					}else{
 					<tr>

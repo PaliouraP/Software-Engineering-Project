@@ -23,9 +23,9 @@
      <div class="menu_burger">
      <div class="menu" id="bmenu">       
         <a class="link" href="#">Home</a>
-        <a class="link" asp-controller="Teacher" asp-action="Meeting" asp-route-username="@Model.Username">Appointments</a>
-        <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@Model.Username">Students</a>        
-        <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@Model.Username">Profile</a>
+        <a class="link" asp-controller="Teacher" asp-action="Meeting" asp-route-username="@ViewBag.Username">Appointments</a>
+        <a class="link" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@ViewBag.Username">Students</a>        
+        <a class="link" asp-controller="Teacher" asp-action="Profile" asp-route-username="@ViewBag.Username">Profile</a>
         <a class="link" asp-controller="Home" asp-action="Login">Logout</a>
      </div>
      <div class="burger">
@@ -54,7 +54,7 @@
             
             <a class="links" href="#">Home</a>
             <a class="links" href="#">Thesis</a>
-            <a class="links" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="@Model.Username">Students</a>
+            <a class="links" asp-controller="Teacher" asp-action="StudentHandler" asp-route-username="Model.Username">Students</a>
             <a class="links" href="#">Reports</a>
             <a class="links" href="#">Profile</a>            
         </div>

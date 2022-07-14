@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Software_Engineering_Project.Models.SearchModel>
+﻿@model IEnumerable<Software_Engineering_Project.Models.ThesisModel>
 
 @{
     ViewData["Title"] = "UngradedStudents";
@@ -68,13 +68,13 @@
                 @foreach (var item in Model) {
                         <tr>
                             <td>
-                                @item.Student
+                                @item.Username
                             </td>
                             <td>
                                 @item.Title
                             </td>
                             <td>
-                                @item.StartDate
+                                @item.ThesisStartDate
                             </td>
                             <td>
                                 @item.Language
@@ -83,7 +83,7 @@
                                 @item.Technology
                             </td>
                             <td>
-                                <a asp-controller="Teacher" asp-action="Grade" asp-route-username="@ViewBag.Username" asp-route-student="@item.Student">
+                                <a asp-controller="Teacher" asp-action="Grade" asp-route-username="@ViewBag.Username" asp-route-student="@item.Username">
                                     Click here
                                 </a>
                             </td>

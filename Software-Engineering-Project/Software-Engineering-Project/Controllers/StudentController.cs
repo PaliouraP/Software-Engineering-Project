@@ -104,6 +104,7 @@ namespace Software_Engineering_Project.Controllers
                 model.Technology = reader.GetString(5);
             }
             conn.Close();
+            ViewBag.Username = Username;
             return View(model);
         }
 
@@ -127,6 +128,7 @@ namespace Software_Engineering_Project.Controllers
                 model.Professor = reader.GetString(6);
             }
             conn.Close();
+            ViewBag.Username = Username;
             return View(model);
         }
 
@@ -183,6 +185,7 @@ namespace Software_Engineering_Project.Controllers
             conn.Close();
             StudentModel model = new();
             model.Username = Username;
+            ViewBag.Username = Username;
             return View("Profile", model);
         }
 
@@ -212,6 +215,7 @@ namespace Software_Engineering_Project.Controllers
             }
             StudentModel model = new();
             model.Username = Username;
+            ViewBag.Username = Username;
             return View("Profile", model);
         }
 
@@ -262,15 +266,18 @@ namespace Software_Engineering_Project.Controllers
 
                     if (result == 1 && result1 ==1)
                     {
+                        ViewBag.Username = Username;
                         return View("StudentHome", Username);
                     }
                     else
                     {
+                        ViewBag.Username = Username;
                         ViewBag.failure = 1;
                     }
                 }
             }
-                        return View("SetPassword", Username);
+            ViewBag.Username = Username;
+            return View("SetPassword", Username);
         }
 
         //GET

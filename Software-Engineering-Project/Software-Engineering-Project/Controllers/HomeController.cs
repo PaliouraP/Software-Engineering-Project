@@ -7,28 +7,6 @@ namespace Software_Engineering_Project.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
 
         // Login page view method
         //GET
@@ -60,6 +38,7 @@ namespace Software_Engineering_Project.Controllers
                 {
                     if(role == "professor")
                     {
+                        ViewBag.Username = model.Username;
                         return View("~/Views/Teacher/TeacherHome.cshtml", model);
                     }
                     else
@@ -72,6 +51,7 @@ namespace Software_Engineering_Project.Controllers
                             bool has_connected = new_reader.GetBoolean(0);
                             if (has_connected) 
                             {
+                                ViewBag.Username = model.Username;
                                 return View("~/Views/Student/StudentHome.cshtml", model.Username);
                             }
                             else

@@ -40,12 +40,14 @@ namespace Software_Engineering_Project.Controllers
                 if (result != 0)
                 {
                     conn.Close();
+                    ViewBag.Username = proffesorName;
                     ViewBag.Success = true;
                     return View();
                 }
                 conn.Close();
             }
             ViewBag.Success = false;
+            ViewBag.Username = proffesorName;
             return View();
 
         }
@@ -91,7 +93,7 @@ namespace Software_Engineering_Project.Controllers
 
         public IActionResult SearchMeetingStudent(string Username)
         {
-            List<SearchModel> searchModels = new List<SearchModel>();
+            List<ThesisModel> searchModels = new List<ThesisModel>();
 
             NpgsqlConnection conn = Database.Database.GetConnection();
 
@@ -100,14 +102,15 @@ namespace Software_Engineering_Project.Controllers
 
             while (reader.Read())
             {
-                SearchModel model = new SearchModel();
-                model.Student = reader.GetString(0);
+                ThesisModel model = new ThesisModel();
+                model.Username = reader.GetString(0);
                 model.FirstName = reader.GetString(1);
                 model.LastName = reader.GetString(2);
 
                 searchModels.Add(model);
             }
             conn.Close();
+            ViewBag.Username = Username;
             return View("AddMeeting", searchModels);
 
         }
@@ -158,7 +161,7 @@ namespace Software_Engineering_Project.Controllers
                 ViewBag.Username = professorName;
                 return View("StudentHandler");
             }
-            List<SearchModel> searchModels = new List<SearchModel>();
+            List<ThesisModel> searchModels = new List<ThesisModel>();
 
             NpgsqlConnection conn = Database.Database.GetConnection();
 
@@ -176,15 +179,15 @@ namespace Software_Engineering_Project.Controllers
 
                 while (reader.Read())
                 {
-                    SearchModel model = new SearchModel();
-                    model.Student = reader.GetString(0);
+                    ThesisModel model = new ThesisModel();
+                    model.Username = reader.GetString(0);
                     model.StartYear = reader.GetInt32(1);
                     model.FirstName = reader.GetString(2);
                     model.LastName = reader.GetString(3);
                     model.Email = reader.GetString(4);
                     model.Phone = reader.GetDecimal(5).ToString();
                     model.Title = reader.GetString(6);
-                    model.StartDate = (DateOnly)reader.GetDate(7);
+                    model.ThesisStartDate = (DateOnly)reader.GetDate(7);
                     model.Grade = reader.GetInt32(8);
                     model.Language = reader.GetString(9);
                     model.Technology = reader.GetString(10);
@@ -203,15 +206,15 @@ namespace Software_Engineering_Project.Controllers
 
                 while (reader.Read())
                 {
-                    SearchModel model = new SearchModel();
-                    model.Student = reader.GetString(0);
+                    ThesisModel model = new ThesisModel();
+                    model.Username = reader.GetString(0);
                     model.StartYear = reader.GetInt32(1);
                     model.FirstName = reader.GetString(2);
                     model.LastName = reader.GetString(3);
                     model.Email = reader.GetString(4);
                     model.Phone = reader.GetDecimal(5).ToString();
                     model.Title = reader.GetString(6);
-                    model.StartDate = (DateOnly)reader.GetDate(7);
+                    model.ThesisStartDate = (DateOnly)reader.GetDate(7);
                     model.Grade = reader.GetInt32(8);
                     model.Language = reader.GetString(9);
                     model.Technology = reader.GetString(10);
@@ -383,7 +386,7 @@ namespace Software_Engineering_Project.Controllers
 
         public IActionResult GradeList(string username)
         {
-            List<GradeModel> models = new();
+            List<ThesisModel> models = new();
 
             NpgsqlConnection conn = Database.Database.GetConnection();
             NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select first_name, last_name, grade " +
@@ -392,7 +395,7 @@ namespace Software_Engineering_Project.Controllers
 
             while (reader.Read())
             {
-                GradeModel model = new();
+                ThesisModel model = new();
                 model.Professor = username;
                 model.FirstName = reader.GetString(0);
                 model.LastName = reader.GetString(1);
@@ -400,6 +403,7 @@ namespace Software_Engineering_Project.Controllers
                 models.Add(model);
             }
             conn.Close();
+            ViewBag.Username = username;
             return View(models);
         }
 
@@ -430,12 +434,13 @@ namespace Software_Engineering_Project.Controllers
                 models.Add(model);
             }
             conn.Close();
+            ViewBag.Username = username;
             return View(models);
         }
 
         public IActionResult UngradedStudents(string username)
         {
-            List<SearchModel> models = new();
+            List<ThesisModel> models = new();
 
             NpgsqlConnection conn = Database.Database.GetConnection();
             NpgsqlDataReader reader = Database.Database.ExecuteQuery(String.Format("select student, title, thesis_start_date, language, technology" +
@@ -443,10 +448,10 @@ namespace Software_Engineering_Project.Controllers
 
             while (reader.Read())
             {
-                SearchModel model = new();
-                model.Student = reader.GetString(0);
+                ThesisModel model = new();
+                model.Username = reader.GetString(0);
                 model.Title = reader.GetString(1);
-                model.StartDate = (DateOnly)reader.GetDate(2);
+                model.ThesisStartDate = (DateOnly)reader.GetDate(2);
                 model.Language = reader.GetString(3);
                 model.Technology = reader.GetString(4);
                 models.Add(model);
