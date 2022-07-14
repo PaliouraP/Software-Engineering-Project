@@ -184,7 +184,23 @@ namespace Software_Engineering_Project.Controllers
             }
             conn.Close();
             StudentModel model = new();
-            model.Username = Username;
+            NpgsqlConnection conn1 = Database.Database.GetConnection();
+            NpgsqlDataReader reader1 = Database.Database.ExecuteQuery(String.Format("select users.first_name, users.last_name," +
+                " users.gender, users.email, users.phone, student.start_year, student.professor" +
+                " from student join users on student.student = users.username and users.username = '{0}'; ", Username), conn1);
+
+            while (reader1.Read())
+            {
+                model.Username = Username;
+                model.FirstName = reader1.GetString(0);
+                model.LastName = reader1.GetString(1);
+                model.Gender = reader1.GetString(2);
+                model.Email = reader1.GetString(3);
+                model.Phone = reader1.GetDecimal(4).ToString();
+                model.StartYear = reader1.GetInt32(5);
+                model.Professor = reader1.GetString(6);
+            }
+            conn1.Close();
             ViewBag.Username = Username;
             return View("Profile", model);
         }
@@ -214,7 +230,23 @@ namespace Software_Engineering_Project.Controllers
                 conn.Close();
             }
             StudentModel model = new();
-            model.Username = Username;
+            NpgsqlConnection conn1 = Database.Database.GetConnection();
+            NpgsqlDataReader reader1 = Database.Database.ExecuteQuery(String.Format("select users.first_name, users.last_name," +
+                " users.gender, users.email, users.phone, student.start_year, student.professor" +
+                " from student join users on student.student = users.username and users.username = '{0}'; ", Username), conn1);
+
+            while (reader1.Read())
+            {
+                model.Username = Username;
+                model.FirstName = reader1.GetString(0);
+                model.LastName = reader1.GetString(1);
+                model.Gender = reader1.GetString(2);
+                model.Email = reader1.GetString(3);
+                model.Phone = reader1.GetDecimal(4).ToString();
+                model.StartYear = reader1.GetInt32(5);
+                model.Professor = reader1.GetString(6);
+            }
+            conn1.Close();
             ViewBag.Username = Username;
             return View("Profile", model);
         }

@@ -95,7 +95,7 @@
             <input type="password" placeholder="Old Password" name="oldPassword" class="inpt"/> 
             <input type="password" placeholder="New Password" name="newPassword" class="inpt"/> 
             <input type="password" placeholder="Confirm new Password" name="newPassword1" class="inpt"/> 
-            <input type="hidden" name="Username" value="@Model.Username" />
+            <input type="hidden" name="Username" value="@ViewBag.Username" />
             <input class="submit" type="submit"/>
         </div>
     </form>
@@ -110,7 +110,7 @@
     <div>
          <input placeholder="New phone number" type="tel" pattern="[0-9]{10}" name="phone" class="inpt"/>
          <input type="tel" pattern="[0-9]{10}" name="phone" placeholder="Confirm Phone Number" class="inpt"/> 
-        <input type="hidden"  name="Username" value="@Model.Username" />
+        <input type="hidden"  name="Username" value="@ViewBag.Username" />
         <input class="submit" type="SUBMIT" />
     </div>
 </form></div>  
